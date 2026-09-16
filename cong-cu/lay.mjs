@@ -1,64 +1,118 @@
 #!/usr/bin/env node
 /**
- * Lay mot nguon asset tu Releases ve `assets_source/<ten-nguon>/`.
+ * Lay mot nguon asset ve `assets_source/<ten-nguon>/` theo manifest `nguon/<ten>.json`.
  *
- * Chay lai duoc: thu muc da co thi bo qua, khong tai lai 1 GB.
+ * VI SAO TAI LAI CHU KHONG CHUA SAN. Releases bi chan o loai phien nay
+ * (`Creating, editing, or deleting releases is not permitted for this session type`), ma
+ * day nhi phan vao git thi lich su phinh vinh vien - them me sau la cong don, khong xoa
+ * duoc. Manifest chi vai tram KB, tai lai thi mat hang chuc phut nhung chi lam khi can.
  *
- * KHONG can token: repo Public nen `browser_download_url` tai thang duoc. Nhung van phai
- * `--http1.1` va `-L` (Releases chuyen huong sang `objects.githubusercontent.com`).
+ * DANH DOI, noi thang: phu thuoc `web.archive.org` con song. No la luu tru phi loi nhuan,
+ * khong ai bao dam. Mat nguon thi mat kho - do la cai gia cua repo nhe.
+ *
+ * BA BAY:
+ * 1. `fetch` cua Node khong di CONNECT qua proxy phien -> `403 Blocked by egress policy`.
+ *    Phai goi `curl`.
+ * 2. Phai `--http1.1`: HTTP/2 qua proxy dut `ws_closed_mid_exchange` sau ~11 giay.
+ * 3. Manifest giu MOC THAT nen GET thang duoc. Dung "toi uu" thanh tai URL cua API.
  *
  * Dung:
- *   node cong-cu/lay.mjs icosa
- *   node cong-cu/lay.mjs icosa /duong/dan/khac
+ *   node cong-cu/lay.mjs icosa                       # -> ./assets_source/icosa/
+ *   node cong-cu/lay.mjs icosa ../quoc-chien/assets_source
+ *   node cong-cu/lay.mjs icosa --loc chicken         # chi lay model trung tu khoa
  */
-import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readdirSync, rmSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { execFile } from 'node:child_process';
+import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { promisify } from 'node:util';
 
-const REPO = 'gc1001vn-svg/kho-game';
-const TAM = '/tmp/kho-game-goi';
+const chay_lenh = promisify(execFile);
+const SONG_SONG = 4;
 
-const [ten, dichNgoai] = process.argv.slice(2);
+const args = process.argv.slice(2);
+const ten = args.find((a) => !a.startsWith('--'));
+const iLoc = args.indexOf('--loc');
+const loc = iLoc >= 0 ? (args[iLoc + 1] || '').toLowerCase() : null;
+const dich = args.filter((a) => !a.startsWith('--') && a !== ten && a !== args[iLoc + 1])[0]
+  || 'assets_source';
 if (!ten) {
-  console.error('Dung: node cong-cu/lay.mjs <ten-nguon> [duong-dan-dich]');
-  process.exit(1);
-}
-const dich = dichNgoai || 'assets_source';
-if (existsSync(join(dich, ten)) && readdirSync(join(dich, ten)).length) {
-  console.log(`${join(dich, ten)} da co - bo qua. Muon tai lai thi xoa thu muc do truoc.`);
-  process.exit(0);
-}
-
-const curl = (args) => execFileSync('curl', ['-s', '-L', '--http1.1', '--max-time', '3600', ...args], {
-  encoding: 'utf8',
-  maxBuffer: 1 << 26,
-});
-
-const rel = JSON.parse(curl([`https://api.github.com/repos/${REPO}/releases/tags/kho-${ten}`]));
-if (!rel.assets?.length) {
-  console.error(`Khong thay release kho-${ten}. Co gi trong kho: xem ke/`);
+  console.error('Dung: node cong-cu/lay.mjs <ten-nguon> [duong-dan-dich] [--loc <tu khoa>]');
   process.exit(1);
 }
 
-mkdirSync(TAM, { recursive: true });
-mkdirSync(dich, { recursive: true });
-const phan = [];
-for (const a of rel.assets.sort((x, y) => x.name.localeCompare(y.name))) {
-  const p = join(TAM, a.name);
-  if (existsSync(p) && statSync(p).size === a.size) { console.log(`co san ${a.name}`); phan.push(p); continue; }
-  console.log(`tai ${a.name} (${(a.size / 1024 ** 2).toFixed(0)} MB)`);
-  curl(['-o', p, a.browser_download_url]);
-  phan.push(p);
+const mf = join(dirname(new URL(import.meta.url).pathname), '..', 'nguon', `${ten}.json`);
+if (!existsSync(mf)) {
+  console.error(`Khong thay manifest ${mf}. Co gi trong kho: xem ke/`);
+  process.exit(1);
+}
+const { model } = JSON.parse(readFileSync(mf, 'utf8'));
+const viec = loc
+  ? model.filter((m) => `${m.ten} ${m.file}`.toLowerCase().includes(loc))
+  : [...model];
+console.log(`${viec.length}/${model.length} model se lay -> ${join(dich, ten)}`);
+
+const doi = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function curl(argsCurl, lan = 4) {
+  for (let i = 0; i < lan; i++) {
+    try {
+      return (await chay_lenh('curl', ['-s', '--http1.1', '--max-time', '180', ...argsCurl], {
+        encoding: 'buffer',
+        maxBuffer: 1 << 28,
+      })).stdout;
+    } catch (loi) {
+      if (i === lan - 1) throw loi;
+      await doi(2 ** i * 1000);
+    }
+  }
 }
 
-// Nhieu phan thi noi lai truoc khi bung - `split` cat giua dong byte, tar khong doc roi le.
-// KHONG dung `--strip-components`: goi da co san thu muc goc ten `<ten-nguon>/`.
-const tar = join(TAM, `${ten}.tar`);
-if (phan.length === 1 && phan[0].endsWith('.tar')) {
-  execFileSync('tar', ['-xf', phan[0], '-C', dich]);
-} else {
-  execFileSync('bash', ['-c', `cat ${phan.map((p) => `'${p}'`).join(' ')} > '${tar}'`]);
-  execFileSync('tar', ['-xf', tar, '-C', dich]);
-  rmSync(tar, { force: true });
-}
-console.log(`Xong -> ${join(dich, ten)}`);
+let xong = 0, boQua = 0, hong = 0;
+const chay = async () => {
+  for (;;) {
+    const m = viec.shift();
+    if (m === undefined) return;
+    const thuMuc = join(dich, ten, m.id);
+    const file = join(thuMuc, m.file);
+    if (existsSync(file) && statSync(file).size > 0) { boQua++; continue; }
+    mkdirSync(thuMuc, { recursive: true });
+    try {
+      await curl(['-o', file, m.url]);
+      const dau = readFileSync(file).subarray(0, 5).toString();
+      if (!(dau.startsWith('glTF') || dau.trimStart().startsWith('{'))) {
+        rmSync(file, { force: true });
+        throw new Error('khong phai model: ' + dau);
+      }
+      for (const p of m.phu || []) {
+        const pd = join(thuMuc, (p.file || '').replace(/[^\w./-]/g, '_'));
+        if (existsSync(pd) && statSync(pd).size > 0) continue;
+        mkdirSync(dirname(pd), { recursive: true });
+        await curl(['-o', pd, p.url]);
+        // File phu rong la model hong am tham: `.gltf` van doc duoc, den luc nuong moi
+        // gay `Invalid typed array length`. Bat ngay o day.
+        if (!existsSync(pd) || statSync(pd).size === 0) {
+          rmSync(pd, { force: true });
+          rmSync(file, { force: true });
+          throw new Error(`file phu rong: ${p.file}`);
+        }
+      }
+      // Ghi cong di theo model, khong nam mot cho de roi mat.
+      writeFileSync(
+        join(thuMuc, 'ghi_cong.json'),
+        JSON.stringify(
+          { ten: m.ten, tac_gia: m.tac_gia, license: m.license, so_tam: m.so_tam, trang: m.trang, nguon: ten },
+          null,
+          1,
+        ) + '\n',
+      );
+      xong++;
+    } catch (loi) {
+      hong++;
+      console.log(`HONG ${m.ten} (${m.id}): ${String(loi.message).slice(0, 50)}`);
+    }
+    if ((xong + boQua + hong) % 50 === 0) console.log(`... ${xong + boQua + hong}/${viec.length + xong + boQua + hong}`);
+    await doi(0);
+  }
+};
+await Promise.all(Array.from({ length: SONG_SONG }, chay));
+console.log(`Lay ${xong} · co san ${boQua} · hong ${hong} -> ${join(dich, ten)}`);

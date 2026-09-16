@@ -3,15 +3,23 @@
 Model 3D, hoạ tiết, bản kê và công cụ lấy về. **Một chỗ duy nhất** cho mọi dự án game,
 thay vì mỗi dự án tải lại cùng một gói.
 
-## Repo nhẹ, asset nằm ở Releases
+## Repo nhẹ: giữ bản kê, không giữ nhị phân
 
 Git **không** giữ file nhị phân: `.glb` nén rất kém, mà lịch sử git giữ mọi bản cũ vĩnh
-viễn. Nên:
+viễn — thêm một mẻ là cộng dồn, không xoá được.
 
-- **Trong git:** bản kê (`ke/*.md`), công cụ (`cong-cu/`), ghi công license.
-- **Ở Releases:** gói `.tar` của từng nguồn. GitHub cho **2 GiB mỗi file · 1.000 file mỗi
-  release · không giới hạn tổng, không giới hạn băng thông** — trong khi repo thì khuyến
-  nghị dưới 1 GB (trần mềm 5 GB) và **file trong git cứng 100 MB**.
+- **Trong git:** bản kê (`ke/*.md`), manifest tải lại (`nguon/*.json`), công cụ
+  (`cong-cu/`), ghi công license. Tổng vài trăm KB.
+- **Model thật:** tải lại từ nguồn gốc bằng `cong-cu/lay.mjs`. Manifest giữ **URL mốc
+  thật** của bản lưu nên tải thẳng, không phải dò lại.
+
+**Đánh đổi, nói thẳng:** phụ thuộc `web.archive.org` còn sống. Nó là lưu trữ phi lợi
+nhuận, không ai bảo đảm. Mất nguồn là mất kho — đó là cái giá của repo nhẹ.
+
+Hai đường khác đã cân và bỏ: đẩy nhị phân vào git (repo từ vài trăm KB thành 1 GB, phình
+vĩnh viễn) và GitHub Releases (2 GiB mỗi file, không giới hạn tổng — **nhưng phiên Claude
+Code từ web bị chặn**: `Creating, editing, or deleting releases is not permitted for this
+session type`). Muốn dùng Releases thì chạy `cong-cu/dong_goi.mjs` từ máy thật.
 
 ## Dùng ở dự án game
 
@@ -19,21 +27,24 @@ viễn. Nên:
 # Dò trước, khỏi tải: bản kê nằm trong git nên grep được ngay
 grep -io '[a-z0-9_ -]*chicken[a-z0-9_ -]*' ke/icosa.md | sort -u
 
-# Trúng rồi mới lấy gói thật về ./assets_source/
-node cong-cu/lay.mjs icosa
+# Lấy vài model trúng từ khoá — đừng kéo cả kho khi cần ba con gà
+node cong-cu/lay.mjs icosa --loc chicken
+
+# Lấy cả nguồn về thư mục của dự án khác
+node cong-cu/lay.mjs icosa ../quoc-chien/assets_source
 ```
 
-`lay.mjs` tải gói từ Releases rồi bung ra `assets_source/<nguồn>/`. Chạy lại được: có
-rồi thì bỏ qua.
+Chạy lại được: model đã có trên đĩa thì bỏ qua. Mỗi model tải kèm `ghi_cong.json` để
+ghi công đi theo file, không nằm một chỗ dễ mất.
 
 ## Đưa nguồn mới vào kho
 
 ```bash
-node cong-cu/dong_goi.mjs <đường-dẫn-thư-mục> <tên-nguồn>
+# 1. Tải về bằng công cụ của dự án (ví dụ quoc-chien: npm run tai:icosa)
+# 2. Sinh manifest từ thư mục đã tải
+node cong-cu/sinh_manifest.mjs <tên-nguồn> <đường-dẫn-thư-mục>
+# 3. Chép bản kê của dự án vào ke/<tên-nguồn>.md, rồi commit
 ```
-
-Nó `tar` thư mục, cắt thành phần ≤ 1,5 GiB nếu cần, tạo release `kho-<tên-nguồn>` rồi
-tải lên. Cần biến môi trường `GITHUB_TOKEN` (máy ảo Claude Code đã có sẵn).
 
 ## License
 
