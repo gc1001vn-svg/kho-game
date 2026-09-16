@@ -62,9 +62,11 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 
 | Nguồn | Bản kê | Dòng | License | Lấy bằng |
 |---|---|---:|---|---|
-| **Icosa Gallery** (kho gương Google Poly) | `ke/icosa.tsv` | **73.626** | CC-BY (vài chục CC0) | `lay.mjs icosa` |
+| **Icosa Gallery** (kho gương Google Poly) | `ke/icosa.tsv` | **73.626** | CC-BY (vài chục CC0) | `lay.mjs icosa` — tự động |
 | `quoc-chien/assets_source` (Kenney · Quaternius · KayKit) | `ke/quoc-chien-assets.tsv` | 3.960 | CC0 | `tai_itch.mjs` ở repo đó |
+| Poly Pizza | `ke/poly-pizza.tsv` | 2.646 | CC-BY 1.725 · CC0 921 | **tải bằng máy thật** |
 | Kho chung `tayvuc` | `ke/tayvuc-kho-chung.tsv` | 1.347 | CC0 (vài gói `?`) | `npm run kho:lay` |
+| Poly Haven | `ke/polyhaven.tsv` | 521 | CC0 toàn bộ | API mở, không cần khoá |
 
 Số Icosa là **model duy nhất**, đã lọc phía server: bỏ ND, bỏ Tilt Brush. Toàn kho
 141.099 asset; hợp license 130.530; bỏ Tilt còn 73.626; trong đó **41.435 cái ≤ 8.000 tam**.
@@ -72,8 +74,14 @@ Số Icosa là **model duy nhất**, đã lọc phía server: bỏ ND, bỏ Tilt
 Hai con số kia là **lượt file**, không phải model duy nhất — một model xuất ra fbx/gltf/obj
 thì đếm ba lần. Model duy nhất: 1.222 và 1.310 (xem `KHO_ASSET.md`, `KHO_CHUNG.md` gốc).
 
-**Chưa nạp:** Poly Haven (521 model CC0, API mở) · Poly Pizza (10.400+, dò được nhưng
-`static.poly.pizza` trả 403 của Cloudflare — phải tải bằng máy thật).
+**Poly Pizza dò được, TẢI KHÔNG ĐƯỢC:** `static.poly.pizza` — host của mọi đường
+`Download` — trả `403` với thân `Just a moment...` của Cloudflare, kể cả khi lái Chromium.
+API cũng **không có đường duyệt hết** (`search/` trần và `category/<tên>` đều 404), nên
+mục lục đó quét theo 159 từ khoá và **không phủ hết 10.400+ model** — đừng tưởng đã đủ.
+
+Trùng lặp giữa các nguồn rất nhiều: đo 32 kết quả `house` trên Poly Pizza thì Quaternius 9
+· Poly by Google 7 · Kenney 4 — Quaternius/Kenney đã nằm ở kho chung, Poly by Google đã
+nằm trong mục lục Icosa.
 
 `nguon/icosa.json` là **manifest 1.679 model đã tải về một lần**, giữ URL mốc thật để lấy
 lại nhanh. Nó là tập con của mục lục, không phải giới hạn của kho.
