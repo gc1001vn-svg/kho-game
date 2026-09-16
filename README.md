@@ -71,6 +71,7 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 | **Freesound** — âm thanh | `ke/freesound.tsv` | **27.313** | CC0 14.587 · CC-BY 12.726 | cần khoá API, tải theo link |
 | **OpenGameArt** — âm thanh · nhạc · 2D · hoạ tiết | `ke/opengameart.tsv` | **22.714** | CC0 11.816 · CC-BY 10.898 | mở trang gốc, tải tay |
 | **Google Fonts** | `ke/font.tsv` | 1.941 họ | OFL | `fonts.google.com/specimen/<tên>` |
+| **itch.io CC0** — **2D 360** · 3D 165 | `ke/itch.tsv` | 525 gói | CC0 (tác giả tự khai) | `tai_itch.mjs <tác-giả>/<gói>` |
 | Mã nguồn mở — **học kiến trúc, cấm chép code** | `ke/ma-nguon-mo.tsv` | 10 | GPL/AGPL | đọc trên GitHub |
 
 **Chia theo loại — cột `loai` của từng bản kê:**
@@ -81,8 +82,14 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 | Kenney | `2D 145 · 3D 50 · Audio 10 · Textures 9 · Other 1` (một gói mang được nhiều nhãn) |
 | Poly Haven | `hdris 996 · textures 861 · models 521` |
 
-**Muốn tìm 2D:** OpenGameArt 9.347 mục + 145 gói Kenney. Bốn nguồn model 3D (Icosa,
-Poly Pizza, `assets_source`, kho chung) **không có 2D** — chúng là model để nướng ra sprite.
+**Muốn tìm 2D:** OpenGameArt 9.347 mục · itch.io 360 gói · Kenney 145 gói. Bốn nguồn model
+3D (Icosa, Poly Pizza, `assets_source`, kho chung) **không có 2D** — chúng là model để
+nướng ra sprite.
+
+**itch.io: hai cảnh báo.** License do **tác giả tự khai**, itch không kiểm — mở `LICENSE`
+trong gói đối chiếu trước khi dùng. Và bộ lọc `assets-cc0` lọc theo license **chứ không
+theo giá**, nên gói trả tiền vẫn lọt vào (`Kenney Game Assets All-in-1`, $19.95); cột `gia`
+giữ nguyên để thấy.
 
 **Cột `tac_gia` của OpenGameArt để `?`** — trang danh sách không hiện tên, phải mở từng
 mục mới biết, mà 22.714 mục thì 99% không bao giờ dùng tới. Nên lấy **lười**, đúng lúc cần:
