@@ -68,6 +68,16 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 | Poly Haven — model · **hoạ tiết · HDRI** | `ke/polyhaven.tsv` | 2.378 | CC0 toàn bộ | API mở, không cần khoá |
 | Kho chung `tayvuc` | `ke/tayvuc-kho-chung.tsv` | 1.347 | CC0 (vài gói `?`) | `npm run kho:lay` |
 | **Kenney** — cả kho, không chỉ gói đã tải | `ke/kenney.tsv` | 215 gói | CC0 toàn bộ | `tai_asset.mjs <gói>` |
+| **OpenGameArt** — âm thanh · nhạc · 2D · hoạ tiết | `ke/opengameart.tsv` | **22.714** | CC0 11.816 · CC-BY 10.898 | mở trang gốc, tải tay |
+| **Google Fonts** | `ke/font.tsv` | 1.941 họ | OFL | `fonts.google.com/specimen/<tên>` |
+| Mã nguồn mở — **học kiến trúc, cấm chép code** | `ke/ma-nguon-mo.tsv` | 10 | GPL/AGPL | đọc trên GitHub |
+
+OpenGameArt chia năm loại (cột `loai`): `2D Art 9.347 · Music 6.825 · 3D Art 3.475 ·
+Texture 1.640 · Sound Effect 1.427`. Đây là nguồn **duy nhất trong kho có âm thanh và
+nhạc** — bốn nguồn model 3D không có gì để nghe.
+
+**Cột `tac_gia` của OpenGameArt để `?`** — trang danh sách không hiện tên, phải mở từng
+mục mới biết. CC-BY đòi ghi tên, nên **mở trang gốc lấy tên tác giả trước khi dùng**.
 
 Poly Haven chia ba loại: `models 521 · textures 861 · hdris 996` (cột `loai`).
 
@@ -75,6 +85,14 @@ Poly Haven chia ba loại: `models 521 · textures 861 · hdris 996` (cột `loa
 
 - **ambientCG** (~2.000 hoạ tiết CC0): request đầu `200`, sau đó `000` với
   `ws_closed_mid_exchange` cho mọi đường, kể cả trang chủ. Chặn ở phía họ hoặc allowlist.
+- **game-icons.net** (~4.000 biểu tượng CC-BY): trang chủ `000`. Và
+  `raw.githubusercontent.com/game-icons/icons/master/icons.json` → `404`.
+- **Freesound** (~600.000 file âm thanh): cần khoá API, chủ dự án chưa lấy.
+- **Google Fonts qua đường chính thức:** `fonts.google.com/metadata/fonts` → `000`,
+  `api.fontsource.org/v1/fonts` → `000`, `api.github.com/repos/google/fonts/...` → `403
+  GitHub access to this repository is not enabled for this session` kể cả khi đính kèm
+  `GITHUB_TOKEN`. Đường chạy được là **`raw.githubusercontent.com`** với file index
+  `tags/all/families.csv`.
 - ~~Kenney~~ — **đã lấy được 16/09 bằng Chromium**: `node cong-cu/quet_kenney.mjs`.
   `curl` không ăn thua (`/data/assets.json`, `/api/assets`, `/assets.json` đều `404`, danh
   sách nạp bằng JavaScript) và href là **URL tuyệt đối** nên `a[href^="/assets/"]` ra 0
