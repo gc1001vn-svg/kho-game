@@ -24,15 +24,18 @@ session type`). Muốn dùng Releases thì chạy `cong-cu/dong_goi.mjs` từ m�
 ## Dùng ở dự án game
 
 ```bash
-# Dò trước, khỏi tải: bản kê nằm trong git nên grep được ngay
-grep -io '[a-z0-9_ -]*chicken[a-z0-9_ -]*' ke/icosa.md | sort -u
+# 1. Dò khắp mọi nguồn một lệnh — in kèm license và cách lấy từng nguồn
+node cong-cu/do.mjs chicken --tam 8000
+node cong-cu/do.mjs ga                    # tiếng Việt, tự dịch qua từ điển
 
-# Lấy vài model trúng từ khoá — đừng kéo cả kho khi cần ba con gà
+# 2. Lấy đúng thứ cần. KHÔNG kéo cả kho.
 node cong-cu/lay.mjs icosa --loc chicken
-
-# Lấy cả nguồn về thư mục của dự án khác
-node cong-cu/lay.mjs icosa ../quoc-chien/assets_source
+node cong-cu/lay.mjs icosa --id 1YE8U35HXsI 0GKndEIbbMf
+node cong-cu/lay.mjs icosa ../quoc-chien/assets_source --loc house
 ```
+
+Model nào **chưa có trong manifest** thì `lay.mjs` tự hỏi API lúc tải — mục lục phủ cả
+kho, manifest chỉ là đường tắt cho những cái đã lấy về một lần.
 
 Chạy lại được: model đã có trên đĩa thì bỏ qua. Mỗi model tải kèm `ghi_cong.json` để
 ghi công đi theo file, không nằm một chỗ dễ mất.
@@ -57,6 +60,20 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 
 ## Nguồn đang có
 
-| Nguồn | Bản kê | Model | License |
-|---|---|---:|---|
-| Icosa Gallery (kho gương Google Poly) | `ke/icosa.md` | 1.671 | CC-BY |
+| Nguồn | Bản kê | Dòng | License | Lấy bằng |
+|---|---|---:|---|---|
+| **Icosa Gallery** (kho gương Google Poly) | `ke/icosa.tsv` | **73.626** | CC-BY (vài chục CC0) | `lay.mjs icosa` |
+| `quoc-chien/assets_source` (Kenney · Quaternius · KayKit) | `ke/quoc-chien-assets.tsv` | 3.960 | CC0 | `tai_itch.mjs` ở repo đó |
+| Kho chung `tayvuc` | `ke/tayvuc-kho-chung.tsv` | 1.347 | CC0 (vài gói `?`) | `npm run kho:lay` |
+
+Số Icosa là **model duy nhất**, đã lọc phía server: bỏ ND, bỏ Tilt Brush. Toàn kho
+141.099 asset; hợp license 130.530; bỏ Tilt còn 73.626; trong đó **41.435 cái ≤ 8.000 tam**.
+
+Hai con số kia là **lượt file**, không phải model duy nhất — một model xuất ra fbx/gltf/obj
+thì đếm ba lần. Model duy nhất: 1.222 và 1.310 (xem `KHO_ASSET.md`, `KHO_CHUNG.md` gốc).
+
+**Chưa nạp:** Poly Haven (521 model CC0, API mở) · Poly Pizza (10.400+, dò được nhưng
+`static.poly.pizza` trả 403 của Cloudflare — phải tải bằng máy thật).
+
+`nguon/icosa.json` là **manifest 1.679 model đã tải về một lần**, giữ URL mốc thật để lấy
+lại nhanh. Nó là tập con của mục lục, không phải giới hạn của kho.
