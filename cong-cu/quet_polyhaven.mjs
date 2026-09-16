@@ -25,19 +25,33 @@ const lay = async (url) => JSON.parse(
 );
 
 const sach = (s) => String(s ?? '').replace(/[\t\r\n]+/g, ' ').trim();
-const ds = await lay('https://api.polyhaven.com/assets?t=models');
-const dong = ['id\tten\ttac_gia\tlicense\tso_tam\tdinh_dang\ttag'];
-for (const [id, a] of Object.entries(ds)) {
-  dong.push([
-    id,
-    sach(a.name),
-    sach(Object.keys(a.authors || {}).join(', ')),
-    'CC0 1.0',
-    a.polycount ?? '',
-    'gltf,blend,fbx',
-    [...(a.categories || []), ...(a.tags || [])].join(','),
-  ].join('\t'));
+
+// Quet CA BA LOAI. Truoc chi lay `models` va bo sot hai loai kia - ma hoa tiet be mat la
+// thu `quoc-chien` da dung that (bay o nen, ban do giay da), khong phai thu de danh.
+const LOAI = [
+  { t: 'models', dinhDang: 'gltf,blend,fbx' },
+  { t: 'textures', dinhDang: 'jpg,png,exr (1k..8k)' },
+  { t: 'hdris', dinhDang: 'hdr,exr (1k..16k)' },
+];
+
+const dong = ['id\tten\ttac_gia\tlicense\tso_tam\tdinh_dang\ttag\tloai'];
+const dem = [];
+for (const { t, dinhDang } of LOAI) {
+  const ds = await lay(`https://api.polyhaven.com/assets?t=${t}`);
+  for (const [id, a] of Object.entries(ds)) {
+    dong.push([
+      id,
+      sach(a.name),
+      sach(Object.keys(a.authors || {}).join(', ')),
+      'CC0 1.0',
+      a.polycount ?? '',
+      dinhDang,
+      [...(a.categories || []), ...(a.tags || [])].join(','),
+      t,
+    ].join('\t'));
+  }
+  dem.push(`${t} ${Object.keys(ds).length}`);
 }
 mkdirSync('ke', { recursive: true });
 writeFileSync(RA, dong.join('\n') + '\n');
-console.log(`Poly Haven: ${dong.length - 1} model -> ${RA}`);
+console.log(`Poly Haven: ${dong.length - 1} muc (${dem.join(' · ')}) -> ${RA}`);

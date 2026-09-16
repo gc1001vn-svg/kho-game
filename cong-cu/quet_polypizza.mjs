@@ -59,7 +59,11 @@ async function goi(tuKhoa) {
 }
 
 const tuDien = existsSync(TU_DIEN) ? (JSON.parse(readFileSync(TU_DIEN, 'utf8')).tu || {}) : {};
-const tuKhoa = [...new Set([...NEN, ...Object.values(tuDien).flat()])];
+// Bo tu khoa rut tu chinh muc luc Icosa (`cong-cu/rut_tu_khoa.mjs`): 73.626 ten model that
+// noi ro kho co nhieu thu gi, sat hon danh sach tu nghi tay.
+const TU_RUT = join(import.meta.dirname, 'tu_khoa.json');
+const rut = existsSync(TU_RUT) ? (JSON.parse(readFileSync(TU_RUT, 'utf8')).tu || []) : [];
+const tuKhoa = [...new Set([...NEN, ...Object.values(tuDien).flat(), ...rut])];
 console.log(`${tuKhoa.length} tu khoa`);
 
 const thay = new Map();

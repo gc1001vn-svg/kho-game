@@ -63,10 +63,21 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 | Nguồn | Bản kê | Dòng | License | Lấy bằng |
 |---|---|---:|---|---|
 | **Icosa Gallery** (kho gương Google Poly) | `ke/icosa.tsv` | **73.626** | CC-BY (vài chục CC0) | `lay.mjs icosa` — tự động |
+| Poly Pizza | `ke/poly-pizza.tsv` | 6.136 | CC-BY 4.295 · CC0 1.841 | **tải bằng máy thật** |
 | `quoc-chien/assets_source` (Kenney · Quaternius · KayKit) | `ke/quoc-chien-assets.tsv` | 3.960 | CC0 | `tai_itch.mjs` ở repo đó |
-| Poly Pizza | `ke/poly-pizza.tsv` | 2.646 | CC-BY 1.725 · CC0 921 | **tải bằng máy thật** |
+| Poly Haven — model · **hoạ tiết · HDRI** | `ke/polyhaven.tsv` | 2.378 | CC0 toàn bộ | API mở, không cần khoá |
 | Kho chung `tayvuc` | `ke/tayvuc-kho-chung.tsv` | 1.347 | CC0 (vài gói `?`) | `npm run kho:lay` |
-| Poly Haven | `ke/polyhaven.tsv` | 521 | CC0 toàn bộ | API mở, không cần khoá |
+
+Poly Haven chia ba loại: `models 521 · textures 861 · hdris 996` (cột `loai`).
+
+**Nguồn đã thử, CHƯA lấy được — đừng mò lại:**
+
+- **ambientCG** (~2.000 hoạ tiết CC0): request đầu `200`, sau đó `000` với
+  `ws_closed_mid_exchange` cho mọi đường, kể cả trang chủ. Chặn ở phía họ hoặc allowlist.
+- **Kenney** (~80 gói CC0): `kenney.nl/assets` trả `200` nhưng danh sách gói **nạp bằng
+  JavaScript**; `/data/assets.json`, `/api/assets`, `/assets.json` đều `404`. Muốn quét
+  phải lái Chromium (`npm run mo:mang` ở `quoc-chien`).
+- **game-icons.net**: `raw.githubusercontent.com/game-icons/icons/master/icons.json` → `404`.
 
 Số Icosa là **model duy nhất**, đã lọc phía server: bỏ ND, bỏ Tilt Brush. Toàn kho
 141.099 asset; hợp license 130.530; bỏ Tilt còn 73.626; trong đó **41.435 cái ≤ 8.000 tam**.
