@@ -43,6 +43,7 @@ const mau = tra.map((t) => new RegExp(`(^|[^a-z0-9])${t.replace(/[.*+?^${}()|[\]
 if (tra.join(' ') !== tuKhoa.join(' ').toLowerCase()) console.log(`(dich: ${tra.join(' · ')})`);
 
 let tongTrung = 0;
+let coOga = false;
 for (const f of readdirSync(KE).filter((x) => x.endsWith('.tsv')).sort()) {
   const dong = readFileSync(join(KE, f), 'utf8').split('\n').filter(Boolean);
   const cot = dong[0].split('\t');
@@ -56,6 +57,7 @@ for (const f of readdirSync(KE).filter((x) => x.endsWith('.tsv')).sort()) {
   });
   if (!trung.length) continue;
   tongTrung += trung.length;
+  if (f.startsWith('opengameart')) coOga = true;
   console.log(`\n=== ${f.replace('.tsv', '')} — ${trung.length} trúng`);
   for (const d of (het ? trung : trung.slice(0, TRAN_IN))) {
     const o = d.split('\t');
@@ -63,5 +65,14 @@ for (const f of readdirSync(KE).filter((x) => x.endsWith('.tsv')).sort()) {
   }
   if (!het && trung.length > TRAN_IN) console.log(`  ... con ${trung.length - TRAN_IN} dong, them --het de xem het`);
 }
-if (!tongTrung) console.log('Khong nguon nao co. Dung tu ve - bao chu du an quyet (luat ba buoc).');
-else console.log(`\nTong ${tongTrung} trung. Lay ve: node cong-cu/lay.mjs <nguon> --loc <tu khoa>`);
+if (!tongTrung) {
+  console.log('Khong nguon nao co. Dung tu ve - bao chu du an quyet (luat ba buoc).');
+} else {
+  console.log(`\nTong ${tongTrung} trung. Lay ve: node cong-cu/lay.mjs <nguon> --loc <tu khoa>`);
+  // Cot `tac_gia` cua OpenGameArt de `?` (xem `tac_gia.mjs`) - nhac dung lenh lay ten,
+  // vi CC-BY doi ghi ten ma khong ai nho khi dang doi asset.
+  if (coOga) {
+    console.log('OpenGameArt khong hien tac gia o trang danh sach.'
+      + ' Truoc khi DUNG: node cong-cu/tac_gia.mjs <duong_dan>');
+  }
+}

@@ -77,7 +77,22 @@ Texture 1.640 · Sound Effect 1.427`. Đây là nguồn **duy nhất trong kho c
 nhạc** — bốn nguồn model 3D không có gì để nghe.
 
 **Cột `tac_gia` của OpenGameArt để `?`** — trang danh sách không hiện tên, phải mở từng
-mục mới biết. CC-BY đòi ghi tên, nên **mở trang gốc lấy tên tác giả trước khi dùng**.
+mục mới biết, mà 22.714 mục thì 99% không bao giờ dùng tới. Nên lấy **lười**, đúng lúc cần:
+
+```bash
+node cong-cu/tac_gia.mjs /content/rpg-sound-pack
+# RPG Sound Pack | tac gia: artisticdude | license: CC0 | https://...
+```
+
+CC-BY đòi ghi tên, nên **chạy lệnh này rồi chép tên vào `ASSET_CREDITS.md` trước khi
+dùng**. `do.mjs` tự nhắc khi kết quả có OpenGameArt.
+
+**Freesound — chờ khoá.** `cong-cu/quet_freesound.mjs` viết xong, cắm khoá là chạy.
+`freesound.org` trả `200`, còn `/apiv2/search/text/` không khoá thì `401
+{"detail":"Authentication credentials were not provided."}`. Lấy khoá ở
+<https://freesound.org/apiv2/apply/>, rồi `FREESOUND_KEY=<khoá> node
+cong-cu/quet_freesound.mjs`. Lệnh chỉ lấy **CC0** và **Attribution**, bỏ
+`Attribution NonCommercial` — luật kho chỉ nhận CC0 · CC-BY · MIT.
 
 Poly Haven chia ba loại: `models 521 · textures 861 · hdris 996` (cột `loai`).
 
