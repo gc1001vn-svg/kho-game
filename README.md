@@ -64,7 +64,7 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 |---|---|---:|---|---|
 | **Icosa Gallery** (kho gương Google Poly) | `ke/icosa.tsv` | **73.626** | CC-BY (vài chục CC0) | `lay.mjs icosa` — tự động |
 | Poly Pizza | `ke/poly-pizza.tsv` | 6.136 | CC-BY 4.295 · CC0 1.841 | **tải bằng máy thật** |
-| `quoc-chien/assets_source` (Kenney · Quaternius · KayKit) | `ke/quoc-chien-assets.tsv` | 3.960 | CC0 | `tai_itch.mjs` ở repo đó |
+| `quoc-chien/assets_source` (Kenney · Quaternius · KayKit) | `ke/quoc-chien-assets.tsv` | 6.288 | CC0 | `tai_itch.mjs` ở repo đó |
 | Poly Haven — model · **hoạ tiết · HDRI** | `ke/polyhaven.tsv` | 2.378 | CC0 toàn bộ | API mở, không cần khoá |
 | Kho chung `tayvuc` | `ke/tayvuc-kho-chung.tsv` | 1.347 | CC0 (vài gói `?`) | `npm run kho:lay` |
 | **Kenney** — cả kho, không chỉ gói đã tải | `ke/kenney.tsv` | 215 gói | CC0 toàn bộ | `tai_asset.mjs <gói>` |
@@ -73,9 +73,16 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 | **Google Fonts** | `ke/font.tsv` | 1.941 họ | OFL | `fonts.google.com/specimen/<tên>` |
 | Mã nguồn mở — **học kiến trúc, cấm chép code** | `ke/ma-nguon-mo.tsv` | 10 | GPL/AGPL | đọc trên GitHub |
 
-OpenGameArt chia năm loại (cột `loai`): `2D Art 9.347 · Music 6.825 · 3D Art 3.475 ·
-Texture 1.640 · Sound Effect 1.427`. Đây là nguồn **duy nhất trong kho có âm thanh và
-nhạc** — bốn nguồn model 3D không có gì để nghe.
+**Chia theo loại — cột `loai` của từng bản kê:**
+
+| Nguồn | Chia ra |
+|---|---|
+| OpenGameArt | `2D Art 9.347 · Music 6.825 · 3D Art 3.475 · Texture 1.640 · Sound Effect 1.427` |
+| Kenney | `2D 145 · 3D 50 · Audio 10 · Textures 9 · Other 1` (một gói mang được nhiều nhãn) |
+| Poly Haven | `hdris 996 · textures 861 · models 521` |
+
+**Muốn tìm 2D:** OpenGameArt 9.347 mục + 145 gói Kenney. Bốn nguồn model 3D (Icosa,
+Poly Pizza, `assets_source`, kho chung) **không có 2D** — chúng là model để nướng ra sprite.
 
 **Cột `tac_gia` của OpenGameArt để `?`** — trang danh sách không hiện tên, phải mở từng
 mục mới biết, mà 22.714 mục thì 99% không bao giờ dùng tới. Nên lấy **lười**, đúng lúc cần:
@@ -112,7 +119,6 @@ Poly Haven chia ba loại: `models 521 · textures 861 · hdris 996` (cột `loa
   `ws_closed_mid_exchange` cho mọi đường, kể cả trang chủ. Chặn ở phía họ hoặc allowlist.
 - **game-icons.net** (~4.000 biểu tượng CC-BY): trang chủ `000`. Và
   `raw.githubusercontent.com/game-icons/icons/master/icons.json` → `404`.
-- **Freesound** (~600.000 file âm thanh): cần khoá API, chủ dự án chưa lấy.
 - **Google Fonts qua đường chính thức:** `fonts.google.com/metadata/fonts` → `000`,
   `api.fontsource.org/v1/fonts` → `000`, `api.github.com/repos/google/fonts/...` → `403
   GitHub access to this repository is not enabled for this session` kể cả khi đính kèm
@@ -123,13 +129,14 @@ Poly Haven chia ba loại: `models 521 · textures 861 · hdris 996` (cột `loa
   sách nạp bằng JavaScript) và href là **URL tuyệt đối** nên `a[href^="/assets/"]` ra 0
   dòng. Phải chạy `npm run mo:mang` ở `quoc-chien` trước, không thì Chromium báo
   `net::ERR_CERT_AUTHORITY_INVALID`. Ra **215 gói**, gấp gần ba lần con số "~80" từng ước.
-- **game-icons.net**: `raw.githubusercontent.com/game-icons/icons/master/icons.json` → `404`.
+- ~~Freesound~~ — **đã lấy được 16/09** sau khi chủ dự án lấy khoá API.
 
 Số Icosa là **model duy nhất**, đã lọc phía server: bỏ ND, bỏ Tilt Brush. Toàn kho
 141.099 asset; hợp license 130.530; bỏ Tilt còn 73.626; trong đó **41.435 cái ≤ 8.000 tam**.
 
 Hai con số kia là **lượt file**, không phải model duy nhất — một model xuất ra fbx/gltf/obj
-thì đếm ba lần. Model duy nhất: 1.222 và 1.310 (xem `KHO_ASSET.md`, `KHO_CHUNG.md` gốc).
+thì đếm ba lần. Model duy nhất: **2.164** và **1.310**; số thật luôn ở dòng cuối
+`quoc-chien/docs/KHO_ASSET.md` và `docs/KHO_CHUNG.md`, đừng chép ra chỗ khác.
 
 **Poly Pizza dò được, TẢI KHÔNG ĐƯỢC:** `static.poly.pizza` — host của mọi đường
 `Download` — trả `403` với thân `Just a moment...` của Cloudflare, kể cả khi lái Chromium.
