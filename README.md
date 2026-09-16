@@ -68,6 +68,7 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 | Poly Haven — model · **hoạ tiết · HDRI** | `ke/polyhaven.tsv` | 2.378 | CC0 toàn bộ | API mở, không cần khoá |
 | Kho chung `tayvuc` | `ke/tayvuc-kho-chung.tsv` | 1.347 | CC0 (vài gói `?`) | `npm run kho:lay` |
 | **Kenney** — cả kho, không chỉ gói đã tải | `ke/kenney.tsv` | 215 gói | CC0 toàn bộ | `tai_asset.mjs <gói>` |
+| **Freesound** — âm thanh | `ke/freesound.tsv` | **27.313** | CC0 14.587 · CC-BY 12.726 | cần khoá API, tải theo link |
 | **OpenGameArt** — âm thanh · nhạc · 2D · hoạ tiết | `ke/opengameart.tsv` | **22.714** | CC0 11.816 · CC-BY 10.898 | mở trang gốc, tải tay |
 | **Google Fonts** | `ke/font.tsv` | 1.941 họ | OFL | `fonts.google.com/specimen/<tên>` |
 | Mã nguồn mở — **học kiến trúc, cấm chép code** | `ke/ma-nguon-mo.tsv` | 10 | GPL/AGPL | đọc trên GitHub |
@@ -87,12 +88,21 @@ node cong-cu/tac_gia.mjs /content/rpg-sound-pack
 CC-BY đòi ghi tên, nên **chạy lệnh này rồi chép tên vào `ASSET_CREDITS.md` trước khi
 dùng**. `do.mjs` tự nhắc khi kết quả có OpenGameArt.
 
-**Freesound — chờ khoá.** `cong-cu/quet_freesound.mjs` viết xong, cắm khoá là chạy.
-`freesound.org` trả `200`, còn `/apiv2/search/text/` không khoá thì `401
-{"detail":"Authentication credentials were not provided."}`. Lấy khoá ở
-<https://freesound.org/apiv2/apply/>, rồi `FREESOUND_KEY=<khoá> node
-cong-cu/quet_freesound.mjs`. Lệnh chỉ lấy **CC0** và **Attribution**, bỏ
-`Attribution NonCommercial` — luật kho chỉ nhận CC0 · CC-BY · MIT.
+**Freesound — đã quét 16/09: 27.313 file** qua 41 từ khoá (kho họ có 735.011 file, nên đây
+là phần liên quan tới game, không phải cả kho). Lệnh chỉ lấy **CC0** và **Attribution**,
+bỏ `Attribution NonCommercial` — luật kho chỉ nhận CC0 · CC-BY · MIT.
+
+```bash
+FREESOUND_KEY=<khoá> node cong-cu/quet_freesound.mjs           # bộ từ khoá nền
+FREESOUND_KEY=<khoá> node cong-cu/quet_freesound.mjs ga chim    # tiếng Việt cũng được
+```
+
+**Khoá là mật khẩu, repo này Public — không bao giờ commit.** Lấy ở
+<https://freesound.org/apiv2/apply/>, lấy dòng **Api key** chứ không phải **Client id**.
+Không khoá thì `/apiv2/search/text/` trả
+`401 {"detail":"Authentication credentials were not provided."}`.
+
+Khác OpenGameArt: Freesound **có sẵn tên tác giả** trong cột `tac_gia`, khỏi phải mở trang.
 
 Poly Haven chia ba loại: `models 521 · textures 861 · hdris 996` (cột `loai`).
 
