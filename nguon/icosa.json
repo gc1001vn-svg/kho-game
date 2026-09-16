@@ -228,6 +228,17 @@
    "trang": "https://icosa.gallery/view/077VO4YoXiE"
   },
   {
+   "id": "07v0Nfccjlk",
+   "ten": "Modern House",
+   "tac_gia": "Ryoma ishiki Buppha",
+   "license": "CREATIVE_COMMONS_BY 3.0",
+   "so_tam": 846,
+   "file": "Ryoma.glb",
+   "url": "https://web.archive.org/web/20210619182540id_/https://poly.googleusercontent.com/downloads/c/fp/1582660352279180/07v0Nfccjlk/86lyE8l1803/Ryoma.glb",
+   "phu": [],
+   "trang": "https://icosa.gallery/view/07v0Nfccjlk"
+  },
+  {
    "id": "08NVFYL8JUk",
    "ten": "Church_Pernik",
    "tac_gia": "Aleks Milchov",
@@ -237,6 +248,17 @@
    "url": "https://web.archive.org/web/20210619172222id_/https://poly.googleusercontent.com/downloads/c/fp/1582997369759128/08NVFYL8JUk/b9hxcRMC4SI/church.glb",
    "phu": [],
    "trang": "https://icosa.gallery/view/08NVFYL8JUk"
+  },
+  {
+   "id": "092ga0JXZ5H",
+   "ten": "Victor's house",
+   "tac_gia": "Victor Vicente",
+   "license": "CREATIVE_COMMONS_BY 3.0",
+   "so_tam": 1234,
+   "file": "tinker.glb",
+   "url": "https://web.archive.org/web/20210619184725id_/https://poly.googleusercontent.com/downloads/c/fp/1601803501978096/092ga0JXZ5H/et2tsP1I62Q/tinker.glb",
+   "phu": [],
+   "trang": "https://icosa.gallery/view/092ga0JXZ5H"
   },
   {
    "id": "09OlYUrCAAA",
@@ -281,6 +303,17 @@
    "url": "https://web.archive.org/web/20210619174014id_/https://poly.googleusercontent.com/downloads/c/fp/1606074428185010/0ARH--XdX9a/aTBL9iKaBfc/sketch.glb",
    "phu": [],
    "trang": "https://icosa.gallery/view/0ARH--XdX9a"
+  },
+  {
+   "id": "0B3uTGqbqGL",
+   "ten": "Front of a house",
+   "tac_gia": "Christian Pelaez-Espinosa",
+   "license": "CREATIVE_COMMONS_BY 3.0",
+   "so_tam": 96,
+   "file": "model.glb",
+   "url": "https://web.archive.org/web/20210619165847id_/https://poly.googleusercontent.com/downloads/c/fp/1601976616849043/0B3uTGqbqGL/aHK3mr-o8Z5/model.glb",
+   "phu": [],
+   "trang": "https://icosa.gallery/view/0B3uTGqbqGL"
   },
   {
    "id": "0Bbul4beDGp",
@@ -5836,6 +5869,17 @@
    "trang": "https://icosa.gallery/view/4tul2T6ccfI"
   },
   {
+   "id": "4txHk-4fKED",
+   "ten": "Treehouse by Karl",
+   "tac_gia": "Studio Npl",
+   "license": "CREATIVE_COMMONS_BY 3.0",
+   "so_tam": 1216,
+   "file": "model.glb",
+   "url": "https://web.archive.org/web/20210619133841id_/https://poly.googleusercontent.com/downloads/c/fp/1599817579958715/4txHk-4fKED/eO4KNqm4wre/model.glb",
+   "phu": [],
+   "trang": "https://icosa.gallery/view/4txHk-4fKED"
+  },
+  {
    "id": "4TZXM3lO5KK",
    "ten": "Computer Tower",
    "tac_gia": "Ethan Yawney",
@@ -8935,6 +8979,17 @@
    "url": "https://web.archive.org/web/20210619180743id_/https://poly.googleusercontent.com/downloads/c/fp/1623994243006776/7BGjfcacWkz/5jcEnPz_uJh/BarnOwl.glb",
    "phu": [],
    "trang": "https://icosa.gallery/view/7BGjfcacWkz"
+  },
+  {
+   "id": "7BSiA6vabDD",
+   "ten": "house",
+   "tac_gia": "Joanna Kozole",
+   "license": "CREATIVE_COMMONS_BY 3.0",
+   "so_tam": 174,
+   "file": "model.glb",
+   "url": "https://web.archive.org/web/20210619185246id_/https://poly.googleusercontent.com/downloads/c/fp/1602615428219409/7BSiA6vabDD/a0pZ8thwu8s/model.glb",
+   "phu": [],
+   "trang": "https://icosa.gallery/view/7BSiA6vabDD"
   },
   {
    "id": "7bUwve5hPDl",
@@ -15849,6 +15904,22 @@
    "trang": "https://icosa.gallery/view/cmYgeNinOwO"
   },
   {
+   "id": "cMYQU7-efFJ",
+   "ten": "ddoge temple green fog",
+   "tac_gia": "Robert S",
+   "license": "CREATIVE_COMMONS_BY 3.0",
+   "so_tam": 532,
+   "file": "sketch.gltf",
+   "url": "https://web.archive.org/web/20210619121932id_/https://poly.googleusercontent.com/downloads/c/fp/1601115456580365/cMYQU7-efFJ/7N7HmtroZmH/sketch.gltf",
+   "phu": [
+    {
+     "file": "sketch.bin",
+     "url": "https://web.archive.org/web/20210619121932id_/https://poly.googleusercontent.com/downloads/c/fp/1601115456580365/cMYQU7-efFJ/7N7HmtroZmH/sketch.bin"
+    }
+   ],
+   "trang": "https://icosa.gallery/view/cMYQU7-efFJ"
+  },
+  {
    "id": "cn2TLOaUBIn",
    "ten": "Horseshoe",
    "tac_gia": "Google",
@@ -18244,6 +18315,17 @@
    "trang": "https://icosa.gallery/view/eOEwsOqdcHl"
   },
   {
+   "id": "eokBgA4nwxK",
+   "ten": "IT park Software Building",
+   "tac_gia": "Raveendra Babu Aripaka",
+   "license": "CREATIVE_COMMONS_BY 3.0",
+   "so_tam": 486,
+   "file": "Building1.glb",
+   "url": "https://web.archive.org/web/20210619130059id_/https://poly.googleusercontent.com/downloads/c/fp/1596663243147048/eokBgA4nwxK/6wyhYfQ8kHN/Building1.glb",
+   "phu": [],
+   "trang": "https://icosa.gallery/view/eokBgA4nwxK"
+  },
+  {
    "id": "eoYi_P53Gri",
    "ten": "desert tower 2",
    "tac_gia": "Michael Pretz",
@@ -18313,6 +18395,17 @@
    "url": "https://web.archive.org/web/20210619160544id_/https://poly.googleusercontent.com/downloads/c/fp/1623128448852147/epTRRUlM5tM/18Y68OJcaiO/model.glb",
    "phu": [],
    "trang": "https://icosa.gallery/view/epTRRUlM5tM"
+  },
+  {
+   "id": "eqgL5SRiR5L",
+   "ten": "OBJ pr lighthouse2 08 P",
+   "tac_gia": "Robert Mark",
+   "license": "CREATIVE_COMMONS_BY 3.0",
+   "so_tam": 4684,
+   "file": "Lighthouse.glb",
+   "url": "https://web.archive.org/web/20210619180532id_/https://poly.googleusercontent.com/downloads/c/fp/1597746434498030/eqgL5SRiR5L/0DVBGU_zLh-/Lighthouse.glb",
+   "phu": [],
+   "trang": "https://icosa.gallery/view/eqgL5SRiR5L"
   },
   {
    "id": "eQMdN_go11z",
