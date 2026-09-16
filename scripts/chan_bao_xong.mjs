@@ -6,6 +6,13 @@
 // mot dong bat dau bang "So do:" (co dau: "Số đo:"). Khong can do that thi ghi
 // "So do: khong can - <ly do>". Bat buoc noi ra, khong duoc im lang.
 //
+// 16/09: doi THEM mot dong "De xuat:" (co dau: "Đề xuất:"), hay khoi
+// "=== VIEC CUA ANH BAY GIO ===". Vi sao: chu du an bao bao xong ma khong bao
+// buoc ke thi anh phai tu nghi ra viec, va phan dat nhat cua tro ly - nhin thay
+// viec tiep theo - bi bo. Luat cu chi nam o CLAUDE.md cua mot repo va chi ap
+// CUOI PHIEN, nen xong viec giua phien thi khong ai bat.
+// Khong co buoc ke that thi ghi "De xuat: khong co - <ly do>".
+//
 // Cai vao mot du an:
 //   1. Chep file nay vao <du-an>/scripts/chan_bao_xong.mjs
 //   2. Them vao <du-an>/.claude/settings.json:
@@ -25,6 +32,8 @@ const PHU_DINH = 'chưa|chua|không|khong|sắp|sap|gần|gan|nếu|neu|khi nào
 const BAO_XONG = 'xong|hoàn thành|hoan thanh|hoàn tất|hoan tat';
 // Cho phep ky tu trang tri Markdown dung truoc: ` * _ ~ # - > va khoang trang.
 const CO_SO_DO = /^[\s>*_`~#-]*(số đo|so do)\s*:/im;
+/** Dong de xuat buoc ke, hay khoi viec cuoi phien - mot trong hai la du. */
+const CO_DE_XUAT = /^[\s>*_`~#-]*(đề xuất|de xuat)\s*:|việc của anh bây giờ|viec cua anh bay gio/im;
 
 let raw = '';
 // Fail-open ca khi CHINH hook hong, khong chi khi du lieu hong. Doan duoi co
@@ -78,6 +87,16 @@ process.stdin.on('end', () => {
       'Cau tra loi noi "xong" nhung khong co dong "So do:". ' +
       'Chua do duoc thi khong duoc bao xong — hay dua so do that, ' +
       'hoac ghi mot dong "So do: khong can - <ly do>".',
+    );
+    process.exit(2);
+  }
+
+  // Bao xong ma khong noi buoc ke -> chu du an phai tu nghi ra viec.
+  if (!CO_DE_XUAT.test(msg)) {
+    console.error(
+      'Cau tra loi noi "xong" nhung khong co dong "De xuat:". Xong mot viec thi '
+      + 'phai noi buoc ke - viec gi, vi sao, ton bao lau. That su het viec thi ghi '
+      + '"De xuat: khong co - <ly do>".',
     );
     process.exit(2);
   }
