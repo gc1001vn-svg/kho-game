@@ -1,3 +1,8 @@
 # Goi asset tai ve, khong bao gio len git.
 assets_source/
 node_modules/
+
+# Ve duyet dung mot lan va so lenh — KHONG len git
+.claude/da_duyet.txt
+.claude/so_lenh.log
+.claude/nhac_kho.log

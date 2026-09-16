@@ -1,0 +1,5 @@
+# File phai hoi chu du an truoc khi sua. Dong ket thuc bang "/" la khoa ca thu muc.
+
+CLAUDE.md
+.claude/settings.json
+.claude/file_khoa.txt

@@ -1,0 +1,94 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/scripts/dau_phien.mjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/scripts/nhac_kho.mjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/scripts/chan_file_khoa.mjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/scripts/ghi_so_lenh.mjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/scripts/chan_bao_xong.mjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "skillOverrides": {
+    "ghi-nho": "user-invocable-only",
+    "bo-tro": "user-invocable-only",
+    "ponytail": "user-invocable-only",
+    "pptx": "off",
+    "docx": "off",
+    "xlsx": "off",
+    "pdf": "off",
+    "vsp-safety-expert": "off",
+    "vsp-van-ban": "off",
+    "ponytail-audit": "user-invocable-only",
+    "ponytail-debt": "user-invocable-only",
+    "ponytail-gain": "user-invocable-only",
+    "ponytail-help": "user-invocable-only",
+    "ponytail-review": "user-invocable-only",
+    "session-start-hook": "off",
+    "update-config": "off",
+    "fewer-permission-prompts": "off",
+    "security-review": "off",
+    "loop": "user-invocable-only",
+    "run": "off",
+    "simplify": "off",
+    "dataviz": "off",
+    "design": "off",
+    "artifact-design": "off",
+    "artifact-diagramming": "off",
+    "artifact-capabilities": "off",
+    "claude-api": "off",
+    "keybindings-help": "off",
+    "init": "off",
+    "giam-token": "user-invocable-only",
+    "lap-ke-hoach": "user-invocable-only",
+    "code-review": "user-invocable-only"
+  }
+}
