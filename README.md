@@ -187,7 +187,7 @@ môi trường chặn**, request chưa ra khỏi máy ảo, chủ dự án mở 
 | Nguồn | Host | License | Vì sao đáng |
 |---|---|---|---|
 | **Openverse** | `api.openverse.org` | lọc CC0 · CC-BY **phía server** | Gộp ~800M ảnh + âm thanh. Thay được nhiều nguồn lẻ |
-| **Openclipart** | `openclipart.org` (sitemap) | CC0 toàn bộ | ~170.000 SVG. Biểu tượng, UI, hình 2D. **Họ đang chặn IP máy ảo** — xem dưới |
+| **Openclipart** | `ke/openclipart.tsv` | CC0 toàn bộ | **101.536 mục** (5.571/5.820 sitemap). SVG + PNG: biểu tượng, UI, hình 2D. **Còn thiếu 249 sitemap** — họ chặn lại, xem dưới |
 | **Openverse** | `api.openverse.org` | CC0 1.708 · CC-BY 836 | **Bản kê `ke/openverse.tsv` ĐÃ CÓ: 2.544 mục** qua 44 từ khoá. Nhưng **ba host tải còn bị chặn** — xem dưới |
 | **Iconify** | `api.iconify.design` | theo từng bộ — **phải loại bộ CC-BY-SA** | 200.000+ icon, 150+ bộ. Không cần khoá |
 | **Lospec** | `lospec.com/palette-list/load` | bảng màu, không đòi ghi công | Bảng màu để nướng sprite 2D |
@@ -311,6 +311,25 @@ Công cụ đã sửa theo đúng bài học: `SONG_SONG = 2`, `NGHI_LO = 250` m
 dần bằng `appendFileSync`, và sổ `nguon/openclipart_xong.txt` để **chạy tiếp được** chỗ
 đứt. **Đừng nâng `SONG_SONG` lên cho nhanh** — đó đúng là cái làm mất cả buổi.
 
+#### Quét thật 17/09 — 101.536 mục, và vẫn bị chặn lại
+
+Hết chặn sau **~5 tiếng**. Quét lại với cấu hình nhẹ tay:
+
+```
+5.571/5.820 sitemap · 101.536 muc · 249 hong · ~2,5 gio · ke/openclipart.tsv 12 MB
+```
+
+Tốc độ đo được: **68 sitemap / 105 giây** (~0,65/s), ~31,5 mục mỗi sitemap. `id` không
+trùng cái nào: 101.536/101.536.
+
+**Nhưng 2,5 tiếng quét cũng đủ để họ chặn lại** — 249 sitemap cuối hỏng chính là lúc chặn
+ập xuống, và chạy lại ngay sau đó là `Khong doc duoc /sitemap.xml` (`robots.txt` vẫn `200`,
+tức chặn IP chứ không phải allowlist).
+
+**Kết luận thật:** ngay cả `SONG_SONG = 2` + nghỉ 250 ms vẫn quá mạnh cho cả kho. Muốn lấy
+nốt 249 sitemap thì **đợi vài tiếng rồi chạy lại** — sổ `nguon/openclipart_xong.txt` bỏ qua
+5.571 cái đã xong, nên lần sau chỉ tốn vài phút. **Đừng `--lam-lai`**, mất sạch 2,5 tiếng.
+
 **Lospec: phải đủ tham số.** Bỏ bớt là `500`:
 
 ```bash
@@ -381,8 +400,8 @@ nhanh**: nhanh hơn nghĩa là hỏng nhiều hơn, tổng thời gian tệ hơn
 
 ### Việc phiên sau
 
-1. **Quét lại Openclipart** khi hết chặn (thử `curl -sS --http1.1 -A "$UA"
-   https://openclipart.org/sitemap.xml`; ra `406.414 B` là thông). Chạy
-   `node cong-cu/quet_openclipart.mjs` — tự bỏ qua phần đã xong. **Bản kê
-   `ke/openclipart.tsv` CHƯA CÓ**, đừng tưởng đã có.
+1. **Lấy nốt 249 sitemap Openclipart còn thiếu.** Thử
+   `curl -sS --http1.1 -A "$UA" https://openclipart.org/sitemap.xml`; ra `406.414 B` là hết
+   chặn. Rồi `node cong-cu/quet_openclipart.mjs` — bỏ qua 5.571 cái đã xong, chỉ vài phút.
+   **Đừng `--lam-lai`.**
 2. ~~Viết `cong-cu/quet_openverse.mjs`~~ — **xong 17/09**, kèm `lay_openverse.mjs`.
