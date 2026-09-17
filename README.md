@@ -174,19 +174,81 @@ nằm trong mục lục Icosa.
 `nguon/icosa.json` là **manifest 1.679 model đã tải về một lần**, giữ URL mốc thật để lấy
 lại nhanh. Nó là tập con của mục lục, không phải giới hạn của kho.
 
-## Việc phiên sau — tìm API và MCP mở về game / đồ hoạ
+## Kết quả dò API và MCP mở — 17/09
 
-Chủ dự án giao 17/09. Tìm **API mở hay miễn phí** và **MCP server** phục vụ làm game:
-asset, đồ hoạ, âm thanh, sinh nội dung, công cụ. Cách làm:
+Giao 17/09, làm xong 17/09. Đo **24 host**, ghi mã trả về thật. Dưới đây là kết luận;
+**đừng dò lại từ đầu**.
 
-1. **Đo trước khi tin.** Mỗi nguồn: `curl` một phát, ghi mã trả về thật. `000` thì đọc dấu
-   vết proxy để biết **allowlist chặn** (`connect_rejected — gateway answered 403 to
-   CONNECT`, chủ dự án mở được) hay **đích chặn** (`403` kèm `server: cloudflare`, mở
-   allowlist vô ích).
-2. **License trước số lượng.** Chỉ nhận CC0 · CC-BY · MIT. Nguồn nào không nói rõ license
-   thì ghi `?`, đừng đoán.
-3. **MCP thì cân nhắc kỹ hơn API.** Schema của MCP **nạp vào ngữ cảnh mỗi phiên dù không
-   gọi lần nào**; một lệnh CLI tốn 0 token khi không dùng. Đo 13/09 đã loại
-   `threenative-asset-mcp` vì lý do này (40+ tool, không ghi license, 2/6 nguồn của nó
-   `000` ở máy ảo). Muốn thêm MCP thì phải chỉ ra nó làm được gì mà CLI không làm được.
-4. Nguồn đã thử rồi, **đừng tra lại**: xem mục "Nguồn đã thử, CHƯA lấy được" ở trên.
+### Sáu API đáng xin mở allowlist
+
+Cả sáu đều trả `000` kèm `curl: (56) CONNECT tunnel failed, response 403` — **allowlist
+môi trường chặn**, request chưa ra khỏi máy ảo, chủ dự án mở được.
+
+| Nguồn | Host | License | Vì sao đáng |
+|---|---|---|---|
+| **Openverse** | `api.openverse.org` | lọc CC0 · CC-BY **phía server** | Gộp ~800M ảnh + âm thanh. Thay được nhiều nguồn lẻ |
+| **Openclipart** | `openclipart.org/search/json/` | CC0 toàn bộ | ~170.000 SVG. Biểu tượng, UI, hình 2D |
+| **Iconify** | `api.iconify.design` | theo từng bộ — **phải loại bộ CC-BY-SA** | 200.000+ icon, 150+ bộ. Không cần khoá |
+| **Lospec** | `lospec.com/palette-list/load` | bảng màu, không đòi ghi công | Bảng màu để nướng sprite 2D |
+| **Sketchfab** | `api.sketchfab.com` | lọc `cc0` · `by` được; **tải cần OAuth** | Model để nướng sprite |
+| **GameAsset.net** | `gameasset.net` | khai CC0, **CHƯA kiểm** | 10.000+ animation nhân vật, tải GLB |
+
+Mở xong thì **kiểm license GameAsset.net trước khi tải gì** — tự khai, giống bẫy itch.io.
+
+### Loại vì license — đừng mở, đừng dùng
+
+| Nguồn | Lý do |
+|---|---|
+| **Pixabay** | Pixabay Content License, **bỏ CC0 từ 2019** |
+| **Hugging Face / Objaverse** (800k model) | **ODC-By 1.0** — không nằm trong CC0 · CC-BY · MIT |
+| **Liberated Pixel Cup** `lpc.opengameart.org` | **CC-BY-SA 3.0 + GPL-3.0**. Host trả `200` (đi nhờ allowlist `opengameart.org`) nhưng luật kho cấm SA |
+| **Matcaps** `nidorx/matcaps` | `200` nhưng **không có file LICENSE**; README tự nhận không truy được tác giả gốc, gom từ ZBrushCentral/Pixologic |
+| **ColourLovers** | `?` — nội dung người dùng đăng, chưa xác minh |
+
+### Loại vì không có asset dùng được
+
+- **Games & Comics của `public-apis`: 103 API, dùng được 0.** Toàn metadata game thương
+  mại (RAWG, IGDB, Riot, Steam, Battle.net, Genshin…). `PokéSprite` có sprite thật nhưng
+  là tài sản Nintendo — **luật cấm copy từ game thương mại**.
+- **Bảo tàng** (Met, Smithsonian, Art Institute of Chicago, Europeana, NASA): CC0 thật,
+  nhưng là tranh và ảnh tư liệu, không phải asset game.
+- **Musopen**: nhạc công hữu — Freesound 27.313 file đã phủ nhu cầu âm thanh.
+
+### MCP: không thêm cái nào
+
+Luật: schema MCP **nạp vào ngữ cảnh mỗi phiên dù không gọi lần nào**; CLI tốn 0 token khi
+không dùng. Đã loại `threenative-asset-mcp` 13/09 vì đúng lý do này.
+
+| MCP | Loại vì |
+|---|---|
+| `MubarakHAlketbi/game-asset-mcp` | Sinh sprite/3D qua Hugging Face Spaces. **License đầu ra không rõ**, cần token HF |
+| `Flux159/mcp-game-asset-gen` | Sinh asset cho three.js — cùng vấn đề license |
+| `Ludo.ai` API + MCP (beta 3/2026) | Thương mại, trả tiền, điều khoản riêng |
+| `ahujasid/blender-mcp` (MIT) | **Máy ảo không có Blender** — `which blender` rỗng |
+| `Coding-Solo/godot-mcp` (MIT) | Dự án là TypeScript/web, không dùng Godot |
+
+Không cái nào làm được thứ CLI không làm được. Máy ảo chỉ có `node v22.22.2` và `python3`
+— **không** `blender`, `magick`, `inkscape`.
+
+### Mục lục đã soi hết, đừng soi lại
+
+- **`public-apis/public-apis`** — README 2.313 dòng, **1.827 API**, 52 mục. Ra đúng một
+  cái mới: Iconify. `Creative Commons Catalog` `api.creativecommons.engineering` **là tên
+  cũ của Openverse**, không phải nguồn thứ hai.
+- **`Calinou/awesome-gamedev` · `godotengine/awesome-godot` · `ellisonleao/magictools`**
+  — ra Openclipart, GameAsset.net, LPC, Matcaps. Phần còn lại là **công cụ chạy trong
+  trình duyệt, không có API**: Sprite Fusion, Piskel, PixelChart, Spritemate.
+
+### Việc của chủ dự án
+
+`claude.ai/code` → nút tên môi trường → **Edit cloud environment** → ô **Network access**,
+thêm sáu dòng:
+
+```
+api.openverse.org
+openclipart.org
+api.iconify.design
+lospec.com
+api.sketchfab.com
+gameasset.net
+```
