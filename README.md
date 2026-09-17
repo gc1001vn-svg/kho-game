@@ -187,7 +187,7 @@ môi trường chặn**, request chưa ra khỏi máy ảo, chủ dự án mở 
 | Nguồn | Host | License | Vì sao đáng |
 |---|---|---|---|
 | **Openverse** | `api.openverse.org` | lọc CC0 · CC-BY **phía server** | Gộp ~800M ảnh + âm thanh. Thay được nhiều nguồn lẻ |
-| **Openclipart** | `openclipart.org/search/json/` | CC0 toàn bộ | ~170.000 SVG. Biểu tượng, UI, hình 2D |
+| **Openclipart** | `openclipart.org` (sitemap) | CC0 toàn bộ | ~170.000 SVG. Biểu tượng, UI, hình 2D. **Họ đang chặn IP máy ảo** — xem dưới |
 | **Iconify** | `api.iconify.design` | theo từng bộ — **phải loại bộ CC-BY-SA** | 200.000+ icon, 150+ bộ. Không cần khoá |
 | **Lospec** | `lospec.com/palette-list/load` | bảng màu, không đòi ghi công | Bảng màu để nướng sprite 2D |
 | **Sketchfab** | `api.sketchfab.com` | lọc `cc0` · `by` được; **tải cần OAuth** | Model để nướng sprite |
@@ -275,6 +275,41 @@ Index có **5.820 sitemap con**; `sitemap-1.xml` là trang tĩnh (7 URL), các f
 clipart. Mẫu một file ra 32 URL → **ước ~186.000 mục, CHƯA quét hết** — đừng chép con số
 ước này đi đâu, quét xong lấy số thật.
 
+#### Openclipart CHẶN IP khi quét mạnh — bẫy đắt nhất phiên 17/09
+
+Chạy `quet_openclipart.mjs` với `SONG_SONG = 6`, không nghỉ giữa các lô. Sau **~30 phút**
+họ bắt đầu cắt, rồi chặn hẳn:
+
+```
+sitemap.xml lan1: curl: (18) transfer closed with outstanding read data remaining  200 81445B  (cua 406414B)
+sitemap.xml lan2: curl: (52) Empty reply from server
+sitemap.xml lan3: curl: (52) Empty reply from server
+```
+
+**Sau hơn một tiếng vẫn chặn.** Đo lúc bị chặn — mọi đường đều `52`, **trừ `robots.txt`**:
+
+```
+robots.txt        200        <- carve-out, dung de biet mang van thong
+sitemap.xml       52
+sitemap-10.xml    52
+download/...svg   52
+```
+
+Thử gỡ bằng bốn cách, **không cách nào ăn**: `-H 'Range: bytes=0-9999'`, `--limit-rate 50k`,
+`--compressed`, `--http1.1` cho đường tải. Không phải chặn theo cỡ file — là **chặn IP**.
+
+**Phân biệt ba thứ dễ lẫn:**
+
+| Dấu vết | Là gì | Làm gì |
+|---|---|---|
+| `000` + `connect_rejected — gateway answered 403 to CONNECT` | allowlist môi trường | chủ dự án thêm vào **Allowed domains** |
+| `403` + `server: cloudflare` | đích đuổi | thêm allowlist vô ích |
+| `52` mọi đường **nhưng `robots.txt` `200`** | **đích chặn IP vì quét mạnh** | nghỉ, rồi quét lại nhẹ tay |
+
+Công cụ đã sửa theo đúng bài học: `SONG_SONG = 2`, `NGHI_LO = 250` ms giữa mỗi lô, ghi TSV
+dần bằng `appendFileSync`, và sổ `nguon/openclipart_xong.txt` để **chạy tiếp được** chỗ
+đứt. **Đừng nâng `SONG_SONG` lên cho nhanh** — đó đúng là cái làm mất cả buổi.
+
 **Lospec: phải đủ tham số.** Bỏ bớt là `500`:
 
 ```bash
@@ -290,5 +325,8 @@ nhưng **vẫn phải mở file license trong từng gói trước khi dùng**, 
 
 ### Việc phiên sau
 
-Viết `cong-cu/quet_openclipart.mjs` (sitemap, UA trình duyệt, `--http1.1`) và
-`cong-cu/quet_openverse.mjs` (lọc `license=cc0,by`), đưa hai nguồn vào `ke/`.
+1. **Quét lại Openclipart** khi hết chặn (thử `curl -sS --http1.1 -A "$UA"
+   https://openclipart.org/sitemap.xml`; ra `406.414 B` là thông). Chạy
+   `node cong-cu/quet_openclipart.mjs` — tự bỏ qua phần đã xong. **Bản kê
+   `ke/openclipart.tsv` CHƯA CÓ**, đừng tưởng đã có.
+2. Viết `cong-cu/quet_openverse.mjs` (lọc `license=cc0,by`).
