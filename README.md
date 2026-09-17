@@ -188,6 +188,7 @@ môi trường chặn**, request chưa ra khỏi máy ảo, chủ dự án mở 
 |---|---|---|---|
 | **Openverse** | `api.openverse.org` | lọc CC0 · CC-BY **phía server** | Gộp ~800M ảnh + âm thanh. Thay được nhiều nguồn lẻ |
 | **Openclipart** | `openclipart.org` (sitemap) | CC0 toàn bộ | ~170.000 SVG. Biểu tượng, UI, hình 2D. **Họ đang chặn IP máy ảo** — xem dưới |
+| **Openverse** | `api.openverse.org` | CC0 1.708 · CC-BY 836 | **Bản kê `ke/openverse.tsv` ĐÃ CÓ: 2.544 mục** qua 44 từ khoá. Nhưng **ba host tải còn bị chặn** — xem dưới |
 | **Iconify** | `api.iconify.design` | theo từng bộ — **phải loại bộ CC-BY-SA** | 200.000+ icon, 150+ bộ. Không cần khoá |
 | **Lospec** | `lospec.com/palette-list/load` | bảng màu, không đòi ghi công | Bảng màu để nướng sprite 2D |
 | **Sketchfab** | `api.sketchfab.com` | lọc `cc0` · `by` được; **tải cần OAuth** | Model để nướng sprite |
@@ -323,10 +324,42 @@ curl 'https://lospec.com/palette-list/load?colorNumberFilterType=any&colorNumber
 `license":"https://creativecommons.org/publicdomain...` và 9 lần chữ `CC0` — dấu hiệu tốt,
 nhưng **vẫn phải mở file license trong từng gói trước khi dùng**, giống bẫy itch.io.
 
+### Openverse — quét xong, tải thì chưa
+
+`node cong-cu/quet_openverse.mjs` → **2.544 mục** qua **44 từ khoá**, **130 lượt gọi**,
+`ke/openverse.tsv` 967 KB. Chia ra: **CC0 1.708 · CC-BY 836**; nguồn `wikimedia 1.798 ·
+rawpixel 533 · svgsilh 213`; **toàn bộ là `illustration`**.
+
+**Mặc định lọc `category=illustration`.** Không lọc thì `sword` ra toàn ảnh chụp Flickr
+kiểu *"pen mightier than sword"* — vô dụng cho game 2D. Cần ảnh chụp làm hoạ tiết thì
+thêm `--anh`.
+
+**Không khoá vẫn chạy, nhưng chật** — đo từ header trả về:
+
+```
+x-ratelimit-limit-anon_burst: 20/min
+x-ratelimit-limit-anon_sustained: 200/day
+page_size > 20 -> 401 {"detail":"page_size may not exceed 20 for anonymous requests"}
+```
+
+Nên mỗi từ khoá tối đa 12 trang × 20 = 240 mục. Lấy khoá là **việc của chủ dự án** (phải
+bấm link xác minh trong email) — ba bước ghi ở đầu `quet_openverse.mjs`.
+
+**Bẫy: quét xong mục lục vẫn CHƯA tải được.** Openverse chỉ trả URL trỏ về host gốc, host
+đó phải nằm trong **Allowed domains**. Cả ba đều `000` + `connect_rejected`:
+
+```
+upload.wikimedia.org   1.798 muc   000
+images.rawpixel.com      533 muc   000
+svgsilh.com              213 muc   000
+```
+
 ### Việc phiên sau
 
-1. **Quét lại Openclipart** khi hết chặn (thử `curl -sS --http1.1 -A "$UA"
+1. **Xin mở ba host tải của Openverse** (xem trên) — không có thì `ke/openverse.tsv`
+   2.544 mục chỉ để đọc, không lấy về được.
+2. **Quét lại Openclipart** khi hết chặn (thử `curl -sS --http1.1 -A "$UA"
    https://openclipart.org/sitemap.xml`; ra `406.414 B` là thông). Chạy
    `node cong-cu/quet_openclipart.mjs` — tự bỏ qua phần đã xong. **Bản kê
    `ke/openclipart.tsv` CHƯA CÓ**, đừng tưởng đã có.
-2. Viết `cong-cu/quet_openverse.mjs` (lọc `license=cc0,by`).
+3. ~~Viết `cong-cu/quet_openverse.mjs`~~ — **xong 17/09**.
