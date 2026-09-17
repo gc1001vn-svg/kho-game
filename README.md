@@ -173,3 +173,20 @@ nằm trong mục lục Icosa.
 
 `nguon/icosa.json` là **manifest 1.679 model đã tải về một lần**, giữ URL mốc thật để lấy
 lại nhanh. Nó là tập con của mục lục, không phải giới hạn của kho.
+
+## Việc phiên sau — tìm API và MCP mở về game / đồ hoạ
+
+Chủ dự án giao 17/09. Tìm **API mở hay miễn phí** và **MCP server** phục vụ làm game:
+asset, đồ hoạ, âm thanh, sinh nội dung, công cụ. Cách làm:
+
+1. **Đo trước khi tin.** Mỗi nguồn: `curl` một phát, ghi mã trả về thật. `000` thì đọc dấu
+   vết proxy để biết **allowlist chặn** (`connect_rejected — gateway answered 403 to
+   CONNECT`, chủ dự án mở được) hay **đích chặn** (`403` kèm `server: cloudflare`, mở
+   allowlist vô ích).
+2. **License trước số lượng.** Chỉ nhận CC0 · CC-BY · MIT. Nguồn nào không nói rõ license
+   thì ghi `?`, đừng đoán.
+3. **MCP thì cân nhắc kỹ hơn API.** Schema của MCP **nạp vào ngữ cảnh mỗi phiên dù không
+   gọi lần nào**; một lệnh CLI tốn 0 token khi không dùng. Đo 13/09 đã loại
+   `threenative-asset-mcp` vì lý do này (40+ tool, không ghi license, 2/6 nguồn của nó
+   `000` ở máy ảo). Muốn thêm MCP thì phải chỉ ra nó làm được gì mà CLI không làm được.
+4. Nguồn đã thử rồi, **đừng tra lại**: xem mục "Nguồn đã thử, CHƯA lấy được" ở trên.
