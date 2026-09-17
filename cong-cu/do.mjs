@@ -15,6 +15,7 @@
  *   node cong-cu/do.mjs house --tam 8000   # chi model <= 8000 tam (nguon nao co cot do)
  *   node cong-cu/do.mjs house --het        # in het, khong cat o 40 dong moi nguon
  */
+import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -22,14 +23,17 @@ const KE = join(import.meta.dirname, '..', 'ke');
 const TU_DIEN = join(import.meta.dirname, '..', '..', 'quoc-chien', 'tools', 'tu_dien_asset.json');
 /** Tran dong in moi nguon. Dai hon la tu khoa qua rong - hep lai con hon do output. */
 const TRAN_IN = 40;
+/** `--tac-gia` mo bao nhieu trang OpenGameArt. Moi muc mot luot goi mang, dung tham. */
+const TRAN_TAC_GIA = 8;
 
 const args = process.argv.slice(2);
 const iTam = args.indexOf('--tam');
 const tranTam = iTam >= 0 ? Number(args[iTam + 1]) : 0;
 const het = args.includes('--het');
+const tacGia = args.includes('--tac-gia');
 const tuKhoa = args.filter((a, i) => !a.startsWith('--') && !(iTam >= 0 && i === iTam + 1));
 if (!tuKhoa.length) {
-  console.log('Dung: node cong-cu/do.mjs <tu khoa...> [--tam 8000] [--het]');
+  console.log('Dung: node cong-cu/do.mjs <tu khoa...> [--tam 8000] [--het] [--tac-gia]');
   process.exit(1);
 }
 
@@ -64,6 +68,20 @@ for (const f of readdirSync(KE).filter((x) => x.endsWith('.tsv')).sort()) {
     console.log('  ' + cot.map((c, i) => (c === 'tag' ? null : o[i])).filter(Boolean).join(' | '));
   }
   if (!het && trung.length > TRAN_IN) console.log(`  ... con ${trung.length - TRAN_IN} dong, them --het de xem het`);
+
+  // `--tac-gia`: OpenGameArt khong hien tac gia o trang danh sach, nen lay ngay day cho
+  // may muc dau. Moi muc mot luot goi mang - nen CHAN o TRAN_TAC_GIA, dung goi ca trang.
+  if (tacGia && f.startsWith('opengameart')) {
+    const duong = trung.slice(0, TRAN_TAC_GIA).map((d) => d.split('\t')[0]);
+    console.log(`\n  -- tac gia (${duong.length} muc dau) --`);
+    try {
+      const ra = execFileSync('node', [join(import.meta.dirname, 'tac_gia.mjs'), ...duong],
+        { encoding: 'utf8' });
+      for (const l of ra.trim().split('\n')) console.log(`  ${l}`);
+    } catch (e) {
+      console.log(`  hong: ${String(e.message).slice(0, 70)}`);
+    }
+  }
 }
 if (!tongTrung) {
   console.log('Khong nguon nao co. Dung tu ve - bao chu du an quyet (luat ba buoc).');

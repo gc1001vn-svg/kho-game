@@ -97,6 +97,8 @@ mục mới biết, mà 22.714 mục thì 99% không bao giờ dùng tới. Nên
 ```bash
 node cong-cu/tac_gia.mjs /content/rpg-sound-pack
 # RPG Sound Pack | tac gia: artisticdude | license: CC0 | https://...
+
+node cong-cu/do.mjs anvil --tac-gia     # dò xong tự lấy tên 8 mục đầu
 ```
 
 CC-BY đòi ghi tên, nên **chạy lệnh này rồi chép tên vào `ASSET_CREDITS.md` trước khi
@@ -124,8 +126,15 @@ Poly Haven chia ba loại: `models 521 · textures 861 · hdris 996` (cột `loa
 
 - **ambientCG** (~2.000 hoạ tiết CC0): request đầu `200`, sau đó `000` với
   `ws_closed_mid_exchange` cho mọi đường, kể cả trang chủ. Chặn ở phía họ hoặc allowlist.
-- **game-icons.net** (~4.000 biểu tượng CC-BY): trang chủ `000`. Và
-  `raw.githubusercontent.com/game-icons/icons/master/icons.json` → `404`.
+- **game-icons.net** (~4.000 biểu tượng CC-BY 3.0) và **CraftPix**: cả hai `000` với
+  `connect_rejected — gateway answered 403 to CONNECT (policy denial)`. Đây là
+  **allowlist môi trường chặn**, request chưa ra khỏi máy ảo — chủ dự án mở được ở
+  `claude.ai/code` → bộ chọn môi trường → Update cloud environment → Network.
+  Khác hẳn Poly Pizza: ở đó `403` kèm `server: cloudflare` và `cf-mitigated: challenge`,
+  tức request tới nơi rồi mới bị đích đuổi — thêm allowlist vô ích.
+  **CraftPix cân nhắc trước khi mở:** phần "freebies" của họ dùng *license riêng của
+  CraftPix*, không phải CC0/CC-BY, và cấm phát tán lại — không lọt luật kho.
+  `raw.githubusercontent.com/game-icons/icons/master/icons.json` cũng `404`.
 - **Google Fonts qua đường chính thức:** `fonts.google.com/metadata/fonts` → `000`,
   `api.fontsource.org/v1/fonts` → `000`, `api.github.com/repos/google/fonts/...` → `403
   GitHub access to this repository is not enabled for this session` kể cả khi đính kèm
