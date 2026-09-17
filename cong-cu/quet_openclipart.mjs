@@ -30,7 +30,13 @@
  * Dung:
  *   node cong-cu/quet_openclipart.mjs                  # quet, tu chay tiep cho con do
  *   node cong-cu/quet_openclipart.mjs --gioi-han 20    # 20 sitemap con, de thu nhanh
+ *   node cong-cu/quet_openclipart.mjs --cham           # 1 luong, nghi 3s - cho phan duoi
  *   node cong-cu/quet_openclipart.mjs --lam-lai        # bo phan da quet, lam tu dau
+ *
+ * KHI NAO DUNG `--cham`. Quet cang nhieu lan, nguong chan cua ho cang thap: lan dau chiu
+ * duoc ~30 phut o `SONG_SONG = 6`, lan hai ~2,5 gio o `SONG_SONG = 2`, lan ba chi ~9 phut.
+ * Con vai tram sitemap thi dung `--cham` - cham hon nhung khong bi chan giua chung, tong
+ * thoi gian it hon la bi chan roi doi vai tieng.
  */
 import { execFile } from 'node:child_process';
 import { appendFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
@@ -41,10 +47,11 @@ const RA = 'ke/openclipart.tsv';
 const GOC = 'https://openclipart.org';
 const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)'
   + ' Chrome/140.0 Safari/537.36';
+const cham = process.argv.includes('--cham');
 /** Sitemap chay song song. 6 lam ho chan (xem dau file) - 2 la muc chay duoc ca buoi. */
-const SONG_SONG = 2;
-/** Nghi giua moi lo, ms. Bo di la nhanh hon lucdau roi dung han. */
-const NGHI_LO = 250;
+const SONG_SONG = cham ? 1 : 2;
+/** Nghi giua moi lo, ms. Bo di la nhanh hon luc dau roi dung han. */
+const NGHI_LO = cham ? 3000 : 250;
 /** So lan thu lai mot sitemap khi gap `52`/`18`. Lan sau nghi lau hon (400ms * lan). */
 const THU_LAI = 4;
 /** Ghi nho sitemap da quet xong, de chay tiep khi dut. Khong len git. */
@@ -97,7 +104,7 @@ const daCo = new Set(existsSync(RA)
 if (!existsSync(RA)) writeFileSync(RA, 'id\tten\ttac_gia\tlicense\tdinh_dang\tcach_lay\n');
 const canQuet = conXml.filter((u) => !daXong.has(u));
 console.log(`${conXml.length} sitemap con · da xong ${daXong.size} · con ${canQuet.length}`
-  + ` · dang co ${daCo.size} muc`);
+  + ` · dang co ${daCo.size} muc${cham ? ' · CHAM (1 luong, nghi 3s)' : ''}`);
 
 // Buoc 3: moi sitemap con -> cac URL `/detail/<id>/<slug>`. Trung id thi bo (sitemap chong nhau).
 let hong = 0;
