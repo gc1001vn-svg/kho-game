@@ -176,8 +176,8 @@ lại nhanh. Nó là tập con của mục lục, không phải giới hạn c�
 
 ## Kết quả dò API và MCP mở — 17/09
 
-Giao 17/09, làm xong 17/09. Đo **24 host**, ghi mã trả về thật. Dưới đây là kết luận;
-**đừng dò lại từ đầu**.
+Giao 17/09, làm xong 17/09. Đo **24 host ứng viên** + 8 host đã biết làm đối chứng (8/8
+đúng như ghi ở trên), ghi mã trả về thật. Dưới đây là kết luận; **đừng dò lại từ đầu**.
 
 ### Sáu API đáng xin mở allowlist
 
@@ -238,6 +238,8 @@ Không cái nào làm được thứ CLI không làm được. Máy ảo chỉ c
 - **`Calinou/awesome-gamedev` · `godotengine/awesome-godot` · `ellisonleao/magictools`**
   — ra Openclipart, GameAsset.net, LPC, Matcaps. Phần còn lại là **công cụ chạy trong
   trình duyệt, không có API**: Sprite Fusion, Piskel, PixelChart, Spritemate.
+- **`thoseawesomeguys.com/prompts`** (CC0, icon phím và tay cầm): license sạch nhưng chỉ
+  hợp game dùng bàn phím/tay cầm. Bỏ qua cho tới khi có việc cần.
 
 ### Việc của chủ dự án
 
