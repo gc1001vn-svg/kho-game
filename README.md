@@ -243,14 +243,52 @@ Không cái nào làm được thứ CLI không làm được. Máy ảo chỉ c
 
 ### Việc của chủ dự án
 
-`claude.ai/code` → nút tên môi trường → **Edit cloud environment** → ô **Network access**,
-thêm sáu dòng:
+**XONG 17/09** — chủ dự án đã mở cả sáu.
+
+Ô đó tên **"Allowed domains"**, KHÔNG phải "Network access": `claude.ai/code` → nút tên
+môi trường → **Edit cloud environment** → ô **Allowed domains**. Chú thích dưới ô:
+*"List of domains (not URLs). Use \* for wildcards."* — nhập **tên miền trần**, không
+nhập URL. Trợ lý gọi sai tên ô này nhiều lần; gọi đúng tên thì chủ dự án khỏi phải dò.
+
+### Đo lại sau khi mở — cả sáu thông, nhưng hai cái có bẫy
 
 ```
-api.openverse.org
-openclipart.org
-api.iconify.design
-lospec.com
-api.sketchfab.com
-gameasset.net
+api.openverse.org    200
+openclipart.org      302   -> ben duoi
+api.iconify.design   200
+lospec.com           500   -> ben duoi
+api.sketchfab.com    200
+gameasset.net        200
 ```
+
+**Openclipart: API JSON đã chết.** `/search/json/?query=` trả `302` về trang chủ, và
+`/search/?query=` trả `curl: (52) Empty reply from server`. Đường chạy được là
+**sitemap**, giống game-icons.net — nhưng phải **đủ hai thứ**, thiếu một là `52`:
+
+```bash
+UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36'
+curl -sS --http1.1 -A "$UA" https://openclipart.org/sitemap.xml      # 406.414 B
+curl -sS --http1.1 -A "$UA" https://openclipart.org/sitemap-10.xml   # 32 URL /detail/<id>/<slug>
+```
+
+Index có **5.820 sitemap con**; `sitemap-1.xml` là trang tĩnh (7 URL), các file sau là
+clipart. Mẫu một file ra 32 URL → **ước ~186.000 mục, CHƯA quét hết** — đừng chép con số
+ước này đi đâu, quét xong lấy số thật.
+
+**Lospec: phải đủ tham số.** Bỏ bớt là `500`:
+
+```bash
+curl 'https://lospec.com/palette-list/load?colorNumberFilterType=any&page=1'   # 500
+curl 'https://lospec.com/palette-list/load?colorNumberFilterType=any&colorNumber=8&page=1&tag=&sortingType=default'   # 200, JSON {"palettes":[...]}
+```
+
+`/palette-list.json` → `404`.
+
+**GameAsset.net**: trang chủ có JSON-LD ghi
+`license":"https://creativecommons.org/publicdomain...` và 9 lần chữ `CC0` — dấu hiệu tốt,
+nhưng **vẫn phải mở file license trong từng gói trước khi dùng**, giống bẫy itch.io.
+
+### Việc phiên sau
+
+Viết `cong-cu/quet_openclipart.mjs` (sitemap, UA trình duyệt, `--http1.1`) và
+`cong-cu/quet_openverse.mjs` (lọc `license=cc0,by`), đưa hai nguồn vào `ke/`.
