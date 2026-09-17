@@ -70,6 +70,7 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 | **Kenney** — cả kho, không chỉ gói đã tải | `ke/kenney.tsv` | 215 gói | CC0 toàn bộ | `tai_asset.mjs <gói>` |
 | **Freesound** — âm thanh | `ke/freesound.tsv` | **27.313** | CC0 14.587 · CC-BY 12.726 | cần khoá API, tải theo link |
 | **OpenGameArt** — âm thanh · nhạc · 2D · hoạ tiết | `ke/opengameart.tsv` | **22.714** | CC0 11.816 · CC-BY 10.898 | mở trang gốc, tải tay |
+| **game-icons.net** — biểu tượng | `ke/game-icons.tsv` | **3.658** | CC-BY 3.0 | `curl -O` link SVG trong cột `cach_lay` |
 | **Google Fonts** | `ke/font.tsv` | 1.941 họ | OFL | `fonts.google.com/specimen/<tên>` |
 | **itch.io CC0** — **2D 360** · 3D 165 | `ke/itch.tsv` | 525 gói | CC0 (tác giả tự khai) | `tai_itch.mjs <tác-giả>/<gói>` |
 | Mã nguồn mở — **học kiến trúc, cấm chép code** | `ke/ma-nguon-mo.tsv` | 10 | GPL/AGPL | đọc trên GitHub |
@@ -126,15 +127,14 @@ Poly Haven chia ba loại: `models 521 · textures 861 · hdris 996` (cột `loa
 
 - **ambientCG** (~2.000 hoạ tiết CC0): request đầu `200`, sau đó `000` với
   `ws_closed_mid_exchange` cho mọi đường, kể cả trang chủ. Chặn ở phía họ hoặc allowlist.
-- **game-icons.net** (~4.000 biểu tượng CC-BY 3.0) và **CraftPix**: cả hai `000` với
-  `connect_rejected — gateway answered 403 to CONNECT (policy denial)`. Đây là
-  **allowlist môi trường chặn**, request chưa ra khỏi máy ảo — chủ dự án mở được ở
-  `claude.ai/code` → bộ chọn môi trường → Update cloud environment → Network.
+- **CraftPix**: `000` với `connect_rejected — gateway answered 403 to CONNECT (policy
+  denial)` — **allowlist môi trường chặn**, request chưa ra khỏi máy ảo, chủ dự án mở
+  được. Nhưng **không nên mở**: phần "freebies" dùng *license riêng của CraftPix*, không
+  phải CC0/CC-BY, và cấm phát tán lại — không lọt luật kho.
+
   Khác hẳn Poly Pizza: ở đó `403` kèm `server: cloudflare` và `cf-mitigated: challenge`,
-  tức request tới nơi rồi mới bị đích đuổi — thêm allowlist vô ích.
-  **CraftPix cân nhắc trước khi mở:** phần "freebies" của họ dùng *license riêng của
-  CraftPix*, không phải CC0/CC-BY, và cấm phát tán lại — không lọt luật kho.
-  `raw.githubusercontent.com/game-icons/icons/master/icons.json` cũng `404`.
+  tức request tới nơi rồi mới bị đích đuổi — thêm allowlist vô ích. Hai dấu vết này phân
+  biệt **ai** chặn.
 - **Google Fonts qua đường chính thức:** `fonts.google.com/metadata/fonts` → `000`,
   `api.fontsource.org/v1/fonts` → `000`, `api.github.com/repos/google/fonts/...` → `403
   GitHub access to this repository is not enabled for this session` kể cả khi đính kèm
@@ -146,6 +146,11 @@ Poly Haven chia ba loại: `models 521 · textures 861 · hdris 996` (cột `loa
   dòng. Phải chạy `npm run mo:mang` ở `quoc-chien` trước, không thì Chromium báo
   `net::ERR_CERT_AUTHORITY_INVALID`. Ra **215 gói**, gấp gần ba lần con số "~80" từng ước.
 - ~~Freesound~~ — **đã lấy được 16/09** sau khi chủ dự án lấy khoá API.
+- ~~game-icons.net~~ — **đã lấy được 17/09** sau khi chủ dự án mở allowlist: **3.658
+  icon**. Trang là SPA React nên `curl` chỉ thấy khung, `/icons.json` và
+  `/data/icons.json` đều `404`, bundle JS không chứa danh sách. Đường đi là **sitemap**:
+  `/sitemap.xml` → `/sitemaps/1x1/<tác-giả>.xml`. Chia sẵn theo tác giả nên tên người vẽ
+  đi kèm — CC-BY 3.0 đòi đúng thứ đó. Không cần Chromium.
 
 Số Icosa là **model duy nhất**, đã lọc phía server: bỏ ND, bỏ Tilt Brush. Toàn kho
 141.099 asset; hợp license 130.530; bỏ Tilt còn 73.626; trong đó **41.435 cái ≤ 8.000 tam**.
