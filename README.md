@@ -116,6 +116,9 @@ FREESOUND_KEY=<khoá> node cong-cu/quet_freesound.mjs ga chim    # tiếng Việ
 
 **Khoá là mật khẩu, repo này Public — không bao giờ commit.** Lấy ở
 <https://freesound.org/apiv2/apply/>, lấy dòng **Api key** chứ không phải **Client id**.
+Đặt lâu dài: `claude.ai/code` → nút tên môi trường → **Edit cloud environment** → ô
+**Environment variables** → thêm dòng `FREESOUND_KEY=<khoá>`. Hộp thoại đó **không có mục
+"API credentials"** — README bản trước ghi có, sai.
 Không khoá thì `/apiv2/search/text/` trả
 `401 {"detail":"Authentication credentials were not provided."}`.
 

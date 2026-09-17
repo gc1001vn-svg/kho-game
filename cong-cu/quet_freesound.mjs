@@ -7,12 +7,18 @@
  * CAN KHOA. `freesound.org` tra `200`, con `/apiv2/search/text/` khong khoa thi
  * `401 {"detail":"Authentication credentials were not provided."}`.
  * Lay khoa: https://freesound.org/apiv2/apply/ (dang nhap -> dien ten ung dung -> copy
- * "API key"), roi mot trong hai:
+ * **"Api key"**, KHONG phai "Client id"), roi mot trong hai:
  *   a) `FREESOUND_KEY=<khoa> node cong-cu/quet_freesound.mjs`   (tam, het khi dong phien)
- *   b) API credential cua moi truong dam may - khoa khong bao gio vao phien, an toan hon:
- *      claude.ai/code -> bo chon moi truong -> Update cloud environment -> API credentials
- *      -> host `freesound.org`, header `Authorization`, prefix `Token `
- * **KHOA LA MAT KHAU. Repo nay Public - khong bao gio commit khoa vao git.**
+ *   b) Dat ben trong moi truong: claude.ai/code -> bam nut ten moi truong -> hop thoai
+ *      **Edit cloud environment** -> o **Environment variables** -> them mot dong
+ *      `FREESOUND_KEY=<khoa>`. Phien dang mo KHONG nhan, phai mo phien moi.
+ *
+ * Hop thoai do chi co `Name` · `Network access` · `Allowed domains` ·
+ * `Environment variables`. **KHONG co muc "API credentials"** - ban truoc cua file nay ghi
+ * co, la chep lai ghi chep cu ma khong mo ra xem (sua 17/09).
+ *
+ * **KHOA LA MAT KHAU. Repo nay Public - khong bao gio commit khoa vao git.** Va chinh
+ * trang do canh bao: bien moi truong "are visible to anyone using this environment".
  *
  * LICENSE: chi lay **CC0** va **Attribution** (CC-BY). BO "Attribution NonCommercial" -
  * luat repo chi nhan CC0 · CC-BY · MIT, va NC troi tay neu sau nay doi y ve thuong mai.
