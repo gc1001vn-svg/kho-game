@@ -345,21 +345,44 @@ page_size > 20 -> 401 {"detail":"page_size may not exceed 20 for anonymous reque
 Nên mỗi từ khoá tối đa 12 trang × 20 = 240 mục. Lấy khoá là **việc của chủ dự án** (phải
 bấm link xác minh trong email) — ba bước ghi ở đầu `quet_openverse.mjs`.
 
-**Bẫy: quét xong mục lục vẫn CHƯA tải được.** Openverse chỉ trả URL trỏ về host gốc, host
-đó phải nằm trong **Allowed domains**. Cả ba đều `000` + `connect_rejected`:
+**Quét xong mục lục vẫn chưa tải được** — Openverse chỉ trả URL trỏ về host gốc, host đó
+phải nằm trong **Allowed domains**. Chủ dự án đã mở cả ba **17/09**; đo lại sau khi mở:
+
+| Host | Mục | Mã | Kết luận |
+|---|---:|---|---|
+| `upload.wikimedia.org` | 1.798 | `200` | Được, nhưng **rate-limit gắt** — xem dưới |
+| `images.rawpixel.com` | 533 | `200` | Được, không vướng gì |
+| `svgsilh.com` | 213 | `403` + `server: cloudflare` + trang captcha | **Đích đuổi. BỎ HẲN** — mở allowlist vô ích, `lay_openverse.mjs` tự lọc bỏ |
+
+### Lấy về: `cong-cu/lay_openverse.mjs`
+
+```bash
+node cong-cu/lay_openverse.mjs --loc castle              # -> ./assets_source/openverse/
+node cong-cu/lay_openverse.mjs --loc castle --cc0        # chỉ CC0, khỏi phải ghi tên
+node cong-cu/lay_openverse.mjs --loc sword ../quoc-chien/assets_source
+```
+
+Mỗi file tải kèm `<tên>.ghi_cong.json` — ghi công **đi theo file**, đúng lệ kho.
+
+**`upload.wikimedia.org` trả `429` khi tải nhanh** (`server: Varnish`, thân là trang
+*"Wikimedia Error"*). Không phải chặn hẳn: cùng một URL, nghỉ 3 giây rồi gọi lại thì `200`
+(đo 3/3). **Đổi UA cho "lịch sự" KHÔNG cứu được** (đo 1/6) — chỉ có nghỉ mới cứu, và nghỉ
+1 giây là chưa đủ (đo 10 URL cách nhau 1 giây ra **8 lần `429`**).
+
+Nên lệnh để `SONG_SONG = 1`, `NGHI = 2500` ms, thử lại `429` với nghỉ tăng dần. Đo thật:
 
 ```
-upload.wikimedia.org   1.798 muc   000
-images.rawpixel.com      533 muc   000
-svgsilh.com              213 muc   000
+lan 1: Lay 7 · hong 3 (429=3)   2m03s
+lan 2: Lay 2 · co san 7 · hong 1 (429=1)   45s   -> 9/10
 ```
+
+**Chạy lại vài lần là đủ** — file đã có được bỏ qua. **Đừng nâng `SONG_SONG` lên cho
+nhanh**: nhanh hơn nghĩa là hỏng nhiều hơn, tổng thời gian tệ hơn.
 
 ### Việc phiên sau
 
-1. **Xin mở ba host tải của Openverse** (xem trên) — không có thì `ke/openverse.tsv`
-   2.544 mục chỉ để đọc, không lấy về được.
-2. **Quét lại Openclipart** khi hết chặn (thử `curl -sS --http1.1 -A "$UA"
+1. **Quét lại Openclipart** khi hết chặn (thử `curl -sS --http1.1 -A "$UA"
    https://openclipart.org/sitemap.xml`; ra `406.414 B` là thông). Chạy
    `node cong-cu/quet_openclipart.mjs` — tự bỏ qua phần đã xong. **Bản kê
    `ke/openclipart.tsv` CHƯA CÓ**, đừng tưởng đã có.
-3. ~~Viết `cong-cu/quet_openverse.mjs`~~ — **xong 17/09**.
+2. ~~Viết `cong-cu/quet_openverse.mjs`~~ — **xong 17/09**, kèm `lay_openverse.mjs`.
