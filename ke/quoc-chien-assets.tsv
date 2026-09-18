@@ -1605,687 +1605,687 @@ assets_source/fantasy-town-kit/Models/OBJ format	watermill	Kenney	CC0 1.0	node t
 assets_source/fantasy-town-kit/Models/OBJ format	watermill-wide	Kenney	CC0 1.0	node tools/tai_asset.mjs fantasy-town-kit  (o repo quoc-chien)
 assets_source/fantasy-town-kit/Models/OBJ format	wheel	Kenney	CC0 1.0	node tools/tai_asset.mjs fantasy-town-kit  (o repo quoc-chien)
 assets_source/fantasy-town-kit/Models/OBJ format	windmill	Kenney	CC0 1.0	node tools/tai_asset.mjs fantasy-town-kit  (o repo quoc-chien)
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	archeryrange	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	barracks	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	bridge	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	bridge_roofed	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	castle	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_forestA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_forestB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_hill	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_rocks	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_rocks_small	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_treeA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_treeB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_treeC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	farm_plot	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	forest	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	house	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	lumbermill	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	market	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	mill	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	mine	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	mountain	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_corner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_gate	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_gate_closed	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_hexCornerA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_hexCornerB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_straight	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	watchtower	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	watermill	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	well	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	archeryrange.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	barracks.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	bridge.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	bridge_roofed.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	castle.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_forestA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_forestB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_hill.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_rocks.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_rocks_small.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_treeA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_treeB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_treeC.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	farm_plot.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	forest.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	house.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	lumbermill.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	market.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	mill.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	mine.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	mountain.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_corner.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_gate.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_gate_closed.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_hexCornerA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_hexCornerB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_straight.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	watchtower.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	watermill.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	well.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	archeryrange	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	barracks	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	bridge	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	bridge_roofed	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	castle	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_forestA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_forestB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_hill	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_rocks	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_rocks_small	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_treeA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_treeB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_treeC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	farm_plot	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	farm_wheat	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	forest	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	house	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	lumbermill	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	market	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	mill	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	mill_blades	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	mine	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	mountain	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_corner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_gate	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_gate_closed	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_hexCornerA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_hexCornerB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_straight	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	watchtower	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	watermill	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	watermill_wheel	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/objects/obj	well	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadF	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadF_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadG	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadG_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadH	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadH_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadI	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadI_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadJ	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadJ_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadK	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadK_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadL	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadL_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadM	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadM_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_transitionA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_transitionB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterA_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterB_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterC_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterD_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadF	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadF_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadG	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadG_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadH	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadH_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadI	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadI_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadJ	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadJ_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadK	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadK_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadL	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadL_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadM	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadM_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_transitionA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_transitionB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterA_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterB_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterC_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterD_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadF	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadF_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadG	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadG_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadH	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadH_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadI	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadI_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadJ	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadJ_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadK	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadK_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadL	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadL_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadM	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadM_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_transitionA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_transitionB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterA_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterB_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterC_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterD_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_water	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_water_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadA_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadB_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadC.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadC_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadD.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadD_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadE.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadE_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadF.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadF_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadG.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadG_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadH.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadH_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadI.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadI_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadJ.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadJ_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadK.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadK_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadL.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadL_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadM.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadM_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_transitionA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_transitionB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterA_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterA_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterB_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterB_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterC.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterC_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterC_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterD.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterD_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterD_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadA_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadB_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadC.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadC_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadD.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadD_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadE.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadE_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadF.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadF_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadG.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadG_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadH.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadH_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadI.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadI_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadJ.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadJ_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadK.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadK_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadL.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadL_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadM.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadM_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_transitionA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_transitionB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterA_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterA_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterB_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterB_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterC.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterC_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterC_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterD.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterD_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterD_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadA_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadB_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadC.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadC_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadD.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadD_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadE.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadE_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadF.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadF_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadG.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadG_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadH.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadH_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadI.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadI_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadJ.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadJ_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadK.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadK_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadL.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadL_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadM.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadM_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_transitionA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_transitionB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterA_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterA_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterB_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterB_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterC.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterC_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterC_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterD.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterD_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterD_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_water.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_water_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadF	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadF_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadG	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadG_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadH	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadH_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadI	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadI_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadJ	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadJ_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadK	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadK_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadL	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadL_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadM	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadM_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_transitionA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_transitionB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterA_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterB_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterC_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterD_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadF	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadF_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadG	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadG_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadH	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadH_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadI	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadI_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadJ	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadJ_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadK	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadK_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadL	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadL_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadM	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadM_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_transitionA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_transitionB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterA_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterB_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterC_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterD_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadF	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadF_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadG	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadG_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadH	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadH_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadI	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadI_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadJ	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadJ_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadK	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadK_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadL	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadL_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadM	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadM_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_transitionA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_transitionB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterA_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterB_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterC_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterD_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_water	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_water_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterInnerCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterInnerCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterInnerCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterOuterCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterOuterCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterOuterCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterStraight	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterStraight_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterStraight_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterInnerCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterInnerCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterInnerCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterOuterCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterOuterCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterOuterCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterStraight	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterStraight_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterStraight_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterInnerCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterInnerCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterInnerCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterOuterCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterOuterCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterOuterCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterStraight	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterStraight_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterStraight_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_water	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_water_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_water_detail_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_water_detail_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_water_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadA_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadB_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadC.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadC_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadD.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadD_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadE.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadE_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterInnerCorner.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterInnerCorner_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterInnerCorner_noSides.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterOuterCorner.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterOuterCorner_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterOuterCorner_noSides.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterStraight.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterStraight_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterStraight_noSides.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadA_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadB_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadC.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadC_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadD.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadD_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadE.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadE_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterInnerCorner.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterInnerCorner_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterInnerCorner_noSides.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterOuterCorner.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterOuterCorner_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterOuterCorner_noSides.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterStraight.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterStraight_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterStraight_noSides.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadA.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadA_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadB.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadB_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadC.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadC_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadD.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadD_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadE.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadE_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterInnerCorner.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterInnerCorner_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterInnerCorner_noSides.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterOuterCorner.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterOuterCorner_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterOuterCorner_noSides.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterStraight.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterStraight_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterStraight_noSides.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_water.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_water_detail.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_water_detail_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_water_detail_noSides.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_water_empty.gltf	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterInnerCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterInnerCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterInnerCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterOuterCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterOuterCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterOuterCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterStraight	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterStraight_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterStraight_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterInnerCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterInnerCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterInnerCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterOuterCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterOuterCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterOuterCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterStraight	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterStraight_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterStraight_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadA	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadA_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadB	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadB_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadC	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadC_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadD	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadD_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadE	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadE_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterInnerCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterInnerCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterInnerCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterOuterCorner	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterOuterCorner_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterOuterCorner_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterStraight	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterStraight_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterStraight_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_water	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_water_detail	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_water_detail_empty	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_water_detail_noSides	kaylousberg	?	?
-assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_water_empty	kaylousberg	?	?
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	archeryrange	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	barracks	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	bridge	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	bridge_roofed	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	castle	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_forestA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_forestB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_hill	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_rocks	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_rocks_small	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_treeA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_treeB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	detail_treeC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	farm_plot	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	forest	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	house	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	lumbermill	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	market	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	mill	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	mine	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	mountain	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_corner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_gate	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_gate_closed	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_hexCornerA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_hexCornerB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	wall_straight	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	watchtower	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	watermill	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/fbx	well	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	archeryrange.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	barracks.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	bridge.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	bridge_roofed.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	castle.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_forestA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_forestB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_hill.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_rocks.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_rocks_small.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_treeA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_treeB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	detail_treeC.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	farm_plot.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	forest.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	house.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	lumbermill.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	market.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	mill.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	mine.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	mountain.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_corner.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_gate.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_gate_closed.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_hexCornerA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_hexCornerB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	wall_straight.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	watchtower.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	watermill.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/gltf	well.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	archeryrange	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	barracks	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	bridge	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	bridge_roofed	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	castle	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_forestA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_forestB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_hill	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_rocks	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_rocks_small	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_treeA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_treeB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	detail_treeC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	farm_plot	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	farm_wheat	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	forest	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	house	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	lumbermill	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	market	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	mill	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	mill_blades	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	mine	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	mountain	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_corner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_gate	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_gate_closed	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_hexCornerA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_hexCornerB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	wall_straight	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	watchtower	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	watermill	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	watermill_wheel	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/objects/obj	well	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadF	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadF_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadG	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadG_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadH	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadH_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadI	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadI_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadJ	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadJ_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadK	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadK_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadL	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadL_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadM	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_roadM_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_transitionA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_transitionB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterA_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterB_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterC_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_forest_waterD_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadF	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadF_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadG	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadG_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadH	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadH_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadI	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadI_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadJ	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadJ_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadK	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadK_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadL	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadL_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadM	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_roadM_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_transitionA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_transitionB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterA_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterB_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterC_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_rock_waterD_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadF	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadF_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadG	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadG_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadH	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadH_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadI	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadI_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadJ	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadJ_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadK	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadK_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadL	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadL_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadM	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_roadM_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_transitionA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_transitionB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterA_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterB_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterC_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_sand_waterD_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_water	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/fbx	hex_water_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadA_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadB_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadC.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadC_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadD.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadD_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadE.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadE_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadF.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadF_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadG.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadG_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadH.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadH_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadI.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadI_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadJ.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadJ_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadK.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadK_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadL.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadL_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadM.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_roadM_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_transitionA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_transitionB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterA_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterA_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterB_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterB_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterC.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterC_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterC_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterD.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterD_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_forest_waterD_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadA_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadB_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadC.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadC_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadD.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadD_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadE.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadE_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadF.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadF_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadG.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadG_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadH.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadH_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadI.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadI_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadJ.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadJ_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadK.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadK_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadL.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadL_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadM.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_roadM_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_transitionA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_transitionB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterA_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterA_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterB_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterB_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterC.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterC_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterC_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterD.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterD_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_rock_waterD_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadA_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadB_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadC.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadC_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadD.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadD_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadE.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadE_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadF.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadF_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadG.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadG_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadH.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadH_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadI.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadI_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadJ.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadJ_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadK.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadK_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadL.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadL_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadM.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_roadM_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_transitionA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_transitionB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterA_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterA_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterB_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterB_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterC.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterC_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterC_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterD.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterD_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_sand_waterD_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_water.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/gltf	hex_water_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadF	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadF_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadG	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadG_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadH	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadH_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadI	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadI_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadJ	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadJ_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadK	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadK_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadL	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadL_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadM	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_roadM_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_transitionA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_transitionB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterA_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterB_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterC_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_forest_waterD_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadF	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadF_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadG	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadG_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadH	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadH_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadI	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadI_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadJ	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadJ_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadK	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadK_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadL	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadL_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadM	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_roadM_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_transitionA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_transitionB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterA_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterB_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterC_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_rock_waterD_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadF	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadF_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadG	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadG_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadH	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadH_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadI	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadI_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadJ	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadJ_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadK	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadK_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadL	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadL_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadM	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_roadM_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_transitionA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_transitionB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterA_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterB_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterC_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_sand_waterD_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_water	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/hex/obj	hex_water_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterInnerCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterInnerCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterInnerCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterOuterCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterOuterCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterOuterCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterStraight	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterStraight_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_forest_waterStraight_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterInnerCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterInnerCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterInnerCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterOuterCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterOuterCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterOuterCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterStraight	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterStraight_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_rock_waterStraight_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterInnerCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterInnerCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterInnerCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterOuterCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterOuterCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterOuterCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterStraight	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterStraight_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_sand_waterStraight_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_water	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_water_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_water_detail_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_water_detail_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/fbx	square_water_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadA_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadB_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadC.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadC_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadD.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadD_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadE.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_roadE_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterInnerCorner.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterInnerCorner_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterInnerCorner_noSides.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterOuterCorner.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterOuterCorner_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterOuterCorner_noSides.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterStraight.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterStraight_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_forest_waterStraight_noSides.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadA_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadB_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadC.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadC_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadD.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadD_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadE.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_roadE_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterInnerCorner.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterInnerCorner_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterInnerCorner_noSides.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterOuterCorner.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterOuterCorner_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterOuterCorner_noSides.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterStraight.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterStraight_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_rock_waterStraight_noSides.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadA.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadA_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadB.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadB_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadC.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadC_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadD.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadD_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadE.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_roadE_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterInnerCorner.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterInnerCorner_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterInnerCorner_noSides.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterOuterCorner.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterOuterCorner_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterOuterCorner_noSides.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterStraight.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterStraight_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_sand_waterStraight_noSides.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_water.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_water_detail.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_water_detail_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_water_detail_noSides.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/gltf	square_water_empty.gltf	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterInnerCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterInnerCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterInnerCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterOuterCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterOuterCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterOuterCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterStraight	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterStraight_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_forest_waterStraight_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterInnerCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterInnerCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterInnerCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterOuterCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterOuterCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterOuterCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterStraight	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterStraight_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_rock_waterStraight_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadA	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadA_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadB	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadB_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadC	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadC_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadD	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadD_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadE	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_roadE_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterInnerCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterInnerCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterInnerCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterOuterCorner	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterOuterCorner_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterOuterCorner_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterStraight	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterStraight_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_sand_waterStraight_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_water	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_water_detail	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_water_detail_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_water_detail_noSides	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/kaykit-medieval-builder-pack/Models/tiles/square/obj	square_water_empty	kaylousberg	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
 assets_source/kaykit-medieval-hexagon/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/fbx/buildings/blue	building_archeryrange_blue	kaylousberg	CC0 (theo bo loc itch - kiem lai LICENSE trong goi)	node tools/tai_itch.mjs kaylousberg/kaykit-medieval-hexagon  (o repo quoc-chien)
 assets_source/kaykit-medieval-hexagon/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/fbx/buildings/blue	building_barracks_blue	kaylousberg	CC0 (theo bo loc itch - kiem lai LICENSE trong goi)	node tools/tai_itch.mjs kaylousberg/kaykit-medieval-hexagon  (o repo quoc-chien)
 assets_source/kaykit-medieval-hexagon/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/fbx/buildings/blue	building_blacksmith_blue	kaylousberg	CC0 (theo bo loc itch - kiem lai LICENSE trong goi)	node tools/tai_itch.mjs kaylousberg/kaykit-medieval-hexagon  (o repo quoc-chien)
@@ -3212,20 +3212,20 @@ assets_source/kaykit-medieval-hexagon/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Asse
 assets_source/kaykit-medieval-hexagon/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/tiles/roads	hex_road_K	kaylousberg	CC0 (theo bo loc itch - kiem lai LICENSE trong goi)	node tools/tai_itch.mjs kaylousberg/kaykit-medieval-hexagon  (o repo quoc-chien)
 assets_source/kaykit-medieval-hexagon/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/tiles/roads	hex_road_L	kaylousberg	CC0 (theo bo loc itch - kiem lai LICENSE trong goi)	node tools/tai_itch.mjs kaylousberg/kaykit-medieval-hexagon  (o repo quoc-chien)
 assets_source/kaykit-medieval-hexagon/KayKit_Medieval_Hexagon_Pack_1.0_FREE/Assets/obj/tiles/roads	hex_road_M	kaylousberg	CC0 (theo bo loc itch - kiem lai LICENSE trong goi)	node tools/tai_itch.mjs kaylousberg/kaykit-medieval-hexagon  (o repo quoc-chien)
-assets_source/lowpoly-animated-animals/FBX	Cow	?	?	?
-assets_source/lowpoly-animated-animals/FBX	Horse	?	?	?
-assets_source/lowpoly-animated-animals/FBX	Llama	?	?	?
-assets_source/lowpoly-animated-animals/FBX	Pig	?	?	?
-assets_source/lowpoly-animated-animals/FBX	Pug	?	?	?
-assets_source/lowpoly-animated-animals/FBX	Sheep	?	?	?
-assets_source/lowpoly-animated-animals/FBX	Zebra	?	?	?
-assets_source/lowpoly-animated-animals/OBJ	Cow	?	?	?
-assets_source/lowpoly-animated-animals/OBJ	Horse	?	?	?
-assets_source/lowpoly-animated-animals/OBJ	Llama	?	?	?
-assets_source/lowpoly-animated-animals/OBJ	Pig	?	?	?
-assets_source/lowpoly-animated-animals/OBJ	Pug	?	?	?
-assets_source/lowpoly-animated-animals/OBJ	Sheep	?	?	?
-assets_source/lowpoly-animated-animals/OBJ	Zebra	?	?	?
+assets_source/lowpoly-animated-animals/FBX	Cow	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/FBX	Horse	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/FBX	Llama	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/FBX	Pig	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/FBX	Pug	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/FBX	Sheep	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/FBX	Zebra	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/OBJ	Cow	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/OBJ	Horse	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/OBJ	Llama	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/OBJ	Pig	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/OBJ	Pug	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/OBJ	Sheep	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
+assets_source/lowpoly-animated-animals/OBJ	Zebra	?	?	node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)
 assets_source/medieval-village-megakit/Medieval Village MegaKit[Standard]/FBX	Balcony_Cross_Corner	quaternius	CC0 (theo bo loc itch - kiem lai LICENSE trong goi)	node tools/tai_itch.mjs quaternius/medieval-village-megakit  (o repo quoc-chien)
 assets_source/medieval-village-megakit/Medieval Village MegaKit[Standard]/FBX	Balcony_Cross_Straight	quaternius	CC0 (theo bo loc itch - kiem lai LICENSE trong goi)	node tools/tai_itch.mjs quaternius/medieval-village-megakit  (o repo quoc-chien)
 assets_source/medieval-village-megakit/Medieval Village MegaKit[Standard]/FBX	Balcony_Simple_Corner	quaternius	CC0 (theo bo loc itch - kiem lai LICENSE trong goi)	node tools/tai_itch.mjs quaternius/medieval-village-megakit  (o repo quoc-chien)

@@ -77,6 +77,17 @@ node cong-cu/sinh_manifest.mjs <tên-nguồn> <đường-dẫn-thư-mục>
 # 3. Chép bản kê của dự án vào ke/<tên-nguồn>.md, rồi commit
 ```
 
+Bản kê Markdown của dự án cũ (`KHO_ASSET.md`, `KHO_CHUNG.md`) thì đổi sang TSV bằng
+`nap_ke_cu.mjs` — **tham số thứ ba là `cach_lay` dự phòng**, thiếu nó thì gói nào không
+tra được để `?` và bản kê mất đường lấy:
+
+```bash
+node cong-cu/nap_ke_cu.mjs ../quoc-chien/docs/KHO_ASSET.md quoc-chien-assets \
+  "node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)"
+node cong-cu/nap_ke_cu.mjs ../quoc-chien/docs/KHO_CHUNG.md tayvuc-kho-chung \
+  "npm run kho:lay <goi>  (o repo quoc-chien, clone tayvuc)"
+```
+
 ## License
 
 **Mỗi nguồn có bản kê riêng trong `ke/`, và bản kê LÀ bản ghi công** — cột *Tác giả* và
