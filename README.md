@@ -188,7 +188,7 @@ môi trường chặn**, request chưa ra khỏi máy ảo, chủ dự án mở 
 |---|---|---|---|
 | **Openverse** | `api.openverse.org` | lọc CC0 · CC-BY **phía server** | Gộp ~800M ảnh + âm thanh. Thay được nhiều nguồn lẻ |
 | **Openclipart** | `ke/openclipart.tsv` | CC0 toàn bộ | **108.968 mục, ĐỦ 5.820/5.820 sitemap**. SVG + PNG: biểu tượng, UI, hình 2D |
-| **Openverse** | `api.openverse.org` | CC0 1.708 · CC-BY 836 | **Bản kê `ke/openverse.tsv` ĐÃ CÓ: 2.544 mục** qua 44 từ khoá. Nhưng **ba host tải còn bị chặn** — xem dưới |
+| **Openverse** | `api.openverse.org` | CC0 5.233 · CC-BY 2.350 | `ke/openverse.tsv` **7.583 mục** qua 44 từ khoá. **Đã có khoá API** — xem dưới |
 | **Iconify** | `api.iconify.design` | theo từng bộ — **phải loại bộ CC-BY-SA** | 200.000+ icon, 150+ bộ. Không cần khoá |
 | **Lospec** | `lospec.com/palette-list/load` | bảng màu, không đòi ghi công | Bảng màu để nướng sprite 2D |
 | **Sketchfab** | `api.sketchfab.com` | lọc `cc0` · `by` được; **tải cần OAuth** | Model để nướng sprite |
@@ -378,33 +378,50 @@ nhưng **vẫn phải mở file license trong từng gói trước khi dùng**, 
 
 ### Openverse — quét xong, tải thì chưa
 
-`node cong-cu/quet_openverse.mjs` → **2.544 mục** qua **44 từ khoá**, **130 lượt gọi**,
-`ke/openverse.tsv` 967 KB. Chia ra: **CC0 1.708 · CC-BY 836**; nguồn `wikimedia 1.798 ·
-rawpixel 533 · svgsilh 213`; **toàn bộ là `illustration`**.
+`node cong-cu/quet_openverse.mjs` → **7.583 mục** qua **44 từ khoá**, **161 lượt gọi**,
+`ke/openverse.tsv` 2,7 MB, id không trùng cái nào. Chia ra: **CC0 5.233 · CC-BY 2.350**;
+nguồn `wikimedia 4.598 · rawpixel 1.559 · svgsilh 1.426`; **toàn bộ là `illustration`**.
 
 **Mặc định lọc `category=illustration`.** Không lọc thì `sword` ra toàn ảnh chụp Flickr
 kiểu *"pen mightier than sword"* — vô dụng cho game 2D. Cần ảnh chụp làm hoạ tiết thì
 thêm `--anh`.
 
-**Không khoá vẫn chạy, nhưng chật** — đo từ header trả về:
+### Khoá API — đã có 18/09, gấp 50 lần
+
+Đo từ header, hai mức khác hẳn nhau:
 
 ```
-x-ratelimit-limit-anon_burst: 20/min
-x-ratelimit-limit-anon_sustained: 200/day
-page_size > 20 -> 401 {"detail":"page_size may not exceed 20 for anonymous requests"}
+khong khoa:  x-ratelimit-limit-anon_burst: 20/min
+             x-ratelimit-limit-anon_sustained: 200/day
+             page_size > 20  -> 401 "page_size may not exceed 20 for anonymous requests"
+
+co khoa:     x-ratelimit-limit-oauth2_client_credentials_burst: 100/min
+             x-ratelimit-limit-oauth2_client_credentials_sustained: 10000/day
+             page_size > 50  -> 401 "page_size may not exceed 50 for authenticated requests"
 ```
 
-Nên mỗi từ khoá tối đa 12 trang × 20 = 240 mục. Lấy khoá là **việc của chủ dự án** (phải
-bấm link xác minh trong email) — ba bước ghi ở đầu `quet_openverse.mjs`.
+**Đặt `OPENVERSE_CLIENT_ID` + `OPENVERSE_CLIENT_SECRET`, ĐỪNG đặt `OPENVERSE_TOKEN`.**
+Token chỉ sống **43.200 giây (12 tiếng)** rồi chết — nhét vào biến môi trường là mai sau
+bó tay không hiểu vì sao tụt về mức khách. Có hai biến kia thì `quet_openverse.mjs` **tự
+xin token mới mỗi lần chạy**.
+
+**Hai bẫy khi lấy khoá:**
+
+- `GET /v1/rate_limit/` trả `"verified": false` **ngay cả khi đã xác minh email và đã được
+  cấp mức 100/min**. Đừng tin trường đó — đọc **header** `x-ratelimit-limit-*` mới đúng.
+- Token xin **trước** khi bấm link xác minh vẫn ở mức khách. Phải xin token **mới** sau khi
+  xác minh xong.
+
+Ba bước lấy khoá ghi ở đầu `quet_openverse.mjs`.
 
 **Quét xong mục lục vẫn chưa tải được** — Openverse chỉ trả URL trỏ về host gốc, host đó
 phải nằm trong **Allowed domains**. Chủ dự án đã mở cả ba **17/09**; đo lại sau khi mở:
 
 | Host | Mục | Mã | Kết luận |
 |---|---:|---|---|
-| `upload.wikimedia.org` | 1.798 | `200` | Được, nhưng **rate-limit gắt** — xem dưới |
-| `images.rawpixel.com` | 533 | `200` | Được, không vướng gì |
-| `svgsilh.com` | 213 | `403` + `server: cloudflare` + trang captcha | **Đích đuổi. BỎ HẲN** — mở allowlist vô ích, `lay_openverse.mjs` tự lọc bỏ |
+| `upload.wikimedia.org` | 4.598 | `200` | Được, nhưng **rate-limit gắt** — xem dưới |
+| `images.rawpixel.com` | 1.559 | `200` | Được, không vướng gì |
+| `svgsilh.com` | 1.426 | `403` + `server: cloudflare` + trang captcha | **Đích đuổi. BỎ HẲN** — mở allowlist vô ích, `lay_openverse.mjs` tự lọc bỏ |
 
 ### Lấy về: `cong-cu/lay_openverse.mjs`
 
@@ -436,4 +453,6 @@ nhanh**: nhanh hơn nghĩa là hỏng nhiều hơn, tổng thời gian tệ hơn
 1. ~~Quét Openclipart~~ — **xong 17/09, đủ 5.820/5.820 sitemap**.
 2. ~~Viết `cong-cu/quet_openverse.mjs`~~ — **xong 17/09**, kèm `lay_openverse.mjs`.
 3. ~~Viết `lay_openclipart.mjs`~~ — **xong 18/09**.
-4. Còn mở: lấy khoá Openverse để hết cảnh `200/day` — ba bước ở đầu `quet_openverse.mjs`.
+4. ~~Lấy khoá Openverse~~ — **xong 18/09**, `10000/day`.
+5. Còn mở: quét Openverse thêm từ khoá (giờ rộng rãi quota), và
+   `node cong-cu/rut_tu_khoa.mjs` có thể sinh bộ từ khoá lớn hơn 44 từ hiện tại.

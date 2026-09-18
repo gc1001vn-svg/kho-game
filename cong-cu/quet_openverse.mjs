@@ -27,21 +27,33 @@
  * Va `page_size` > 20 thi `401 {"detail":"page_size may not exceed 20 for anonymous
  * requests"}`. Khong khoa thi moi tu khoa toi da 12 trang x 20 = 240 muc.
  *
- * CO KHOA thi noi ra. Lay khoa la **viec cua chu du an**, khong tu dang ky ho: phai
- * **bam link xac minh trong email**, chua xac minh thi van bi chan nhu khach:
+ * CO KHOA thi rong hon 50 lan. Do 18/09 tu header khi da xac minh email:
+ *   x-ratelimit-limit-oauth2_client_credentials_burst: 100/min
+ *   x-ratelimit-limit-oauth2_client_credentials_sustained: 10000/day
+ * Va `page_size` toi da **50** (`401 {"detail":"page_size may not exceed 50 for
+ * authenticated requests"}` neu xin 100).
+ *
+ * **DAT `OPENVERSE_CLIENT_ID` + `OPENVERSE_CLIENT_SECRET`, DUNG dat `OPENVERSE_TOKEN`.**
+ * Token chi song **43.200 giay (12 tieng)** roi chet - nhet vao bien moi truong la mai sau
+ * bo tay khong hieu vi sao lai tut ve muc khach. Co hai bien kia thi lenh nay **tu xin
+ * token moi moi lan chay**. `OPENVERSE_TOKEN` van dung duoc, chi de chay tam trong phien.
+ *
+ * Lay khoa la **viec cua chu du an** (phai bam link xac minh trong email):
  *   1. POST https://api.openverse.org/v1/auth_tokens/register/  (json: `name`,
  *      `description`, `email`) -> tra ve `client_id` + `client_secret`.
  *      **Chi hien MOT LAN, khong lay lai duoc.**
- *   2. Bam link xac minh trong email.
- *   3. POST https://api.openverse.org/v1/auth_tokens/token/ dang
- *      `application/x-www-form-urlencoded` (`client_id`, `client_secret`,
- *      `grant_type=client_credentials`) -> `access_token`.
- *   4. Chay: `OPENVERSE_TOKEN=<access_token> node cong-cu/quet_openverse.mjs`
- *      Hoac dat lau dai: claude.ai/code -> nut ten moi truong -> **Edit cloud
- *      environment** -> o **Environment variables** -> `OPENVERSE_TOKEN=<token>`.
+ *   2. Bam link xac minh trong email -> `"Successfully verified email. Your OAuth2
+ *      credentials are now active."`
+ *   3. Dat lau dai: claude.ai/code -> nut ten moi truong -> **Edit cloud environment** ->
+ *      o **Environment variables**, hai dong:
+ *        OPENVERSE_CLIENT_ID=<client_id>
+ *        OPENVERSE_CLIENT_SECRET=<client_secret>
  *      Phien dang mo KHONG nhan, phai mo phien moi.
- *   Muc co khoa la bao nhieu: **chua do duoc**, dung doan - goi
- *   `https://api.openverse.org/v1/rate_limit/` ma xem.
+ *
+ * BAY: `GET /v1/rate_limit/` tra `"verified": false` **ngay ca khi da xac minh** va da
+ * duoc cap muc 100/min - dung tin truong do, doc HEADER `x-ratelimit-limit-*` moi dung.
+ * Va token xin TRUOC khi bam link xac minh thi van o muc khach: phai xin token MOI sau
+ * khi xac minh xong.
  *
  * **KHOA LA MAT KHAU. Repo nay Public - khong bao gio commit khoa vao git.**
  *
@@ -61,11 +73,30 @@ const RA = 'ke/openverse.tsv';
 const API = 'https://api.openverse.org/v1/images/';
 /** Sitemap-style so ghi nho, de dut giua chung chay tiep duoc. Khong len git. */
 const SO_XONG = 'nguon/openverse_xong.txt';
-const token = process.env.OPENVERSE_TOKEN || '';
-/** Khong khoa: tran cung cua may chu la 20. Co khoa thi xin nhieu hon. */
-const MOI_TRANG = token ? 100 : 20;
-/** Khong khoa: burst 20/min -> nghi 3,2s moi lan goi cho khoi an `429`. */
-const NGHI = token ? 400 : 3200;
+const chay_lenh_som = promisify(execFile);
+/** Xin token moi tu client_id/secret. Token song 12 tieng nen xin lai moi lan chay. */
+const xin_token = async () => {
+  const id = process.env.OPENVERSE_CLIENT_ID;
+  const bi = process.env.OPENVERSE_CLIENT_SECRET;
+  if (!id || !bi) return '';
+  try {
+    const { stdout } = await chay_lenh_som('curl', [
+      '-sS', '--max-time', '60', '-X', 'POST',
+      'https://api.openverse.org/v1/auth_tokens/token/',
+      '-d', `client_id=${id}`, '-d', `client_secret=${bi}`,
+      '-d', 'grant_type=client_credentials',
+    ], { encoding: 'utf8' });
+    return JSON.parse(stdout).access_token || '';
+  } catch {
+    console.error('Xin token hong - chay tiep o muc khach (20/min · 200/ngay).');
+    return '';
+  }
+};
+const token = process.env.OPENVERSE_TOKEN || await xin_token();
+/** Khong khoa tran la 20; co khoa tran la 50 - xin 100 thi `401`. */
+const MOI_TRANG = token ? 50 : 20;
+/** Khong khoa: burst 20/min -> nghi 3,2s. Co khoa: 100/min -> nghi 700ms. */
+const NGHI = token ? 700 : 3200;
 
 /** Tu khoa nen cho game chien thuat 2D: dia hinh, cong trinh, quan, do, giao dien. */
 const NEN = [
@@ -111,7 +142,8 @@ if (!existsSync(RA)) {
 }
 console.log(`${danhSach.length} tu khoa x ${TRANG_TOI_DA} trang · ${MOI_TRANG} muc/trang`
   + ` · ${caAnh ? 'hinh ve + anh chup' : 'chi hinh ve'}`
-  + ` · ${token ? 'CO khoa' : 'KHONG khoa (20/min · 200/ngay)'} · dang co ${daCo.size} muc`);
+  + ` · ${token ? 'CO khoa (100/min · 10.000/ngay)' : 'KHONG khoa (20/min · 200/ngay)'}`
+  + ` · dang co ${daCo.size} muc`);
 
 let goi = 0;
 let hetQuota = false;
