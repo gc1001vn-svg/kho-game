@@ -23,6 +23,12 @@ session type`). Muốn dùng Releases thì chạy `cong-cu/dong_goi.mjs` từ m�
 
 ## Dùng ở dự án game
 
+**Dự án nào cũng chỉ cần một dòng** — repo này tự đủ, không đòi repo nào khác nằm cạnh:
+
+```bash
+git clone --depth 1 https://github.com/gc1001vn-svg/kho-game /home/user/kho-game
+```
+
 ```bash
 # 1. Dò khắp mọi nguồn một lệnh — in kèm license và cách lấy từng nguồn
 node cong-cu/do.mjs chicken --tam 8000
@@ -34,8 +40,30 @@ node cong-cu/lay.mjs icosa --id 1YE8U35HXsI 0GKndEIbbMf
 node cong-cu/lay.mjs icosa ../quoc-chien/assets_source --loc house
 ```
 
+Gọi từ đâu cũng được (`node /home/user/kho-game/cong-cu/do.mjs ...`): công cụ tìm `ke/`
+theo `import.meta.dirname`, còn `lay.mjs` đổ về `./assets_source/` của **thư mục đang
+đứng**, nên dự án khác không phải chép gì.
+
 Model nào **chưa có trong manifest** thì `lay.mjs` tự hỏi API lúc tải — mục lục phủ cả
 kho, manifest chỉ là đường tắt cho những cái đã lấy về một lần.
+
+### Từ điển Việt→Anh — bản gốc ở `cong-cu/tu_dien.json`
+
+Dò hụt thì **thêm từ vào đó**, đừng sửa mã nguồn. Trước 18/09 `do.mjs` chỉ đọc bản của
+`quoc-chien`, nên repo nào không clone `quoc-chien` nằm cạnh thì `ga` ra **1 trúng** (font
+`Ga Maamli`) thay vì **306** — và **không báo gì**. Nay bản gốc nằm trong repo này; bản của
+`quoc-chien` vẫn được gộp thêm nếu có, và thước `vet:kho` báo khi hai bản lệch.
+
+### Thước của repo — chạy trước mỗi commit
+
+```bash
+bash scripts/do.sh      # check:token · check:kehoach · vet:kho
+```
+
+`vet:kho` (`cong-cu/vet_kho.mjs`) giữ đúng ba luật của `CLAUDE.md`, máy kiểm chứ không
+phải chữ phải nhớ: cột `ten`/`license` bắt buộc · số cột đều · **không license SA/ND** ·
+`id` không trùng · không file nhị phân trong git · từ điển không lệch · số license `?`
+**chỉ được tụt** (trần ở `cong-cu/nguong_vet.json`, tụt thì tự hạ).
 
 Chạy lại được: model đã có trên đĩa thì bỏ qua. Mỗi model tải kèm `ghi_cong.json` để
 ghi công đi theo file, không nằm một chỗ dễ mất.
@@ -186,9 +214,8 @@ môi trường chặn**, request chưa ra khỏi máy ảo, chủ dự án mở 
 
 | Nguồn | Host | License | Vì sao đáng |
 |---|---|---|---|
-| **Openverse** | `api.openverse.org` | lọc CC0 · CC-BY **phía server** | Gộp ~800M ảnh + âm thanh. Thay được nhiều nguồn lẻ |
-| **Openclipart** | `ke/openclipart.tsv` | CC0 toàn bộ | **108.968 mục, ĐỦ 5.820/5.820 sitemap**. SVG + PNG: biểu tượng, UI, hình 2D |
-| **Openverse** | `api.openverse.org` | CC0 5.233 · CC-BY 2.350 | `ke/openverse.tsv` **7.583 mục** qua 44 từ khoá. **Đã có khoá API** — xem dưới |
+| **Openverse** | `api.openverse.org` | CC0 5.233 · CC-BY 2.350, lọc **phía server** | Gộp ~800M ảnh + âm thanh. `ke/openverse.tsv` **7.583 mục** qua 44 từ khoá. **Đã có khoá API** — xem dưới |
+| **Openclipart** | `openclipart.org` | CC0 toàn bộ | **108.968 mục, ĐỦ 5.820/5.820 sitemap**. SVG + PNG: biểu tượng, UI, hình 2D |
 | **Iconify** | `api.iconify.design` | theo từng bộ — **phải loại bộ CC-BY-SA** | 200.000+ icon, 150+ bộ. Không cần khoá |
 | **Lospec** | `lospec.com/palette-list/load` | bảng màu, không đòi ghi công | Bảng màu để nướng sprite 2D |
 | **Sketchfab** | `api.sketchfab.com` | lọc `cc0` · `by` được; **tải cần OAuth** | Model để nướng sprite |
@@ -456,3 +483,28 @@ nhanh**: nhanh hơn nghĩa là hỏng nhiều hơn, tổng thời gian tệ hơn
 4. ~~Lấy khoá Openverse~~ — **xong 18/09**, `10000/day`.
 5. Còn mở: quét Openverse thêm từ khoá (giờ rộng rãi quota), và
    `node cong-cu/rut_tu_khoa.mjs` có thể sinh bộ từ khoá lớn hơn 44 từ hiện tại.
+
+## Nợ của kho — rà 18/09, số sinh từ `vet:kho`
+
+- **`ke/quoc-chien-assets.tsv` không đủ tư cách bản ghi công (luật 2).** 6.288 dòng mà
+  **không có cột `tac_gia`**, license `?` **4.497/6.288**, và cột `cach_lay` chỉ đúng
+  **một** chuỗi `node tools/tai_itch.mjs …` cho **cả** 6.288 dòng — sai với 4 gói Kenney
+  (`tai_asset.mjs`) và sai với 1.689 dòng Icosa (lấy qua wayback). Đây là **toàn bộ**
+  4.497 dòng `?` của cả kho; 13 nhóm gói lấp được license từ `ke/kenney.tsv` và
+  `ke/itch.tsv`, chỉ `lowpoly-animated-animals` và `kaykit-medieval-builder-pack` là
+  chưa có nguồn đối chiếu. Sửa ở **gốc** — bộ sinh `kho_asset.mjs` của `quoc-chien` —
+  rồi chép lại sang đây, đừng sửa tay.
+- **1.689 dòng Icosa nằm nhầm trong `ke/quoc-chien-assets.tsv`.** Chúng trùng
+  `ke/icosa.tsv` (ở đó có đủ `tac_gia` + license + số tam). Bỏ khỏi bản kê dự án khi sinh
+  lại.
+- **`ke/icosa.md` (230 KB, 1.700 dòng) là bản cũ, không ai trỏ tới** — `ke/icosa.tsv`
+  73.626 dòng đã thay hẳn. Xoá được; máy ảo phiên 18/09 bị chặn `git rm`.
+- **Chuỗi license 8 kiểu viết cho cùng một thứ** (`CC-BY 3.0` · `CREATIVE_COMMONS_BY 3.0`
+  · `http://creativecommons.org/licenses/by/3.0/` …). `vet:kho` nhận hết, nhưng lọc theo
+  license thì phải chuẩn hoá lúc đọc.
+- **`cong-cu/quet_kenney.mjs` cần `quoc-chien/tools/lib/cdp.mjs`.** Cố ý — không chép sang
+  để khỏi hai bản lệch — và nó **báo lỗi rõ** khi thiếu, không hỏng lặng. Chỉ ảnh hưởng
+  việc quét lại Kenney, không ảnh hưởng dò hay lấy.
+- **`node cong-cu/do.mjs chicken --tam 8000` in 26 KB (~7.000 token)** vì 10 nguồn × trần
+  40 dòng. Từ khoá rộng thì thêm `--tam` hoặc dò từng nguồn; trần `TRAN_IN` ở đầu `do.mjs`.
+- **`CLAUDE.md` chưa nhắc `bash scripts/do.sh`** — file khoá, phải hỏi chủ dự án trước.

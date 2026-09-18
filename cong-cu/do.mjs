@@ -6,8 +6,11 @@
  * wayback, kho chung `tayvuc` phai clone repo do, goi itch thi tai lai tu itch.io. Nho
  * lenh nay thi chi can nho MOT cach do, khong phai nho ba.
  *
- * Do theo CHU, khong theo nghia: `ga` khong tu ra `chicken`. Tu dien Viet->Anh dung chung
- * voi `quoc-chien/tools/tu_dien_asset.json` neu repo do nam canh.
+ * Do theo CHU, khong theo nghia: `ga` khong tu ra `chicken`. Tu dien Viet->Anh BAN GOC
+ * nam o `cong-cu/tu_dien.json` CUA CHINH REPO NAY. Truoc 18/09 no chi doc ban cua
+ * `quoc-chien`: repo nao khong clone `quoc-chien` nam canh thi `ga` ra 1 trung (font
+ * `Ga Maamli`) thay vi 306 - va KHONG BAO GI. Ban cua `quoc-chien` van duoc gop them
+ * neu co; thuoc `vet:kho` bat khi hai ban lech nhau.
  *
  * Dung:
  *   node cong-cu/do.mjs chicken
@@ -20,7 +23,9 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const KE = join(import.meta.dirname, '..', 'ke');
-const TU_DIEN = join(import.meta.dirname, '..', '..', 'quoc-chien', 'tools', 'tu_dien_asset.json');
+const TU_DIEN = join(import.meta.dirname, 'tu_dien.json');
+/** Ban cua `quoc-chien` - gop them neu repo do nam canh, khong bat buoc phai co. */
+const TU_DIEN_PHU = join(import.meta.dirname, '..', '..', 'quoc-chien', 'tools', 'tu_dien_asset.json');
 /** Tran dong in moi nguon. Dai hon la tu khoa qua rong - hep lai con hon do output. */
 const TRAN_IN = 40;
 /** `--tac-gia` mo bao nhieu trang OpenGameArt. Moi muc mot luot goi mang, dung tham. */
@@ -37,8 +42,9 @@ if (!tuKhoa.length) {
   process.exit(1);
 }
 
-// Tu dien cua `quoc-chien` de cac khoa duoi `tu`, khong de o goc.
-const tuDien = existsSync(TU_DIEN) ? (JSON.parse(readFileSync(TU_DIEN, 'utf8')).tu || {}) : {};
+// Ca hai ban deu de cac khoa duoi `tu`, khong de o goc.
+const docTu = (p) => (existsSync(p) ? (JSON.parse(readFileSync(p, 'utf8')).tu || {}) : {});
+const tuDien = { ...docTu(TU_DIEN_PHU), ...docTu(TU_DIEN) };
 const tra = [...new Set(tuKhoa.flatMap((t) => (tuDien[t]?.length ? tuDien[t] : [t])))]
   .map((t) => t.toLowerCase());
 // Khop theo RANH GIOI TU, khong phai chuoi con: `ga` tung trung ca `Gazer` va `Gaia`.

@@ -44,6 +44,9 @@ done
 [ -f scripts/check_token.mjs ] && chay "check:token" "node scripts/check_token.mjs"
 [ -f scripts/check_ke_hoach.mjs ] && chay "check:kehoach" "node scripts/check_ke_hoach.mjs"
 
+# Thuoc RIENG repo nay: ban ke la thu duy nhat repo co, phai co thuoc giu.
+[ -f cong-cu/vet_kho.mjs ] && chay "vet:kho" "node cong-cu/vet_kho.mjs"
+
 if [ "$tong" -eq 0 ]; then
   echo "Số đo: chưa có thước nào — thêm thước vào scripts/do.sh"
   exit 1
