@@ -92,9 +92,9 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 |---|---|---:|---|---|
 | **Icosa Gallery** (kho gương Google Poly) | `ke/icosa.tsv` | **73.626** | CC-BY (vài chục CC0) | `lay.mjs icosa` — tự động |
 | Poly Pizza | `ke/poly-pizza.tsv` | 6.136 | CC-BY 4.295 · CC0 1.841 | **tải bằng máy thật** |
-| `quoc-chien/assets_source` (Kenney · Quaternius · KayKit) | `ke/quoc-chien-assets.tsv` | 6.288 | CC0 | `tai_itch.mjs` ở repo đó |
+| `quoc-chien/assets_source` (Kenney · Quaternius · KayKit) | `ke/quoc-chien-assets.tsv` | 4.599 | CC0 3.904 · `?` 695 | `cach_lay` ghi sẵn từng gói |
 | Poly Haven — model · **hoạ tiết · HDRI** | `ke/polyhaven.tsv` | 2.378 | CC0 toàn bộ | API mở, không cần khoá |
-| Kho chung `tayvuc` | `ke/tayvuc-kho-chung.tsv` | 1.347 | CC0 (vài gói `?`) | `npm run kho:lay` |
+| Kho chung `tayvuc` | `ke/tayvuc-kho-chung.tsv` | 1.347 | CC0 480 · `?` 867 | `npm run kho:lay` |
 | **Kenney** — cả kho, không chỉ gói đã tải | `ke/kenney.tsv` | 215 gói | CC0 toàn bộ | `tai_asset.mjs <gói>` |
 | **Freesound** — âm thanh | `ke/freesound.tsv` | **27.313** | CC0 14.587 · CC-BY 12.726 | cần khoá API, tải theo link |
 | **OpenGameArt** — âm thanh · nhạc · 2D · hoạ tiết | `ke/opengameart.tsv` | **22.714** | CC0 11.816 · CC-BY 10.898 | mở trang gốc, tải tay |
@@ -515,19 +515,19 @@ nhanh**: nhanh hơn nghĩa là hỏng nhiều hơn, tổng thời gian tệ hơn
 
 ## Nợ của kho — rà 18/09, số sinh từ `vet:kho`
 
-- **`ke/quoc-chien-assets.tsv` không đủ tư cách bản ghi công (luật 2).** 6.288 dòng mà
-  **không có cột `tac_gia`**, license `?` **4.497/6.288**, và cột `cach_lay` chỉ đúng
-  **một** chuỗi `node tools/tai_itch.mjs …` cho **cả** 6.288 dòng — sai với 4 gói Kenney
-  (`tai_asset.mjs`) và sai với 1.689 dòng Icosa (lấy qua wayback). Đây là **toàn bộ**
-  4.497 dòng `?` của cả kho; 13 nhóm gói lấp được license từ `ke/kenney.tsv` và
-  `ke/itch.tsv`, chỉ `lowpoly-animated-animals` và `kaykit-medieval-builder-pack` là
-  chưa có nguồn đối chiếu. Sửa ở **gốc** — bộ sinh `kho_asset.mjs` của `quoc-chien` —
-  rồi chép lại sang đây, đừng sửa tay.
-- **1.689 dòng Icosa nằm nhầm trong `ke/quoc-chien-assets.tsv`.** Chúng trùng
-  `ke/icosa.tsv` (ở đó có đủ `tac_gia` + license + số tam). Bỏ khỏi bản kê dự án khi sinh
-  lại.
-- **`ke/icosa.md` (230 KB, 1.700 dòng) là bản cũ, không ai trỏ tới** — `ke/icosa.tsv`
-  73.626 dòng đã thay hẳn. Xoá được; máy ảo phiên 18/09 bị chặn `git rm`.
+- **✅ Hai bản kê dự án: SỬA XONG 18/09**, gốc là `cong-cu/nap_ke_cu.mjs` (không phải
+  `kho_asset.mjs` của `quoc-chien` như ghi ban đầu). Bảng regex license ở đó (`/kenney/i`,
+  `/quaternius/i`…) dò vào chính đường dẫn gói — mà đường dẫn thật là
+  `assets_source/city-kit-suburban/Models/GLB format`, không chứa chữ "kenney" ở đâu cả.
+  Nay tra thẳng `ke/kenney.tsv` + `ke/itch.tsv`: thêm cột **`tac_gia`**, `cach_lay` đúng
+  từng gói (`tai_asset.mjs` cho Kenney, `tai_itch.mjs` cho itch), và **bỏ 1.679 dòng Icosa
+  nằm nhầm** (trùng `ke/icosa.tsv`, ở đó đủ tác giả + số tam).
+  **license `?` cả kho: 4.497 → 1.562.**
+- **Còn 1.562 dòng `?`, không đoán bừa.** `quoc-chien-assets` 695 (`kaykit-medieval-
+  builder-pack`, `lowpoly-animated-animals`) · kho chung `tayvuc` 867 (12 gói Quaternius và
+  KayKit không có trong `ke/itch.tsv`). Bản trước điền CC0 cho nhóm này **bằng regex đoán**
+  nên đếm ra 0 `?` — số đẹp hơn mà sai hơn. License thật nằm trong file `LICENSE` của từng
+  gói; mở ra đối chiếu rồi mới điền. Cột `tac_gia` thì **đã đủ 100%** cho kho chung.
 - **Chuỗi license 8 kiểu viết cho cùng một thứ** (`CC-BY 3.0` · `CREATIVE_COMMONS_BY 3.0`
   · `http://creativecommons.org/licenses/by/3.0/` …). `vet:kho` nhận hết, nhưng lọc theo
   license thì phải chuẩn hoá lúc đọc.
