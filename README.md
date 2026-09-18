@@ -341,6 +341,26 @@ Mỗi lần bị chặn phải đợi **2–5 tiếng** mới hết. Nên còn v
 **Quét xong 17/09: đủ 5.820/5.820 sitemap, 108.968 mục, id không trùng cái nào, 100% CC0,
 `ke/openclipart.tsv` 12 MB.** Ba lượt `--cham` cuối: 96 sitemap → 7 hỏng → 0 hỏng.
 
+### Lấy về: `cong-cu/lay_openclipart.mjs`
+
+```bash
+node cong-cu/lay_openclipart.mjs --loc castle                 # SVG -> ./assets_source/openclipart/
+node cong-cu/lay_openclipart.mjs --loc castle --png           # PNG 800px thay vì SVG
+node cong-cu/lay_openclipart.mjs --loc castle --png --px 2400
+node cong-cu/lay_openclipart.mjs --loc sword --so 30 ../quoc-chien/assets_source
+```
+
+**Tải thì không cần gì đặc biệt** — khác lúc quét sitemap (phải có UA trình duyệt và
+`--http1.1`). Đo 18/09: `--loc castle --so 12` ra **12/12 SVG, 0 hỏng**; `--png` ra đúng
+`PNG image data, 800 x 379`.
+
+Vẫn để `SONG_SONG = 1`, `NGHI = 1200` ms vì bảng ngưỡng ở trên. Thêm một chốt: **5 lần
+`52` liên tiếp là tự dừng** và in cách phân biệt họ chặn IP (`robots.txt` `200`) với
+allowlist (`000`). Đâm tiếp chỉ làm án chặn lâu hơn, không lấy thêm được file nào.
+
+**SVG Openclipart nặng** — 12 file ra **6,7 MB** (có file 239 KB). Dùng `--so` mà chặn,
+đừng kéo cả nghìn mục.
+
 **Đừng `--lam-lai`** — mất sạch mấy tiếng quét, mà chắc chắn bị chặn giữa chừng.
 
 **Lospec: phải đủ tham số.** Bỏ bớt là `500`:
@@ -415,5 +435,5 @@ nhanh**: nhanh hơn nghĩa là hỏng nhiều hơn, tổng thời gian tệ hơn
 
 1. ~~Quét Openclipart~~ — **xong 17/09, đủ 5.820/5.820 sitemap**.
 2. ~~Viết `cong-cu/quet_openverse.mjs`~~ — **xong 17/09**, kèm `lay_openverse.mjs`.
-3. Còn mở: viết `lay_openclipart.mjs` (giờ mới tải tay bằng cột `cach_lay`), và lấy khoá
-   Openverse để hết cảnh `200/day` — ba bước ở đầu `quet_openverse.mjs`.
+3. ~~Viết `lay_openclipart.mjs`~~ — **xong 18/09**.
+4. Còn mở: lấy khoá Openverse để hết cảnh `200/day` — ba bước ở đầu `quet_openverse.mjs`.
