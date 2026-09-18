@@ -126,6 +126,42 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 3D (Icosa, Poly Pizza, `assets_source`, kho chung) **không có 2D** — chúng là model để
 nướng ra sprite.
 
+### Kiểm kê cả kho — `node cong-cu/kiem_ke.mjs`
+
+Kho mạnh cái gì, yếu cái gì. **Đừng gõ số ra tài liệu**, chạy lệnh. Đo 18/09:
+
+```
+Model 3D                     89704     Nhac                          6825
+Anh 2D · bieu tuong         129556     Hoa tiet · HDRI               3497
+Am thanh                     28740     Font                          1941
+                                       Ma nguon (hoc kien truc)        10
+                            260273  TONG MUC LE
+```
+
+Cộng **740 gói** kê riêng, không kê lẻ từng file: Kenney 215 (2D 145 · 3D 50 · Audio 10 ·
+Textures 9) · itch.io CC0 525 (3D 165 · 2D 360). `vet:kho` đếm 261.013 vì nó cộng cả hai
+bản kê gói vào; **740 gói không so được với 260.273 mục lẻ.**
+
+Model 3D theo chủ đề — **dò theo tên, một model trúng nhiều chủ đề nên cộng lại không ra
+tổng**:
+
+```
+                               Icosa  Poly Pizza  Poly Haven  quoc-chien   kho chung        tong
+Nha cua · cong trinh            5774         632          81        1533         152        8172
+Nguoi · nhan vat                4727         295          51          42          44        5159
+Cay coi · thien nhien           4077         543         131         347         174        5272
+Con vat                         4240         506          16          11          19        4792
+Do dung · noi that              2853         689         178         261         142        4123
+Xe co · phuong tien             2029         385          72          77          32        2595
+Do an                           2095         320          40           0           3        2458
+Vu khi · cong cu                 940         303          87          15         113        1458
+```
+
+Icosa có **tag thật** của họ, đáng tin hơn dò tên: `objects 7835 · art 4946 ·
+architecture 3686 · people 2934 · animals 2798 · nature 2277 · tech 1679 · food 1482 ·
+transport 1339 · scenes 1323`. **43.370 model không mang tag nào trong mười tag đó** —
+mục lục Icosa gắn tag rất thưa, nên coi số tag là sàn chứ không phải trần.
+
 ### Bao nhiêu model 3D **nướng được** — `node cong-cu/dem_model.mjs`
 
 Câu này mỗi phiên hỏi một lần và mỗi phiên ra một số khác, vì đếm kiểu khác: có phiên đếm

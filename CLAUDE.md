@@ -36,6 +36,7 @@ Bảy bước đầu phiên · cách trả lời · luật báo "xong": **ĐỀU
 |---|---|
 | `node cong-cu/do.mjs <từ khoá> [--tam N]` | dò khắp mọi nguồn, in kèm license và cách lấy |
 | `node cong-cu/dem_model.mjs` | đếm model 3D nướng được — **đừng gõ số vào tài liệu** |
+| `node cong-cu/kiem_ke.mjs` | kiểm kê cả kho theo loại và chủ đề — **cũng đừng gõ số** |
 | `node cong-cu/vet_kho.mjs` | rà bản kê: cột, license SA/ND, `id` trùng, nhị phân, từ điển |
 | `node cong-cu/lay.mjs icosa --loc <từ khoá>` | kéo model trúng về `assets_source/` |
 | `node cong-cu/lay.mjs icosa --id <id>...` | kéo đúng mấy model |
