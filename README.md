@@ -115,6 +115,35 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 3D (Icosa, Poly Pizza, `assets_source`, kho chung) **không có 2D** — chúng là model để
 nướng ra sprite.
 
+### Bao nhiêu model 3D **nướng được** — `node cong-cu/dem_model.mjs`
+
+Câu này mỗi phiên hỏi một lần và mỗi phiên ra một số khác, vì đếm kiểu khác: có phiên đếm
+cả `.fbx` (máy nướng **chưa** đọc được), có phiên đếm cả Poly Pizza (dò được nhưng **tải
+không được**), có phiên đếm lượt file thay vì model duy nhất. Lệnh trên chốt **một** cách
+đếm — **đừng gõ số ra tài liệu**, chạy lệnh mà xem. Bốn điều kiện, thiếu một là loại:
+license CC0 · CC-BY · MIT · định dạng `.obj`/`.gltf`/`.glb` (**`.fbx` chưa**) · **≤ 8.000
+tam** · **tải được từ máy ảo**.
+
+Đo 18/09:
+
+```
+Icosa Gallery     41333 /  73626  GLB/GLTF, tai qua wayback
+Poly Haven          210 /    521  CC0, API mo
+—                 41543   model le
+
+Goi chua ke le:  Kenney 3D 50 goi · itch.io CC0 3D 165 goi
+Da tren dia:     quoc-chien 1698 · kho chung tayvuc 1337
+                 (tap con cua Kenney/Quaternius/KayKit — DUNG cong vao tong)
+
+LOAI — do duoc, tai khong duoc:  Poly Pizza 5274/6136 <= 8000 tam
+```
+
+**41.543 model lẻ nướng được ngay**, cộng 215 gói Kenney/itch chưa kê lẻ từng model. Game
+`quoc-chien` cần **32 loại nhà** — dư hơn ba bậc độ lớn. Cái chặn từ lâu **không phải số
+model** mà là **sự đồng nhất phong cách**: 41.333 model Icosa là của hàng nghìn tác giả
+khác nhau, ghép vào một thành phố thì lộn xộn, và **toàn bộ là CC-BY** nên phải ghi công
+từng người. Kenney City Kit 60 dáng nhà một tác giả CC0 vẫn là đường gọn nhất.
+
 **itch.io: hai cảnh báo.** License do **tác giả tự khai**, itch không kiểm — mở `LICENSE`
 trong gói đối chiếu trước khi dùng. Và bộ lọc `assets-cc0` lọc theo license **chứ không
 theo giá**, nên gói trả tiền vẫn lọt vào (`Kenney Game Assets All-in-1`, $19.95); cột `gia`
