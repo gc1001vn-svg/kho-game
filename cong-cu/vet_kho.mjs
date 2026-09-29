@@ -21,6 +21,7 @@
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { boDau, chuanKhoa, docTuDien } from './tim.mjs';
 
 const GOC = join(import.meta.dirname, '..');
 const KE = join(GOC, 'ke');
@@ -87,9 +88,10 @@ const TU_PHU = join(GOC, '..', 'quoc-chien', 'tools', 'tu_dien_asset.json');
 if (!existsSync(TU)) {
   loi.push('thieu cong-cu/tu_dien.json — `do.mjs` mat duong dich tieng Viet');
 } else if (existsSync(TU_PHU)) {
-  const a = JSON.parse(readFileSync(TU, 'utf8')).tu || {};
+  // So theo khoa BO DAU: ban nay khoa co dau ("gà"), ban `quoc-chien` khoa khong dau ("ga").
+  const { khong } = docTuDien();
   const b = JSON.parse(readFileSync(TU_PHU, 'utf8')).tu || {};
-  const thieu = Object.keys(b).filter((k) => !a[k]);
+  const thieu = Object.keys(b).filter((k) => !khong.has(boDau(chuanKhoa(k))));
   if (thieu.length) nhac.push(`tu_dien.json thieu ${thieu.length} tu so voi quoc-chien: ${thieu.slice(0, 6).join(' ')}`);
 }
 

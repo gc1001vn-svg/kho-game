@@ -8,7 +8,7 @@ thay vì mỗi dự án tải lại cùng một gói.
 Git **không** giữ file nhị phân: `.glb` nén rất kém, mà lịch sử git giữ mọi bản cũ vĩnh
 viễn — thêm một mẻ là cộng dồn, không xoá được.
 
-- **Trong git:** bản kê (`ke/*.md`), manifest tải lại (`nguon/*.json`), công cụ
+- **Trong git:** bản kê (`ke/*.tsv`), manifest tải lại (`nguon/*.json`), công cụ
   (`cong-cu/`), ghi công license. Tổng vài trăm KB.
 - **Model thật:** tải lại từ nguồn gốc bằng `cong-cu/lay.mjs`. Manifest giữ **URL mốc
   thật** của bản lưu nên tải thẳng, không phải dò lại.
@@ -30,9 +30,11 @@ git clone --depth 1 https://github.com/gc1001vn-svg/kho-game /home/user/kho-game
 ```
 
 ```bash
-# 1. Dò khắp mọi nguồn một lệnh — in kèm license và cách lấy từng nguồn
+# 1. Dò khắp mọi nguồn một lệnh — mặc định in GỌN ~20 dòng: số trúng, license, tác giả
+node cong-cu/do.mjs "hiệu ứng"            # tiếng Việt có dấu hay không dấu đều được
 node cong-cu/do.mjs chicken --tam 8000
-node cong-cu/do.mjs ga                    # tiếng Việt, tự dịch qua từ điển
+node cong-cu/do.mjs ga --nguon icosa      # xem kỹ một nguồn: 40 dòng kèm cách lấy
+node cong-cu/do.mjs ga --het              # in hết mọi dòng mọi nguồn
 
 # 2. Lấy đúng thứ cần. KHÔNG kéo cả kho.
 node cong-cu/lay.mjs icosa --loc chicken
@@ -49,16 +51,30 @@ kho, manifest chỉ là đường tắt cho những cái đã lấy về một l
 
 ### Từ điển Việt→Anh — bản gốc ở `cong-cu/tu_dien.json`
 
-Dò hụt thì **thêm từ vào đó**, đừng sửa mã nguồn. Trước 18/09 `do.mjs` chỉ đọc bản của
-`quoc-chien`, nên repo nào không clone `quoc-chien` nằm cạnh thì `ga` ra **1 trúng** (font
-`Ga Maamli`) thay vì **306** — và **không báo gì**. Nay bản gốc nằm trong repo này; bản của
-`quoc-chien` vẫn được gộp thêm nếu có, và thước `vet:kho` báo khi hai bản lệch.
+Dò hụt thì **thêm từ vào đó**, đừng sửa mã nguồn. **Khoá viết có dấu, đúng chính tả**:
+bỏ dấu thì lúa/lửa/lừa, đèn/đền, chó/chợ dính nhau. Gõ có dấu → khớp đúng khoá đó; gõ không
+dấu → gộp mọi khoá trùng khi bỏ dấu. Nhiều từ rời tự ghép thành cụm dài nhất có trong từ
+điển (`nhà kho` là một cụm, không phải `nhà` + `kho`).
+
+Lõi dò ở `cong-cu/tim.mjs`, dùng chung cho `do.mjs`, `thu_do.mjs`, `lay.mjs --loc`. Khớp
+**mọi cột chữ** (`ten`, `tag`, `loai`, `tac_gia`, đường gói…) trừ license/đường lấy/số.
+
+**Vì sao 29/09 phải sửa:** từ điển chỉ có 30 từ không dấu, lệnh chỉ khớp cột `ten` —
+`do.mjs hieu_ung` · `nhan_vat` · `cu_dong` ra **0** và in "Không nguồn nào có", trong khi
+kho có hàng nghìn mục. Phiên đọc số 0 là kết luận "không có" rồi tự làm. Nay dò hụt vì từ
+điển thiếu thì lệnh **nói thẳng từ nào chưa có**, không kết luận "không có".
+
+Hai mục riêng cho hook `nhac_kho`: `_hook_bo_qua` (từ một âm tiết hay gặp trong câu nói việc:
+"kho" là kho-game, "đường" là đường dẫn) và `_cum_thuong` ("cá nhân", "thư viện"…).
 
 ### Thước của repo — chạy trước mỗi commit
 
 ```bash
-bash scripts/do.sh      # check:token · check:kehoach · vet:kho
+bash scripts/do.sh      # check:token · check:kehoach · check:hook · check:nguong · check:cap · check:ten · vet:kho · thu:do
 ```
+
+`thu:do` (`cong-cu/thu_do.mjs`) là **bộ đề dò**: câu tiếng Việt phải ra kết quả, lệnh phải
+in gọn, hook không được bắt nhầm câu nói việc. Thử với từ điển cũ 30 từ: 5/19 đạt.
 
 `vet:kho` (`cong-cu/vet_kho.mjs`) giữ đúng ba luật của `CLAUDE.md`, máy kiểm chứ không
 phải chữ phải nhớ: cột `ten`/`license` bắt buộc · số cột đều · **không license SA/ND** ·
@@ -581,6 +597,6 @@ nhanh**: nhanh hơn nghĩa là hỏng nhiều hơn, tổng thời gian tệ hơn
 - **`cong-cu/quet_kenney.mjs` cần `quoc-chien/tools/lib/cdp.mjs`.** Cố ý — không chép sang
   để khỏi hai bản lệch — và nó **báo lỗi rõ** khi thiếu, không hỏng lặng. Chỉ ảnh hưởng
   việc quét lại Kenney, không ảnh hưởng dò hay lấy.
-- **`node cong-cu/do.mjs chicken --tam 8000` in 26 KB (~7.000 token)** vì 10 nguồn × trần
-  40 dòng. Từ khoá rộng thì thêm `--tam` hoặc dò từng nguồn; trần `TRAN_IN` ở đầu `do.mjs`.
+- ~~`node cong-cu/do.mjs chicken --tam 8000` in 26 KB (~7.000 token)~~ — **sửa 29/09**: mặc
+  định in gọn, thước `thu:do` giữ trần byte.
 - **`CLAUDE.md` chưa nhắc `bash scripts/do.sh`** — file khoá, phải hỏi chủ dự án trước.

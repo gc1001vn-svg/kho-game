@@ -50,6 +50,8 @@ done
 
 # Thuoc RIENG repo nay: ban ke la thu duy nhat repo co, phai co thuoc giu.
 [ -f cong-cu/vet_kho.mjs ] && chay "vet:kho" "node cong-cu/vet_kho.mjs"
+# Bo de do (29/09): cau tieng Viet phai ra ket qua, lenh in gon, hook khong bat nham.
+[ -f cong-cu/thu_do.mjs ] && chay "thu:do" "node cong-cu/thu_do.mjs"
 
 if [ "$tong" -eq 0 ]; then
   echo "Số đo: chưa có thước nào — thêm thước vào scripts/do.sh"
