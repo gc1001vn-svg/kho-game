@@ -67,7 +67,7 @@ for (const g of thay.values()) {
     g.id, g.ten, g.tacGia,
     'CC0 (theo bo loc itch - kiem lai LICENSE trong goi)',
     g.gia, g.tag,
-    `node tools/tai_itch.mjs ${g.id}  (o repo quoc-chien)`,
+    `node cong-cu/lay.mjs itch ${g.id}`,
   ].join('\t'));
 }
 mkdirSync('ke', { recursive: true });

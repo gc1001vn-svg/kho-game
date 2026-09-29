@@ -14,14 +14,14 @@
  *   3. Cot `id` (neu co) khong trung nhau.
  *   4. `?` license — dem, so voi tran o `cong-cu/nguong_vet.json`. CHI DUOC TUT.
  *   5. Khong file nhi phan trong git (luat 1).
- *   6. `cong-cu/tu_dien.json` khong lech voi ban cua `quoc-chien` neu repo do nam canh.
+ *   6. `cong-cu/tu_dien.json` con do (ban duy nhat tu 29/09 - `quoc-chien` goi sang day).
  *
  * Dung: node cong-cu/vet_kho.mjs
  */
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { boDau, chuanKhoa, docTuDien } from './tim.mjs';
+import { docTuDien } from './tim.mjs';
 
 const GOC = join(import.meta.dirname, '..');
 const KE = join(GOC, 'ke');
@@ -82,17 +82,13 @@ try {
   nhac.push('khong chay duoc `git ls-files` — bo qua kiem nhi phan');
 }
 
-// --- 6: tu dien lech ---
+// --- 6: tu dien con do ---
+// 29/09 `quoc-chien` bo ban tu dien rieng, goi thang ban nay: chi con MOT ban, het lech.
 const TU = join(GOC, 'cong-cu', 'tu_dien.json');
-const TU_PHU = join(GOC, '..', 'quoc-chien', 'tools', 'tu_dien_asset.json');
 if (!existsSync(TU)) {
   loi.push('thieu cong-cu/tu_dien.json — `do.mjs` mat duong dich tieng Viet');
-} else if (existsSync(TU_PHU)) {
-  // So theo khoa BO DAU: ban nay khoa co dau ("gà"), ban `quoc-chien` khoa khong dau ("ga").
-  const { khong } = docTuDien();
-  const b = JSON.parse(readFileSync(TU_PHU, 'utf8')).tu || {};
-  const thieu = Object.keys(b).filter((k) => !khong.has(boDau(chuanKhoa(k))));
-  if (thieu.length) nhac.push(`tu_dien.json thieu ${thieu.length} tu so voi quoc-chien: ${thieu.slice(0, 6).join(' ')}`);
+} else if (!docTuDien().dau.size) {
+  loi.push('cong-cu/tu_dien.json rong — `do.mjs` mat duong dich tieng Viet');
 }
 
 // --- 4: tran `?` chi duoc tut ---

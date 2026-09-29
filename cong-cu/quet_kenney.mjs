@@ -88,7 +88,7 @@ for (const g of thay.values()) {
     'CC0 1.0',
     loai.join(','),
     loai.includes('Audio') ? 'ogg,wav' : loai.includes('3D') ? 'obj,fbx,gltf,png' : 'png,svg',
-    `node tools/tai_asset.mjs ${g.slug}  (o repo quoc-chien)`,
+    `node cong-cu/lay.mjs kenney ${g.slug}`,
   ].join('\t'));
 }
 console.log('Theo loai: ' + Object.entries(dem).map(([k, v]) => `${k} ${v}`).join(' · '));
