@@ -13,6 +13,12 @@
 //
 // Cai vao mot du an: `node /home/user/ghi-nho/cong-cu/cai_dat.mjs`
 //
+// 29/09 THEM PHAN KHO-GAME: o repo game, cau go co tu asset ("hiệu ứng lửa", "chuồng
+// gà") thi hook tu chay `kho-game/cong-cu/do.mjs --ngan` va chen ket qua (3-4 dong).
+// Vi sao: kho-game bi bo qua nhieu lan — 10/09 ghep coi xay gio nam luot nuong khi KayKit
+// co san `mill`; 28/09 ket luan "khong co ga" khi kho co. Luat "do truoc" la chu; ket
+// qua nam san trong ngu canh thi khong the bo qua ma khong thay.
+//
 // Fail-open tuyet doi: moi duong loi deu tra `continue: true` roi thoat 0.
 // Hook nay khong bao gio duoc chan mot luot lam viec that.
 
@@ -20,7 +26,9 @@ import { readFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
-import { bat, thoat as thoat_an, cat_tran } from './hook_chung.mjs';
+import { execFileSync } from 'node:child_process';
+import { pathToFileURL } from 'node:url';
+import { bat, thoat as thoat_an, cat_tran, la_repo_game, KHO_GAME } from './hook_chung.mjs';
 
 const ID = 'cau:nhac-kho';
 const KHO = '/home/user/ghi-nho';
@@ -237,23 +245,19 @@ function im(ly_do) {
   return thoat(IM);
 }
 
-function chinh(raw) {
-  let vao;
-  try { vao = JSON.parse(raw); } catch { return im('stdin khong phai JSON'); }
-
-  const prompt = String(vao?.prompt ?? '').trim();
-  if (!vao?.session_id) ghi_so('CANH BAO: hook khong nhan duoc session_id');
-  if (prompt.length < DAI_TOI_THIEU) return im(`cau ngan (${prompt.length} ky tu)`);
-  if (['/', '!', '#'].includes(prompt[0])) return im('cau bat dau bang / ! #');
-
+/**
+ * Khoi ghi-nho: 1-2 khoi kho trung cau go. Tra { dong, bam, ly_do } — `dong` rong la im.
+ */
+function khoi_ghi_nho(prompt, da) {
+  const rong = (ly_do) => ({ dong: [], bam: [], ly_do });
   const tu = tu_khoa(prompt);
-  if (tu.length === 0) return im('khong con tu khoa nao sau khi loc');
+  if (tu.length === 0) return rong('khong con tu khoa nao sau khi loc');
 
   // Chi lay tu VUNG DAU bang xep. Khoi thu 6 tro xuong la "co dinh tu khoa" chu
   // khong phai "noi ve thu dang hoi" — chen no vao la nhieu, khong phai nhac.
   // Nen khi ca vung dau da chen roi thi IM, khong voi xuong lay hang kem hon.
   const kho = doc_kho();
-  if (kho.length === 0) return im(`kho chua clone ve ${KHO}`);
+  if (kho.length === 0) return rong(`kho chua clone ve ${KHO}`);
   const hiem = do_hiem(kho, tu);
 
   const xep = kho
@@ -265,10 +269,7 @@ function chinh(raw) {
     .filter((x) => x.diem >= DIEM_TOI_THIEU && x.trung.length >= Math.ceil(tu.length * BAO_PHU))
     .sort((a, b) => b.diem - a.diem)
     .slice(0, VUNG_DAU);
-  if (xep.length === 0) return im(`khong khoi nao du diem (${tu.length} tu khoa)`);
-
-  const p_so = duong_so(vao?.session_id);
-  const da = new Set(p_so ? doc_so(p_so) : []);
+  if (xep.length === 0) return rong(`khong khoi nao du diem (${tu.length} tu khoa)`);
 
   const chon = [];
   const bam_moi = [];
@@ -280,33 +281,97 @@ function chinh(raw) {
     chon.push({ ...x, noi });
     bam_moi.push(h);
   }
-  if (chon.length === 0) return im('vung dau da chen het trong phien nay');
+  if (chon.length === 0) return rong('vung dau da chen het trong phien nay');
+  return {
+    dong: chon.map((x) => `- [${x.k.ten} › ${x.k.tieu_de}] ${x.noi}`),
+    bam: bam_moi,
+    tieu_de: chon.map((x) => x.k.tieu_de),
+    dau: chon[0].k.ten,
+    ly_do: '',
+  };
+}
+
+/**
+ * Khoi kho-game: chi o repo game, chi khi cau co tu asset. Cat cum bang chinh `tim.mjs`
+ * cua kho-game — mot tu dien, mot cach cat; thuoc `thu:do` ben do giu no khong bat nham
+ * cau noi viec ("chạy lệnh đo cho kho game" ra 0 cum). Tra { tho, bam, cum, ly_do }.
+ */
+async function khoi_kho_game(prompt, da) {
+  if (!la_repo_game()) return { ly_do: 'khong phai repo game' };
+  const tim = join(KHO_GAME, 'cong-cu', 'tim.mjs');
+  if (!existsSync(tim)) return { ly_do: `kho-game chua co o ${KHO_GAME}` };
+  let tachCum;
+  try { ({ tachCum } = await import(pathToFileURL(tim).href)); } catch { return { ly_do: 'kho-game cu, chua co tim.mjs' }; }
+  const cum = [...new Set(tachCum(prompt, { hook: true }).filter((x) => x.v).map((x) => x.cum))];
+  if (cum.length === 0) return { ly_do: 'cau khong co tu asset' };
+  // Chong chen lai: cung bo cum trong mot phien thi ket qua y het, chen lan hai la tra tien hai lan.
+  const h = `kg:${[...cum].sort().join(' ')}`;
+  if (da.has(h)) return { ly_do: `da do [${cum.join(' ')}] trong phien nay` };
+  let tho;
+  try {
+    tho = execFileSync('node', [join(KHO_GAME, 'cong-cu', 'do.mjs'), ...cum, '--ngan'],
+      { encoding: 'utf8', timeout: 6000 }).trim();
+  } catch (e) {
+    return { ly_do: `do.mjs hong: ${String(e.message).slice(0, 60)}` };
+  }
+  if (!tho) return { ly_do: 'do.mjs khong in gi' };
+  return { tho, bam: h, cum, ly_do: '' };
+}
+
+async function chinh(raw) {
+  let vao;
+  try { vao = JSON.parse(raw); } catch { return im('stdin khong phai JSON'); }
+
+  const prompt = String(vao?.prompt ?? '').trim();
+  if (!vao?.session_id) ghi_so('CANH BAO: hook khong nhan duoc session_id');
+  if (prompt.length < DAI_TOI_THIEU) return im(`cau ngan (${prompt.length} ky tu)`);
+  if (['/', '!', '#'].includes(prompt[0])) return im('cau bat dau bang / ! #');
+
+  const p_so = duong_so(vao?.session_id);
+  const da = new Set(p_so ? doc_so(p_so) : []);
+  const gn = khoi_ghi_nho(prompt, da);
+  const kg = await khoi_kho_game(prompt, da);
+  if (gn.dong.length === 0 && !kg.tho) return im(`${gn.ly_do} · kho-game: ${kg.ly_do}`);
 
   if (p_so) {
-    try { writeFileSync(p_so, JSON.stringify([...da, ...bam_moi].slice(-NHO_TOI_DA))); }
+    try { writeFileSync(p_so, JSON.stringify([...da, ...gn.bam, ...(kg.bam ? [kg.bam] : [])].slice(-NHO_TOI_DA))); }
     catch { /* chong trung la phu, thieu no van chen duoc */ }
   }
 
-  const dong = chon.map((x) => `- [${x.k.ten} › ${x.k.tieu_de}] ${x.noi}`);
-  const tho = [
-    '<nhac-kho>',
-    'Tra tu kho ghi-nho theo cau vua go (hook, khong ton luot goi):',
-    ...dong,
-    '',
-    `Chi la trich doan. Can day du: \`cat ${KHO}/${chon[0].k.ten}\`.`,
-    'Trich doan mau thuan voi thu dang lam thi HOI, dung tu chon ben nao.',
-    '</nhac-kho>',
-  ].join('\n');
+  const phan = [];
+  if (gn.dong.length) {
+    phan.push(
+      '<nhac-kho>',
+      'Tra tu kho ghi-nho theo cau vua go (hook, khong ton luot goi):',
+      ...gn.dong,
+      '',
+      `Chi la trich doan. Can day du: \`cat ${KHO}/${gn.dau}\`.`,
+      'Trich doan mau thuan voi thu dang lam thi HOI, dung tu chon ben nao.',
+      '</nhac-kho>',
+    );
+  }
+  if (kg.tho) {
+    phan.push(
+      '<kho-game>',
+      'Do kho-game theo cau vua go (hook, khong ton luot goi). CO SAN thi dung truoc khi tu ve, tu ghep, tu viet:',
+      kg.tho,
+      '</kho-game>',
+    );
+  }
 
-  // Tran cua rieng hook nay (SO_KHOI x DAI_KHOI) la tran MEM: doi mot hang so
+  // Tran cua rieng hook nay (SO_KHOI x DAI_KHOI, `--ngan`) la tran MEM: doi mot hang so
   // la no phinh. `cat_tran` la tran CHUNG cho moi hook chen ngu canh — lop cuoi,
   // khong ai sua nham qua duoc. Token uoc byte/3 (`uoc_tok`), so sinh tu lenh chu khong go tay.
-  const { van: ngu_canh, tok, cat } = cat_tran(tho);
+  const { van: ngu_canh, tok, cat } = cat_tran(phan.join('\n'));
 
-  ghi_so(`CHEN ${chon.length} khoi\t~${tok} tok${cat ? ' (DA CAT)' : ''}\t${chon.map((x) => x.k.tieu_de).join(' | ')}`);
+  const nhan = [
+    gn.dong.length ? `${gn.dong.length} khoi` : '',
+    kg.tho ? `kho-game [${kg.cum.join(' ')}]` : '',
+  ].filter(Boolean).join(' + ');
+  ghi_so(`CHEN ${nhan}\t~${tok} tok${cat ? ' (DA CAT)' : ''}\t${(gn.tieu_de || []).join(' | ')}`);
 
   thoat({
-    systemMessage: `[nhac kho] ${chon.length} khoi (~${tok} tok)`,
+    systemMessage: `[nhac kho] ${nhan} (~${tok} tok)`,
     hookSpecificOutput: { hookEventName: 'UserPromptSubmit', additionalContext: ngu_canh },
   });
 }

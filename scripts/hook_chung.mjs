@@ -240,3 +240,38 @@ export function skill_chua_khoa(root = goc(), thu_muc_skill = join(homedir(), '.
   quet(thu_muc_skill, 3);
   return [...ten].filter((t) => !(t in khoa) && !bat_co_y.includes(t)).sort();
 }
+
+/** Kho muc luc asset chung. Repo PUBLIC: clone doc-suong duoc, khong can `add_repo`. */
+// `GC_KHO_GAME` chi de thu hook ma khong dong vao ban that.
+export const KHO_GAME = process.env.GC_KHO_GAME || '/home/user/kho-game';
+export const KHO_GAME_URL = 'https://github.com/gc1001vn-svg/kho-game';
+
+/**
+ * Repo nay co phai repo GAME khong — de `dau_phien` tu clone kho-game va `nhac_kho` tu
+ * do asset theo cau chu du an go.
+ *
+ * VI SAO: 10/09 ghep coi xay gio bang tay nam luot nuong trong khi KayKit co san `mill`;
+ * 28/09 kho-game chua clone, phien bo buoc do, ket luan sai "khong co ga". Luat "do
+ * truoc khi tu lam" la CHU; hook thi chay moi cau, khong doi ai nho.
+ *
+ * Mot trong bon dau hieu la du: `.claude/repo_game` (tu dat) · `.gitignore` co
+ * `assets_source` (luat hai kho) · `package.json` dung engine game · `CLAUDE.md`/`AGENTS.md`
+ * co chu "game" trong 3.000 ky tu dau.
+ */
+export function la_repo_game(root = goc()) {
+  try {
+    if (existsSync(join(root, '.claude/repo_game'))) return true;
+    const gi = join(root, '.gitignore');
+    if (existsSync(gi) && /assets_source/.test(readFileSync(gi, 'utf8'))) return true;
+    const pkg = doc_json(join(root, 'package.json'));
+    if (pkg) {
+      const dep = Object.keys({ ...pkg.dependencies, ...pkg.devDependencies });
+      if (dep.some((d) => /^(three|phaser|pixi\.js|@babylonjs\/core|kaplay|excalibur|littlejsengine|playcanvas)$/.test(d))) return true;
+    }
+    for (const f of ['CLAUDE.md', 'AGENTS.md']) {
+      const p = join(root, f);
+      if (existsSync(p) && /\bgame\b/i.test(readFileSync(p, 'utf8').slice(0, 3000))) return true;
+    }
+  } catch { /* doc hong thi coi nhu khong phai repo game — hook khong duoc chan viec */ }
+  return false;
+}

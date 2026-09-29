@@ -12,8 +12,11 @@
 // dung — chinh cai dang di chong.
 
 import { existsSync, readFileSync } from 'node:fs';
-import { execSync } from 'node:child_process';
-import { bat, thoat, cat_tran, skill_chua_khoa } from './hook_chung.mjs';
+import { execSync, spawn } from 'node:child_process';
+import { resolve } from 'node:path';
+import {
+  bat, thoat, cat_tran, skill_chua_khoa, la_repo_game, KHO_GAME, KHO_GAME_URL,
+} from './hook_chung.mjs';
 
 const ID = 'phien:dau-phien';
 
@@ -87,6 +90,17 @@ if (nhanh && existsSync('docs/NHAT_KY')) {
   if (code && tl && code > tl) {
     d.push(`phien truoc sua code ${code} ma nhat ky/tien do dung o ${tl} — doc git log roi ghi bu`);
   }
+}
+
+// --- kho-game: repo game thi kho phai CO SAN, khong doi ai nho -----------------
+// 28/09 `quoc-chien` chua clone kho-game, lenh do chi in dong nhac, phien bo qua roi ket
+// luan sai "khong co ga". Nay clone NEN ngay dau phien (khong doi, hook van xong ngay);
+// co roi thi keo ban moi, cung nen. Chinh repo kho-game thi khong dung vao.
+if (la_repo_game() && resolve(process.env.CLAUDE_PROJECT_DIR ?? process.cwd()) !== resolve(KHO_GAME)) {
+  const co = existsSync(`${KHO_GAME}/cong-cu/do.mjs`);
+  const lenh = co ? ['-C', KHO_GAME, 'pull', '-q', '--ff-only'] : ['clone', '-q', '--depth', '1', KHO_GAME_URL, KHO_GAME];
+  try { spawn('git', lenh, { detached: true, stdio: 'ignore' }).unref(); } catch { /* git hong: dong duoi van nhac */ }
+  d.push(`kho-game: ${co ? 'co san' : 'dang clone nen (~1 phut)'} — do asset TRUOC khi tu ve/tu viet: node ${KHO_GAME}/cong-cu/do.mjs <tu khoa>`);
 }
 
 // --- lenh do cua repo --------------------------------------------------------
