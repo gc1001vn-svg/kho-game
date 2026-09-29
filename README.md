@@ -36,18 +36,41 @@ node cong-cu/do.mjs chicken --tam 8000
 node cong-cu/do.mjs ga --nguon icosa      # xem kỹ một nguồn: 40 dòng kèm cách lấy
 node cong-cu/do.mjs ga --het              # in hết mọi dòng mọi nguồn
 
-# 2. Lấy đúng thứ cần. KHÔNG kéo cả kho.
-node cong-cu/lay.mjs icosa --loc chicken
-node cong-cu/lay.mjs icosa --id 1YE8U35HXsI 0GKndEIbbMf
-node cong-cu/lay.mjs icosa ../quoc-chien/assets_source --loc house
+# 2. Lấy đúng thứ cần — MỘT CỬA cho mọi nguồn. KHÔNG kéo cả kho.
+node cong-cu/lay.mjs icosa --loc "gà" --tam 8000 --thu      # --thu: chỉ in sẽ lấy gì
+node cong-cu/lay.mjs icosa --id 1YE8U35HXsI 0GKndEIbbMf --dich ../quoc-chien/assets_source
+node cong-cu/lay.mjs kenney city-kit-suburban               # -> assets_source/<gói>/
+node cong-cu/lay.mjs itch kaylousberg/kaykit-character-animations
+node cong-cu/lay.mjs quaternius farmbuildings --chi fbx     # Drive hay itch, tự biết
+node cong-cu/lay.mjs polyhaven leafy_grass ArmChair_01      # hoạ tiết / model / HDRI
+node cong-cu/lay.mjs 2d-assets animal-pack                  # git, chỉ thư mục gói đó
+node cong-cu/lay.mjs 3dtextures tiles-073                   # đủ bộ map PBR
+node cong-cu/lay.mjs openclipart --loc castle               # và openverse
+
+# 3. Model: FBX -> GLB (giữ clip chuyển động), đếm tam, giảm tam
+node cong-cu/mo_hinh.mjs fbx assets_source/farmbuildings
+node cong-cu/mo_hinh.mjs tam assets_source/farmbuildings
+node cong-cu/mo_hinh.mjs giam Barn.glb --tam 3000           # -> Barn_giam.glb
 ```
 
 Gọi từ đâu cũng được (`node /home/user/kho-game/cong-cu/do.mjs ...`): công cụ tìm `ke/`
 theo `import.meta.dirname`, còn `lay.mjs` đổ về `./assets_source/` của **thư mục đang
-đứng**, nên dự án khác không phải chép gì.
+đứng** (hay `--dich`), nên dự án khác không phải chép gì.
 
-Model nào **chưa có trong manifest** thì `lay.mjs` tự hỏi API lúc tải — mục lục phủ cả
-kho, manifest chỉ là đường tắt cho những cái đã lấy về một lần.
+**Vì sao một cửa (29/09):** trước đó Kenney, itch, hoạ tiết Poly Haven chỉ lấy được bằng
+công cụ nằm ở `quoc-chien` — cột `cach_lay` ghi "(ở repo quoc-chien)" — game khác không có
+thì tự viết lại. Nay mọi cách lấy ở đây; `quoc-chien/tools/tai_*.mjs` chỉ gọi sang. Bố cục
+thư mục giữ y cũ (`assets_source/<gói>/`, `assets_source/hoa_tiet/<mã>.jpg`) vì mẻ nướng trỏ
+thẳng vào đó. Mỗi thứ tải về kèm `ghi_cong.json`.
+
+Model Icosa **chưa có trong manifest** thì `lay.mjs` tự hỏi API lúc tải — mục lục phủ cả
+kho, manifest chỉ là đường tắt. **GLTF1 bỏ qua mặc định** (`--gltf1` để lấy): bộ đọc của
+`quoc-chien` chỉ hiểu glTF 2.0. 29/09 vá luôn lỗi `--id A B` đổ nhầm vào thư mục `./A/`.
+
+`mo_hinh.mjs` tự `npm ci` lần đầu vào `cong-cu/mo_hinh/` (không đặt `package.json` ở gốc:
+hook đầu phiên sẽ bắt mọi phiên kho-game cài thư viện chỉ việc model mới cần). Đo 29/09:
+13 FBX Farm Buildings → 13 GLB trong 5,7 giây, 13/13 dưới 8.000 tam; `giam` bỏ pháp tuyến
+trước khi gộp đỉnh (model đa giác thấp tô phẳng thì không gộp được): 7.827 → 3.078 tam.
 
 ### Từ điển Việt→Anh — bản gốc ở `cong-cu/tu_dien.json`
 
@@ -78,7 +101,7 @@ in gọn, hook không được bắt nhầm câu nói việc. Thử với từ �
 
 `vet:kho` (`cong-cu/vet_kho.mjs`) giữ đúng ba luật của `CLAUDE.md`, máy kiểm chứ không
 phải chữ phải nhớ: cột `ten`/`license` bắt buộc · số cột đều · **không license SA/ND** ·
-`id` không trùng · không file nhị phân trong git · từ điển không lệch · số license `?`
+`id` không trùng · không file nhị phân trong git · từ điển còn đó · số license `?`
 **chỉ được tụt** (trần ở `cong-cu/nguong_vet.json`, tụt thì tự hạ).
 
 Chạy lại được: model đã có trên đĩa thì bỏ qua. Mỗi model tải kèm `ghi_cong.json` để
@@ -87,11 +110,18 @@ ghi công đi theo file, không nằm một chỗ dễ mất.
 ## Đưa nguồn mới vào kho
 
 ```bash
-# 1. Tải về bằng công cụ của dự án (ví dụ quoc-chien: npm run tai:icosa)
-# 2. Sinh manifest từ thư mục đã tải
-node cong-cu/sinh_manifest.mjs <tên-nguồn> <đường-dẫn-thư-mục>
-# 3. Chép bản kê của dự án vào ke/<tên-nguồn>.md, rồi commit
+# 1. Viết cong-cu/quet_<nguồn>.mjs sinh ke/<nguồn>.tsv (cột ten + license bắt buộc)
+# 2. Viết cong-cu/lay_<nguồn>.mjs, thêm một dòng vào LENH_RIENG ở đầu lay.mjs
+# 3. Tải về một lần thì sinh manifest: node cong-cu/sinh_manifest.mjs <nguồn> <thư-mục>
+# 4. bash scripts/do.sh, rồi commit
 ```
+
+Mẫu mới nhất (29/09): `quet_quaternius.mjs` + `lay_quaternius.mjs` (Drive hay itch),
+`quet_3dtextures.mjs` (API WordPress), `quet_2d_assets.mjs` (catalog trong một repo GitHub).
+Thư mục Google Drive công khai đọc/tải không khoá bằng `cong-cu/drive.mjs`.
+
+`ke/ma-nguon-mo.tsv` và `ke/thu-vien.tsv` là hai bản kê **viết tay** (không có lệnh quét) —
+sửa thẳng được. Mọi bản kê khác sinh bằng `quet_*.mjs`/`nap_ke_cu.mjs`: sửa tay là mất.
 
 Bản kê Markdown của dự án cũ (`KHO_ASSET.md`, `KHO_CHUNG.md`) thì đổi sang TSV bằng
 `nap_ke_cu.mjs` — **tham số thứ ba là `cach_lay` dự phòng**, thiếu nó thì gói nào không
@@ -99,7 +129,7 @@ tra được để `?` và bản kê mất đường lấy:
 
 ```bash
 node cong-cu/nap_ke_cu.mjs ../quoc-chien/docs/KHO_ASSET.md quoc-chien-assets \
-  "node tools/tai_itch.mjs <tac-gia>/<goi>  (o repo quoc-chien)"
+  "node cong-cu/lay.mjs itch <tac-gia>/<goi>"
 node cong-cu/nap_ke_cu.mjs ../quoc-chien/docs/KHO_CHUNG.md tayvuc-kho-chung \
   "npm run kho:lay <goi>  (o repo quoc-chien, clone tayvuc)"
 ```
@@ -122,12 +152,18 @@ dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite c
 | `quoc-chien/assets_source` (Kenney · Quaternius · KayKit) | `ke/quoc-chien-assets.tsv` | 4.599 | CC0 3.904 · `?` 695 | `cach_lay` ghi sẵn từng gói |
 | Poly Haven — model · **hoạ tiết · HDRI** | `ke/polyhaven.tsv` | 2.378 | CC0 toàn bộ | API mở, không cần khoá |
 | Kho chung `tayvuc` | `ke/tayvuc-kho-chung.tsv` | 1.347 | CC0 480 · `?` 867 | `npm run kho:lay` |
-| **Kenney** — cả kho, không chỉ gói đã tải | `ke/kenney.tsv` | 215 gói | CC0 toàn bộ | `tai_asset.mjs <gói>` |
+| **Quaternius** — cả trang quaternius.com, **mỗi dòng một gói**, gói Drive kê cả tên model | `ke/quaternius.tsv` | `kiem_ke.mjs` | CC0 1.0 | `lay.mjs quaternius <gói>` |
+| **Openclipart** | `ke/openclipart.tsv` | 108.968 | CC0 | `lay.mjs openclipart --loc` |
+| **Openverse** (Wikimedia · rawpixel) | `ke/openverse.tsv` | 7.583 | CC0 · CC-BY | `lay.mjs openverse --loc` |
+| **2d-assets** — mirror Kenney + OpenGameArt trên GitHub, mỗi dòng một gói | `ke/2d-assets.tsv` | `kiem_ke.mjs` | CC0; **7 gói lệch ghi theo bản gốc CC-BY** | `lay.mjs 2d-assets <id>` — git |
+| **3dtextures.me** — hoạ tiết PBR đủ bộ map | `ke/3dtextures.tsv` | `kiem_ke.mjs` | CC0 1.0 | `lay.mjs 3dtextures <mã>` — Drive |
+| **Thư viện code** — license đọc từ npm, **viết tay** | `ke/thu-vien.tsv` | `kiem_ke.mjs` | MIT, vài cái BSD/Apache/Zlib/MPL (cột `canh_bao`) | `npm i <tên>` — anh duyệt từng cái |
+| **Kenney** — cả kho, không chỉ gói đã tải | `ke/kenney.tsv` | 215 gói | CC0 toàn bộ | `lay.mjs kenney <gói>` |
 | **Freesound** — âm thanh | `ke/freesound.tsv` | **27.313** | CC0 14.587 · CC-BY 12.726 | cần khoá API, tải theo link |
 | **OpenGameArt** — âm thanh · nhạc · 2D · hoạ tiết | `ke/opengameart.tsv` | **22.714** | CC0 11.816 · CC-BY 10.898 | mở trang gốc, tải tay |
 | **game-icons.net** — biểu tượng | `ke/game-icons.tsv` | **3.658** | CC-BY 3.0 | `curl -O` link SVG trong cột `cach_lay` |
 | **Google Fonts** | `ke/font.tsv` | 1.941 họ | OFL | `fonts.google.com/specimen/<tên>` |
-| **itch.io CC0** — **2D 360** · 3D 165 | `ke/itch.tsv` | 525 gói | CC0 (tác giả tự khai) | `tai_itch.mjs <tác-giả>/<gói>` |
+| **itch.io CC0** — **2D 360** · 3D 165 | `ke/itch.tsv` | 525 gói | CC0 (tác giả tự khai) | `lay.mjs itch <tác-giả>/<gói>` |
 | Mã nguồn mở — **học kiến trúc, cấm chép code** | `ke/ma-nguon-mo.tsv` | 10 | GPL/AGPL | đọc trên GitHub |
 
 **Chia theo loại — cột `loai` của từng bản kê:**
@@ -576,6 +612,38 @@ nhanh**: nhanh hơn nghĩa là hỏng nhiều hơn, tổng thời gian tệ hơn
 5. Còn mở: quét Openverse thêm từ khoá (giờ rộng rãi quota), và
    `node cong-cu/rut_tu_khoa.mjs` có thể sinh bộ từ khoá lớn hơn 44 từ hiện tại.
 
+## Dò 29/09 — nhân vật, cử động, hiệu ứng, thư viện; **đừng soi lại**
+
+**Kho CÓ SẴN, chỉ là dò tiếng Việt ra 0 nên không ai dùng** (nay `do.mjs "cử động"` ra):
+Quaternius Universal Animation Library 1 (itch) + 2 (OpenGameArt) — CC0, bản miễn phí UAL1
+45 clip · KayKit Character Animations — CC0, 133 clip · Kenney Animated Characters ×3 ·
+Kenney Particle Pack, Smoke Particles · Ninja Adventure (Pixel-boy) — CC0, nhân vật + VFX +
+icon + nhạc · Screaming Brain 1000+ ô nền isometric (OGA, CC0) · game-icons.net (icon kĩ năng).
+
+**Nạp mới 29/09:** Quaternius cả trang (gói Drive kê tên model), `2d-assets`, 3dtextures.me,
+`ke/thu-vien.tsv`. Cho `quoc-chien`: **Ultimate Fantasy RTS** (Quaternius, CC0, có glTF) —
+nhà theo `FirstAge`/`SecondAge` × `Level1-3`: trại lính, nhà, chợ, cảng, kho, đền, tháp,
+cối xay, ruộng lúa mì — cùng một tay vẽ, khớp cơ chế lên đời; **Farm Buildings** (Barn,
+ChickenCoop, Silo, Windmill…) + **Ultimate Crops** cho ruộng/trại.
+
+**Chưa nạp — ghi lại để khỏi tra lại:**
+
+| Nguồn | Vì sao chưa |
+|---|---|
+| **100STYLE** (mocap 100 kiểu đi, BVH) | CC BY 4.0 — hợp luật; cho game 3D sau này, `quoc-chien` 2D chưa cần |
+| **Effekseer** mẫu hiệu ứng | "hầu hết" CC0 theo trang họ — phải lọc từng mẫu; `tayvuc` kho chung đã có thư mục `effekseer` |
+| **GameAsset.net** 10.783 animation | tự khai CC0, **nguồn gốc chưa rõ**; `anim.gameasset.net` bị chặn (thiếu `*.gameasset.net` trong Allowed domains) |
+| **Sketchfab** | API mở từ 17/09; tải cần token — chưa thử token cá nhân; nhiều đồ rip game thương mại, phải lọc |
+
+**Loại — đừng mở:**
+
+| Nguồn | Lý do |
+|---|---|
+| **Mixamo** | miễn phí trong game, **cấm phát tán file gốc** → không vào kho public; ngoài CC0/CC-BY/MIT |
+| **Hunyuan3D** (Tencent) | license trừ EU/Anh/Hàn, trần 1 triệu người dùng, cấm dùng đầu ra huấn luyện model khác |
+| **TRELLIS.2** (MIT, ảnh → 3D) | 4 tỉ tham số, cần GPU — máy ảo không GPU, `huggingface.co` chặn; chủ dự án không có máy tính |
+| **Gemini sinh ảnh** | khoá hiện có **liệt kê** `gemini-3.1-flash-image`, `gemini-3-pro-image`; **chưa gọi thử** (tốn tiền). Ảnh AI nhiều nước không bảo hộ bản quyền, gắn SynthID, khó đồng phong cách — chủ dự án quyết |
+
 ## Nợ của kho — rà 18/09, số sinh từ `vet:kho`
 
 - **✅ Hai bản kê dự án: SỬA XONG 18/09**, gốc là `cong-cu/nap_ke_cu.mjs` (không phải
@@ -596,7 +664,12 @@ nhanh**: nhanh hơn nghĩa là hỏng nhiều hơn, tổng thời gian tệ hơn
   license thì phải chuẩn hoá lúc đọc.
 - **`cong-cu/quet_kenney.mjs` cần `quoc-chien/tools/lib/cdp.mjs`.** Cố ý — không chép sang
   để khỏi hai bản lệch — và nó **báo lỗi rõ** khi thiếu, không hỏng lặng. Chỉ ảnh hưởng
-  việc quét lại Kenney, không ảnh hưởng dò hay lấy.
+  việc QUÉT LẠI Kenney; LẤY gói Kenney thì từ 29/09 `lay.mjs kenney` tự đủ.
+- ~~`cach_lay` ghi "(ở repo quoc-chien)"~~ — **sửa 29/09**: Kenney, itch, hoạ tiết Poly Haven
+  lấy bằng `lay.mjs <nguồn>` ngay đây. Còn 867 dòng kho chung `tayvuc` giữ `npm run kho:lay`
+  (repo Private, dừng hẳn 05/09 — không đụng).
+- **`itch.tsv` chỉ là một phần itch CC0**: `quet_itch.mjs` dừng ở 30 trang mỗi tag, 2 tag
+  (`2d`, `3d`). Quaternius có riêng `ke/quaternius.tsv` nên không còn hụt gói Quaternius.
 - ~~`node cong-cu/do.mjs chicken --tam 8000` in 26 KB (~7.000 token)~~ — **sửa 29/09**: mặc
   định in gọn, thước `thu:do` giữ trần byte.
 - **`CLAUDE.md` chưa nhắc `bash scripts/do.sh`** — file khoá, phải hỏi chủ dự án trước.
