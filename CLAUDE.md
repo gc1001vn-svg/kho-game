@@ -5,17 +5,18 @@ kê + manifest + công cụ; model thật tải về khi cần rồi thôi.
 
 ## Đầu phiên — đọc kho ghi nhớ trước hết
 
-Ba file, **đọc HẾT, cấm `head`/`tail`/`sed -n`**:
+Kho `ghi-nho` **Private** → phiên mới chưa có quyền. Đúng thứ tự:
 
-```bash
-git -C /home/user/ghi-nho pull -q 2>/dev/null \
-  || git clone --depth 1 https://github.com/gc1001vn-svg/ghi-nho /home/user/ghi-nho
-cat /home/user/ghi-nho/{so-thich,du-an,trang-thai}.md
-node /home/user/ghi-nho/cong-cu/cai_dat.mjs
-```
+1. Chưa có `/home/user/ghi-nho` → gọi tool **`add_repo`** TRƯỚC (`owner: gc1001vn-svg` ·
+   `repo: ghi-nho` · `access: read`), rồi
+   `git clone --depth 1 https://github.com/gc1001vn-svg/ghi-nho /home/user/ghi-nho`.
+   Clone khi chưa `add_repo` luôn trả
+   `fatal: could not read Username for 'https://github.com': terminal prompts disabled`.
+2. Có rồi → `git -C /home/user/ghi-nho pull -q`.
+3. `cat /home/user/ghi-nho/{so-thich,du-an,trang-thai}.md` — đọc HẾT, cấm `head`/`tail`/`sed -n`.
 
-Kho đó **Private**; clone hỏng thì `add_repo` với `access: read`, **đừng xin `push`**.
-Bảy bước đầu phiên · cách trả lời · luật báo "xong": **ĐỀU Ở KHO**.
+Bảy bước đầu phiên · cách trả lời · luật báo "xong": **ĐỀU Ở KHO**. `cai_dat.mjs` gọi từ cài
+đặt cá nhân, không chép vào đây.
 
 ## Ba luật của repo này
 
