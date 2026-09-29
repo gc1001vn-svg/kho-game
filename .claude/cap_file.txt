@@ -1,0 +1,5 @@
+# Cac cap file phu thuoc nhau: sua mot ben thi phai doc lai ben kia.
+# Thuoc `check:cap` bat dung bo quen. No KHONG biet the nao la khop — viec do la cua nguoi.
+#
+# Khuon: duong/dan/a.md | duong/dan/b.md
+# Chua co cap nao. Them cap roi chay: node scripts/check_cap.mjs --ghi

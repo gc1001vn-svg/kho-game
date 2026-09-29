@@ -20,7 +20,9 @@ import { readFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
+import { bat, thoat as thoat_an, cat_tran } from './hook_chung.mjs';
 
+const ID = 'cau:nhac-kho';
 const KHO = '/home/user/ghi-nho';
 const NGUON = ['so-thich.md', 'du-an.md', 'trang-thai.md', 'cong-cu/luat-chi-tiet.md'];
 
@@ -193,9 +195,18 @@ function doc_so(p) {
   try { const a = JSON.parse(readFileSync(p, 'utf8')); return Array.isArray(a) ? a : []; } catch { return []; }
 }
 
+/**
+ * Ghi JSON ra stdout roi thoat — CHO CHU RA HET moi thoat.
+ *
+ * `process.stdout.write(s); process.exit(0)` cat mat phan tren 146.176 byte
+ * (do 18/09, xem `hook_chung.mjs`). Hook nay moi ~973 byte nen chua dinh, nhung
+ * no la hook duy nhat o day dung stdout lam duong CHINH — JSON cut giua chung
+ * thi harness coi ca hook la hong va nuot luon luot go.
+ */
 function thoat(o) {
-  try { process.stdout.write(JSON.stringify(o)); } catch { /* im lang */ }
-  process.exit(0);
+  let s = '';
+  try { s = JSON.stringify(o); } catch { /* im lang */ }
+  thoat_an(0, { ra: s });
 }
 
 const IM = { continue: true, suppressOutput: true };
@@ -277,7 +288,7 @@ function chinh(raw) {
   }
 
   const dong = chon.map((x) => `- [${x.k.ten} › ${x.k.tieu_de}] ${x.noi}`);
-  const ngu_canh = [
+  const tho = [
     '<nhac-kho>',
     'Tra tu kho ghi-nho theo cau vua go (hook, khong ton luot goi):',
     ...dong,
@@ -287,10 +298,12 @@ function chinh(raw) {
     '</nhac-kho>',
   ].join('\n');
 
-  // ~4 ky tu/token. In gia ngay tai cho — luat kho: so lieu phai sinh tu lenh.
-  const tok = Math.round(ngu_canh.length / 4);
+  // Tran cua rieng hook nay (SO_KHOI x DAI_KHOI) la tran MEM: doi mot hang so
+  // la no phinh. `cat_tran` la tran CHUNG cho moi hook chen ngu canh — lop cuoi,
+  // khong ai sua nham qua duoc. Token uoc byte/3 (`uoc_tok`), so sinh tu lenh chu khong go tay.
+  const { van: ngu_canh, tok, cat } = cat_tran(tho);
 
-  ghi_so(`CHEN ${chon.length} khoi\t~${tok} tok\t${chon.map((x) => x.k.tieu_de).join(' | ')}`);
+  ghi_so(`CHEN ${chon.length} khoi\t~${tok} tok${cat ? ' (DA CAT)' : ''}\t${chon.map((x) => x.k.tieu_de).join(' | ')}`);
 
   thoat({
     systemMessage: `[nhac kho] ${chon.length} khoi (~${tok} tok)`,
@@ -301,6 +314,10 @@ function chinh(raw) {
 // Khong co duong nao duoc phep lam treo mot luot lam viec that.
 process.on('uncaughtException', () => thoat(IM));
 process.on('unhandledRejection', () => thoat(IM));
+
+// Muc `nhe` bo hook nay: no chen chu vao ngu canh MOI LUOT go, dat nhat trong
+// nam hook. Tat thi mat lop nhac, khong mat lop bao ve nao.
+if (!bat(ID, ['thuong', 'chat'])) { ghi_so('im — muc hien tai khong goi hook nay'); thoat(IM); }
 
 let raw = '';
 process.stdin.setEncoding('utf8');

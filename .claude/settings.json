@@ -32,6 +32,26 @@
             "timeout": 10
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/scripts/chan_vong_vo_han.mjs",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/scripts/chan_doc_lon.mjs",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "PostToolUse": [
@@ -40,6 +60,16 @@
           {
             "type": "command",
             "command": "node $CLAUDE_PROJECT_DIR/scripts/ghi_so_lenh.mjs",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node $CLAUDE_PROJECT_DIR/scripts/chan_file_khoa.mjs",
             "timeout": 10
           }
         ]
@@ -89,6 +119,10 @@
     "init": "off",
     "giam-token": "user-invocable-only",
     "lap-ke-hoach": "user-invocable-only",
-    "code-review": "user-invocable-only"
+    "code-review": "user-invocable-only",
+    "doubt-driven-development": "user-invocable-only",
+    "constraint-driven-development": "user-invocable-only",
+    "code-simplification": "user-invocable-only",
+    "google-workspace": "off"
   }
 }

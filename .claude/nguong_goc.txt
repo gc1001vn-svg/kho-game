@@ -1,0 +1,11 @@
+# Moc goc cua cac nguong va danh sach mien. Thuoc `check:nguong` doc file nay.
+#
+# CAM tu sua de cho mot thuoc khac xanh. Muon noi that su: hoi chu du an truoc,
+# roi sua so o day VA ghi ngay duoi mot dong ly do co ngay thang.
+# Tut xuong (that chat hon) thi lam thang, khong can hoi.
+
+check_token.nguong=1600
+check_ke_hoach.nguong=60
+check_ke_hoach.mien=2
+
+# 2026-09-29 dung moc dau tien, lay dung so dang chay. Chua noi lan nao.

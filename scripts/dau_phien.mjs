@@ -13,11 +13,18 @@
 
 import { existsSync, readFileSync } from 'node:fs';
 import { execSync } from 'node:child_process';
+import { bat, thoat, cat_tran, skill_chua_khoa } from './hook_chung.mjs';
+
+const ID = 'phien:dau-phien';
 
 // Hook nay chi BAO CAO. No hong thi phien van phai chay binh thuong — khong co
 // luoi nay thi mot loi khong ai ngo do ra ca vet stack vao ngu canh moi phien.
 process.on('uncaughtException', () => process.exit(0));
 process.on('unhandledRejection', () => process.exit(0));
+
+// Muc `nhe` bo khoi nay: no la thu DUY NHAT o day chen chu vao ngu canh moi
+// phien. Can mot phien that re thi ha muc, khong phai go hook ra khoi settings.
+if (!bat(ID, ['thuong', 'chat'])) process.exit(0);
 
 const chay = (c) => { try { return execSync(c, { encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'] }).trim(); } catch { return ''; } };
 const d = [];
@@ -53,19 +60,11 @@ if (existsSync(pSet)) {
     if (n === 0) {
       d.push('skillOverrides TRONG — moi phien phi ~12.500 ky tu. Chay cong-cu/cai_dat.mjs');
     } else {
-      // Skill CO Y de bat liet ke o `.claude/skill_bat.txt` (mot ten mot dong,
-      // `#` la ghi chu). Khong co file do thi moi skill khong khoa deu bi bao.
-      const pBat = '.claude/skill_bat.txt';
-      const batCoY = new Set(
-        existsSync(pBat)
-          ? readFileSync(pBat, 'utf8').split('\n').map((l) => l.split('#')[0].trim()).filter(Boolean)
-          : [],
-      );
-      const thuMuc = chay('ls -d ~/.claude/skills/synced/*/*/ 2>/dev/null')
-        .split('\n').filter(Boolean)
-        .map((p) => p.replace(/\/$/, '').split('/').pop());
-      const sot = thuMuc.filter((t) => !(t in khoa) && !batCoY.has(t));
-      if (sot.length) d.push(`skill CHUA co khoa: ${sot.join(' ')} — tat trong skillOverrides, hoac ghi vao ${pBat} neu co y bat`);
+      // Ham dung chung voi `check_hook` (lenh do): hook nay co the chay truoc khi skill
+      // tai ve may va sot, lenh do chay sau bat lai. Sua o BAN MAU kho — `cai_dat.mjs`
+      // ghi de `skillOverrides` cua repo moi dau phien, sua thang settings.json la mat.
+      const sot = skill_chua_khoa();
+      if (sot.length) d.push(`skill CHUA co khoa: ${sot.join(' ')} — them vao /home/user/ghi-nho/cong-cu/skill_overrides.json roi chay cai_dat.mjs; co y bat thi ghi .claude/skill_bat.txt`);
     }
   } catch { d.push(`${pSet} hong dinh dang`); }
 } else if (existsSync('.git')) {
@@ -102,6 +101,7 @@ d.push(lenhDo ? `lenh do: ${lenhDo}` : 'repo CHUA co lenh do — dung mot cai tr
 // Luat kho: so lieu phai SINH TU LENH, dung go tay vao tai lieu. Khoi nay vao
 // ngu canh moi phien ma truoc gio khong ai biet no ton bao nhieu — tran "duoi
 // ~10 dong" la uoc bang mat. In ra thi lan sau cat hay giu deu co so ma cai.
-// ~4 ky tu/token, du de thay xu huong.
-const ra = `[dau phien] ${d.join('\n[dau phien] ')}`;
-console.log(`${ra}\n[dau phien] khoi nay: ${d.length} dong · ~${Math.round(ra.length / 4)} tok`);
+// Uoc bang `uoc_tok` (byte/3) — cung cong thuc voi moi thuoc trong kho.
+const tho = `[dau phien] ${d.join('\n[dau phien] ')}`;
+const { van, tok, cat } = cat_tran(tho);
+thoat(0, { ra: `${van}\n[dau phien] khoi nay: ${d.length} dong · ~${tok} tok${cat ? ' (DA CAT)' : ''}\n` });

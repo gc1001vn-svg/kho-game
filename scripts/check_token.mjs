@@ -47,3 +47,28 @@ if (token > NGUONG) {
   );
   process.exit(1);
 }
+
+// --- File doc MOI dau phien (tuy chon, 29/09) --------------------------------
+// `.claude/doc_dau_phien.txt`: moi dong `duong/dan tran_token`, `#` la ghi chu. Vi sao:
+// `quoc-chien/docs/TIEN_DO.md` co luat "ghi de, khong cong don" ma van phinh len 91.599 byte
+// (~30.500 token) — doc tron moi dau phien, va moi luot goi sau gui lai. Luat chu thi quen,
+// thuoc thi khong. Tran nam trong file do; `check_nguong` cam noi tong cac tran.
+const P_DAU_PHIEN = '.claude/doc_dau_phien.txt';
+if (existsSync(P_DAU_PHIEN)) {
+  const qua = [];
+  for (const tho of readFileSync(P_DAU_PHIEN, 'utf8').split('\n')) {
+    const [duong, tran] = tho.split('#')[0].trim().split(/\s+/);
+    if (!duong) continue;
+    if (!existsSync(duong)) { qua.push(`${duong}: khong co file`); continue; }
+    const tok = Math.floor(readFileSync(duong).length / 3);
+    console.log(`${duong}: ~${tok} token (tran ${tran})`);
+    if (!(tok <= Number(tran))) qua.push(`${duong}: ~${tok} token, vuot tran ${tran}`);
+  }
+  if (qua.length) {
+    console.error(
+      `HONG: file doc moi dau phien vuot tran:\n  ${qua.join('\n  ')}\n` +
+      '  Cat: lich su sang docs/NHAT_KY/, chi tiet tra-khi-can sang file rieng, chi giu trang thai hien tai.',
+    );
+    process.exit(1);
+  }
+}

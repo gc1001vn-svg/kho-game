@@ -26,14 +26,30 @@
 
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { bat, thoat } from './hook_chung.mjs';
+
+const ID = 'dung:chan-bao-xong';
 
 /** Tu phu dinh dung ngay truoc "xong" -> khong tinh la bao xong. */
 const PHU_DINH = 'chưa|chua|không|khong|sắp|sap|gần|gan|nếu|neu|khi nào|khi nao';
+/**
+ * Tu dung ngay truoc "xong" cho thay dang NHAC TOI no chu khong bao: "đợi xong",
+ * "sau khi xong", "dạng báo xong", "chữ xong".
+ *
+ * Can tu 18/09 (lan 4), khi bo neo dau dong. Truoc do chinh cai neo do lam viec nay -
+ * va lam qua tay: no cat luon dang `<viec> xong`, tuc dang bao xong HAY DUNG NHAT.
+ */
+const NOI_TOI = 'đợi|doi|chờ|cho|khi|báo|bao|dạng|dang|kiểu|kieu|lúc|luc|chữ|chu';
 const BAO_XONG = 'xong|hoàn thành|hoan thanh|hoàn tất|hoan tat';
-// Cho phep ky tu trang tri Markdown dung truoc: ` * _ ~ # - > va khoang trang.
-const CO_SO_DO = /^[\s>*_`~#-]*(số đo|so do)\s*:/im;
+/** Tu chao dong phien. Xem cho dung no o duoi - phai di kem dieu kien DO DAI. */
+const CHAO = 'hẹn phiên sau|hen phien sau|hẹn gặp|hen gap|tạm biệt|tam biet'
+  + '|chào anh|chao anh|chúc anh|chuc anh|hẹn anh|hen anh';
+// "Số đo:" o BAT KY cho nao trong dong, mien truoc no khong phai chu cai. Ban cu doi no
+// dung dau dong: 29/09 "Rà xong. Số đo: 17/17 thước đạt" bi chan nham — so do CO, chi
+// nam giua dong — va chu du an thay mot dong loi vo ly.
+const CO_SO_DO = /(?:^|[^\p{L}])(số đo|so do)\s*:/imu;
 /** Dong de xuat buoc ke, hay khoi viec cuoi phien - mot trong hai la du. */
-const CO_DE_XUAT = /^[\s>*_`~#-]*(đề xuất|de xuat)\s*:|việc của anh bây giờ|viec cua anh bay gio/im;
+const CO_DE_XUAT = /(?:^|[^\p{L}])(đề xuất|de xuat)\s*:|việc của anh bây giờ|viec cua anh bay gio/imu;
 
 let raw = '';
 // Fail-open ca khi CHINH hook hong, khong chi khi du lieu hong. Doan duoi co
@@ -41,6 +57,10 @@ let raw = '';
 process.on('uncaughtException', () => process.exit(0));
 process.on('unhandledRejection', () => process.exit(0));
 process.stdin.on('error', () => process.exit(0));
+
+// Muc `nhe` bo hook nay: no la hook DUY NHAT chan mot cau tra loi da viet xong.
+// Phien nao dang go mot loi gap ma no chan nham thi ha muc, dung go khoi settings.
+if (!bat(ID, ['thuong', 'chat'])) process.exit(0);
 
 process.stdin.on('data', (c) => { raw += c; });
 process.stdin.on('end', () => {
@@ -59,6 +79,16 @@ process.stdin.on('end', () => {
     : '';
   if (!msg) process.exit(0);
 
+  // Cau chao dong phien: "Xong. Hen phien sau." So do da dua o luot TRUOC, day chi la
+  // cau chao - ma hook chi nhin thay mot luot. Do 19/09, bat nham that.
+  //
+  // HAI dieu kien phai dung CUNG luc: ngan (mot doan, duoi 120 ky tu) VA co tu chao.
+  // Chi mot trong hai thi "Xong roi." cung lot, ma cau do chu du an muon bat; con mot
+  // bao cao dai ket bang "Hen phien sau" thi tu chao thanh cua thoat cho moi lan bao xong.
+  const than = msg.trim();
+  const soDong = than.split('\n').filter((l) => l.trim() !== '').length;
+  if (than.length <= 120 && soDong <= 2 && RegExp(CHAO, 'i').test(than)) process.exit(0);
+
   // Bo phan trich dan truoc: khoi ma, nhay nguoc, nhay kep, nhay don.
   // Nhac lai chu "xong" de ban bac thi khong phai la bao xong.
   // Roi bo cac cho "chua xong", "khong hoan thanh"...
@@ -68,37 +98,39 @@ process.stdin.on('end', () => {
     .replace(/`[^`\n]*`/g, ' ')
     .replace(/["\u201C\u201D][^"\u201C\u201D\n]*["\u201C\u201D]/g, ' ')
     .replace(/['\u2018\u2019][^'\u2018\u2019\n]*['\u2018\u2019]/g, ' ')
-    .replace(new RegExp(`(${PHU_DINH})\\s+(${BAO_XONG})`, 'g'), ' ');
-  // Chi tinh la BAO xong khi cum tu dung DAU DONG hoac DAU CAU. Nam giua dong
-  // la dang nhac toi no (vd mot muc trong danh sach), khong phai bao xong.
-  // Sau cum tu phai la dau cau, het dong, hoac mot trong may tu chot cau.
-  // "Xong chup bang skill gui em" la sai bao chu du an lam, khong phai bao xong.
-  const RAC = String.raw`[\s>*_\-#\d.)\]]*`;
+    .replace(new RegExp(`(${PHU_DINH})\\s+(${BAO_XONG})`, 'g'), ' ')
+    .replace(new RegExp(`(${NOI_TOI})\\s+(${BAO_XONG})`, 'g'), ' ');
+  // Cum tu nam O GIUA dong cung tinh - "Buoc 1 va 2 xong, da gop main" la bao xong that,
+  // ma ban truoc bo qua vi doi no dung dau dong hay ngay sau dau cham cau. Do 18/09:
+  // dang `<viec> xong` la dang bao xong HAY DUNG NHAT, ma lot sach.
+  //
+  // Cai giu cho khoi bat nham la `TIEP`: sau cum tu PHAI la dau cau, het dong, hay mot
+  // trong may tu chot cau. Nho vay "xong thi gui" va "xong chup bang gui em" van lot
+  // luoi - hai cai do la sai bao chu du an lam, khong phai bao xong.
   const TIEP = '(?:[\\s*_`)\\]]*(?:[.!?,:;…]|$)|\\s+(?:rồi|roi|cả|ca|hết|het|luôn|luon|nhé|nhe))';
-  const baoXong = t.split('\n').some((dong) =>
-    new RegExp(`^${RAC}(${BAO_XONG})${TIEP}`, 'u').test(dong) ||
-    new RegExp(`[.!?\u2026]\\s+${RAC}(${BAO_XONG})${TIEP}`, 'u').test(dong),
+  const baoXong = t.split('\n').some(
+    (dong) => new RegExp(`(?:^|[^\\p{L}])(${BAO_XONG})${TIEP}`, 'u').test(dong),
   );
   if (!baoXong) process.exit(0);
 
   const dongSoDo = msg.split('\n').find((l) => CO_SO_DO.test(l));
   if (!dongSoDo) {
-    console.error(
-      'Cau tra loi noi "xong" nhung khong co dong "So do:". ' +
-      'Chua do duoc thi khong duoc bao xong — hay dua so do that, ' +
-      'hoac ghi mot dong "So do: khong can - <ly do>".',
-    );
-    process.exit(2);
+    thoat(2, {
+      loi: 'Cau tra loi noi "xong" nhung khong co dong "So do:". ' +
+        'Chua do duoc thi khong duoc bao xong — hay dua so do that, ' +
+        'hoac ghi mot dong "So do: khong can - <ly do>".',
+    });
+    return;
   }
 
   // Bao xong ma khong noi buoc ke -> chu du an phai tu nghi ra viec.
   if (!CO_DE_XUAT.test(msg)) {
-    console.error(
-      'Cau tra loi noi "xong" nhung khong co dong "De xuat:". Xong mot viec thi '
-      + 'phai noi buoc ke - viec gi, vi sao, ton bao lau. That su het viec thi ghi '
-      + '"De xuat: khong co - <ly do>".',
-    );
-    process.exit(2);
+    thoat(2, {
+      loi: 'Cau tra loi noi "xong" nhung khong co dong "De xuat:". Xong mot viec thi '
+        + 'phai noi buoc ke - viec gi, vi sao, ton bao lau. That su het viec thi ghi '
+        + '"De xuat: khong co - <ly do>".',
+    });
+    return;
   }
 
   // Ghi "khong can" thi cho qua, da noi ro ly do la du.
@@ -121,12 +153,12 @@ process.stdin.on('end', () => {
   }
 
   if (!daChayLenh) {
-    console.error(
-      'Cau tra loi dua "So do:" nhung so lenh cua luot nay khong ghi nhan ' +
-      'lenh Bash nao da chay. So do phai chep tu ket qua that. ' +
-      'Hay chay lenh do that, hoac sua thanh "So do: khong can - <ly do>".',
-    );
-    process.exit(2);
+    thoat(2, {
+      loi: 'Cau tra loi dua "So do:" nhung so lenh cua luot nay khong ghi nhan ' +
+        'lenh Bash nao da chay. So do phai chep tu ket qua that. ' +
+        'Hay chay lenh do that, hoac sua thanh "So do: khong can - <ly do>".',
+    });
+    return;
   }
   process.exit(0);
 });

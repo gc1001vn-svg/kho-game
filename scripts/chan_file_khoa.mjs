@@ -1,63 +1,49 @@
 #!/usr/bin/env node
-// Hook PreToolUse cho Claude Code: chan sua cac file phai hoi chu du an truoc.
+// Hook PreToolUse + PostToolUse cho Claude Code: chan sua cac file phai hoi chu du an truoc.
 // Ban dung chung cho moi du an cua gc1001vn-svg.
 //
-// Cai vao mot du an:
-//   1. Chep file nay vao <du-an>/scripts/chan_file_khoa.mjs
-//   2. Liet ke duong dan khoa trong <du-an>/.claude/file_khoa.txt, moi dong mot
-//      duong dan tuong doi goc repo. Dong ket thuc bang "/" = khoa ca thu muc.
-//      Dong bat dau bang "#" la ghi chu. Khong co file nay thi dung MAC_DINH.
-//   3. Them vao <du-an>/.claude/settings.json:
-//      "PreToolUse": [{ "matcher": "Edit|Write|NotebookEdit|Bash", "hooks": [
-//        { "type": "command",
-//          "command": "node $CLAUDE_PROJECT_DIR/scripts/chan_file_khoa.mjs",
-//          "timeout": 10 } ] }]
+// Cai vao mot du an: `node /home/user/ghi-nho/cong-cu/cai_dat.mjs <repo>`. No gan file nay
+// vao HAI moc: PreToolUse (`Edit|Write|NotebookEdit|Bash`) va PostToolUse (`Bash`).
+// Danh sach khoa: <du-an>/.claude/file_khoa.txt, moi dong mot duong dan tuong doi goc
+// repo. Dong ket thuc bang "/" = khoa ca thu muc. Dong bat dau bang "#" la ghi chu.
+// Khong co file do thi dung MAC_DINH.
 //
 // ---------------------------------------------------------------------------
 // NO CHAN DUOC GI VA KHONG CHAN DUOC GI - doc truoc khi tin vao no
 //
-// Hook nay chan duoc viec sua NHAM va sua QUEN HOI. No KHONG chan duoc mot tro
-// ly co tinh di duong vong: shell co muoi cach ghi file (`>`, `sed -i`, `tee`,
-// `python`, `perl`, `mv`, `cp`...) va khong the bat het bang cach doc chuoi
-// lenh. Dung tuong day la mot cai KHOA. No la mot cai NHAC, cong voi mot cuon
-// so ghi lai ai da sua gi.
+// Hook nay chan duoc viec sua NHAM va sua QUEN HOI qua `Edit`/`Write`. No KHONG chan
+// duoc mot tro ly co tinh di duong vong. No la mot cai NHAC, cong voi mot cuon so ghi
+// lai ai da sua gi.
 //
-// Ngay 11/09/2026 dung ra dieu do: chu du an DA DONG Y sua `docs/TECH_SPEC.md`,
-// hook van chan (ban cu khong co cach nao ghi nhan "da duoc dong y"), nen tro
-// ly phai sua bang `python3` - tuc la di vong qua chinh cai hook. Ban nay them
-// hai thu de chuyen do khong con xay ra:
-//
-//   1. VE DUYET (`.claude/da_duyet.txt`): mot dong mot duong dan. Co ve thi cho
-//      qua va XOA dong do ngay - ve dung MOT LAN, khong thanh giay phep vinh
-//      vien. Tro ly chi duoc ghi ve SAU khi chu du an dong y.
-//   2. SO GHI (`.claude/nhat_ky_file_khoa.log`): moi lan dung toi file khoa deu
-//      ghi lai thoi gian + duong dan + cong cu. Chu du an soi lai duoc.
-//
-// Ve do tro ly tu ghi duoc, nen no khong ngan duoc gian doi - no chi lam viec
-// gian doi PHAI CO Y va DE LAI DAU VET. Do la muc bao ve that su dat duoc.
+//   1. VE DUYET (`.claude/da_duyet.txt`): mot dong mot duong dan. Co ve thi `Edit` duoc
+//      qua va dong ve bi XOA ngay - ve dung MOT LAN. Tro ly chi duoc ghi ve SAU khi chu
+//      du an dong y.
+//   2. SO GHI (`.claude/nhat_ky_file_khoa.log`, LEN git): moi lan file khoa bi dung toi.
 //
 // ---------------------------------------------------------------------------
-// 12/09/2026 - DUONG `Bash` KHONG CON CHAN, CHI GHI SO. Chu du an chot.
+// DUONG `Bash`: KHONG CHAN, CHI GHI SO - va chi ghi khi file khoa DOI THAT (29/09)
 //
-// Ban 11/09 chan ca duong Bash. Do mot phien that: so ghi 16 dong, 13 lan CHAN,
-// trong do 4 lan CHAN NHAM - `2>/dev/null` (chuyen huong LOI, khong phai ghi) ·
-// noi dung `-m "..."` cua commit · heredoc `git commit` · heredoc `python` sua
-// file cua REPO KHAC. Va nan hon: `CLAUDE.md` day "sua bang Edit, dung python",
-// ma file khoa thi Edit BI CHAN - doc xong la vao ngo cut.
+// 12/09 chu du an chot bo chan duong Bash (13 lan chan thi 4 lan chan nham), giu ghi so.
+// Ban 12/09 doan "lenh nay co ghi khong" bang cach doc chuoi lenh — va doan nham: `git add`
+// dinh mau `dd `, `node -e` chi DOC file cung bi coi la ghi. Moi dong so thua lam cay git
+// ban (so nam trong git), hook Stop cua may ao bao "There are uncommitted changes" cuoi
+// luot, phai de them commit chi de luu so. Do 29/09: ca hai dong so phien do deu la lenh doc.
 //
-// Ly do chu du an chon bo: chan shell KHONG NGAN DUOC AI CO Y - shell co muoi
-// duong ghi file va doc chuoi lenh khong bat het duoc (chinh dau file nay da
-// noi vay). No chi lam phien nguoi dang lam viec that. Nen doi hau qua tu CHAN
-// sang GHI SO: dau vet moi la thu bao ve, khong phai cai chan.
-//
-// Chan nham thi hong viec that; ghi nham chi ton mot dong so. Doi chieu do la
-// ly do phan nhan dien duoi day GIU NGUYEN du khong con chan.
+// Ban nay KHONG doc chuoi lenh nua. Truoc lenh Bash (PreToolUse) chup mtime + co cua moi
+// file khoa; sau lenh (PostToolUse) chup lai. Khac nhau moi ghi so. Lenh doc khong bao
+// gio vao so; lenh ghi bang bat ky duong nao (`sed -i`, `python`, `>`, `cp`...) deu vao,
+// ke ca file nam trong THU MUC khoa ma ban cu bo qua.
 //
 // Fail-open: doc loi hoac du lieu hong thi cho qua, khong lam treo phien.
 // Y tuong co che hook lay tu MoonshotAI/kimi-code (MIT), code viet lai tu dau.
 
-import { appendFileSync, readFileSync, writeFileSync } from 'node:fs';
-import { join, relative, isAbsolute } from 'node:path';
+import { execFileSync } from 'node:child_process';
+import { appendFileSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { dirname, join, relative, isAbsolute } from 'node:path';
+import { tmpdir } from 'node:os';
+import { bat, thoat } from './hook_chung.mjs';
+
+const ID = 'truoc:chan-file-khoa';
 
 /** Danh sach khoa mac dinh khi du an khong co .claude/file_khoa.txt. */
 const MAC_DINH = ['CLAUDE.md', '.claude/settings.json', '.github/workflows/'];
@@ -65,42 +51,8 @@ const MAC_DINH = ['CLAUDE.md', '.claude/settings.json', '.github/workflows/'];
 const DUONG_VE = '.claude/da_duyet.txt';
 const DUONG_SO = '.claude/nhat_ky_file_khoa.log';
 
-/**
- * Lenh co the GHI de len file. Tu 12/09 dung de GHI SO, khong con de chan.
- *
- * KHONG dua `>` tran vao day. Da thu 11/09 va no chan nham ngay lenh dau tien:
- * gan nhu moi lenh deu co `2>/dev/null` hay `2>&1`, ma do la chuyen huong LOI
- * chu khong phai ghi vao file khoa. Chuyen huong ghi bat bang `CHUYEN_HUONG`
- * duoi day - phai co DUNG duong dan file khoa ngay sau dau `>`.
- */
-const LENH_GHI = [
-  'sed -i', 'tee', 'truncate', 'dd ', 'patch ',
-  'mv ', 'cp ', 'rm ', 'python', 'perl', 'ruby', 'node -e', 'awk ',
-];
-
-/** `> duong/dan` hay `>> duong/dan` - ghi THANG vao dung file do. */
-function chuyenHuongVao(lenh, duong) {
-  const thoat = duong.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return new RegExp(`>>?\\s*['"]?${thoat}`).test(lenh);
-}
-
-/**
- * Bo noi dung `-m "..."` truoc khi quet.
- *
- * VAN BAN khong phai LENH. Commit message hay ke lai viec vua lam - "sua bang python3",
- * "docs/TECH_SPEC.md" - va quet tho thi doc ca hai thanh "lenh python ghi vao file khoa".
- * Da bi dung 11/09: hook chan chinh cai `git commit` ke lai viec vua sua hook.
- */
-function boVanBan(lenh) {
-  let ra = lenh.replace(/-m\s+(['"])[\s\S]*?\1/g, '-m ""');
-  // `git commit -F -` doc message tu heredoc. Do cung la VAN BAN, va commit message ke
-  // lai viec vua lam thi gan nhu chac chan nhac ten file khoa. Chi bo heredoc cho DUNG
-  // `git commit`/`git tag` - khong bo chung, vi `python3 - <<PY` thi heredoc la LENH THAT.
-  if (/git\s+(commit|tag)\b/.test(ra)) {
-    ra = ra.replace(/<<-?\s*(['"]?)([A-Za-z_][A-Za-z0-9_]*)\1[\s\S]*?^\2$/gm, '<<HEREDOC');
-  }
-  return ra;
-}
+/** File chinh cac hook ghi moi luot — khoa ca `.claude/` thi chung khong duoc tinh la "sua". */
+const BO_QUA = new Set([DUONG_SO, DUONG_VE, '.claude/so_lenh.log', '.claude/nhac_kho.log']);
 
 /** Doc danh sach khoa cua du an, khong co thi tra ve MAC_DINH. */
 function docDanhSach(root) {
@@ -118,6 +70,45 @@ function docDanhSach(root) {
 /** Muc khoa trung voi `norm`, hay `undefined`. */
 function timKhoa(muc, norm) {
   return muc.find((d) => (d.endsWith('/') ? norm.startsWith(d) : norm === d));
+}
+
+/** Moi file thuoc danh sach khoa: muc file giu nguyen, muc thu muc bung ra tung file. */
+function fileKhoa(root, muc) {
+  const ra = [];
+  const bung = (rel) => {
+    let ds;
+    try { ds = readdirSync(join(root, rel), { withFileTypes: true }); } catch { return; }
+    for (const m of ds) {
+      const con = `${rel}${m.name}`;
+      if (m.isDirectory()) bung(`${con}/`);
+      else ra.push(con);
+    }
+  };
+  for (const d of muc) {
+    if (d.endsWith('/')) bung(d);
+    else ra.push(d);
+  }
+  return ra.filter((f) => !BO_QUA.has(f));
+}
+
+/** Dau van tay moi file khoa: `mtime:co`, file khong co thi `null`. */
+function chup(root, muc) {
+  const anh = {};
+  for (const f of fileKhoa(root, muc)) {
+    try {
+      const s = statSync(join(root, f));
+      anh[f] = `${s.mtimeMs}:${s.size}`;
+    } catch {
+      anh[f] = null;
+    }
+  }
+  return anh;
+}
+
+/** Cho cat anh chup giua PreToolUse va PostToolUse cua CUNG mot lenh. Ngoai repo: tam. */
+function duongAnh(tho) {
+  const sach = (s) => String(s).replace(/[^\w-]/g, '');
+  return join(tmpdir(), 'chan-file-khoa', sach(tho?.session_id ?? 'phien'), `${sach(tho?.tool_use_id ?? 'bash')}.json`);
 }
 
 /**
@@ -157,26 +148,26 @@ function ghiSo(root, van) {
 }
 
 function chan(norm, khoa, nguon) {
-  console.error(
-    `File "${norm}" trung muc khoa "${khoa}" (${nguon}).\n` +
-    `Phai HOI CHU DU AN va duoc dong y truoc khi sua.\n` +
-    `Duoc dong y roi thi ghi mot dong "${norm}" vao ${DUONG_VE} roi sua lai — ` +
-    `ve dung mot lan, va moi lan cho qua deu ghi vao ${DUONG_SO}.\n` +
-    `CHUA duoc dong y thi KHONG duoc tu ghi ve. Duong Bash tu 12/09 khong bi chan ` +
-    `nhung van GHI SO — di duong do ma chua hoi thi chi la sua trom co dau vet.`,
-  );
-  process.exit(2);
+  thoat(2, {
+    loi:
+      `File "${norm}" trung muc khoa "${khoa}" (${nguon}).\n` +
+      `Phai HOI CHU DU AN va duoc dong y truoc khi sua.\n` +
+      `Duoc dong y roi thi ghi mot dong "${norm}" vao ${DUONG_VE} roi sua lai — ` +
+      `ve dung mot lan, va moi lan cho qua deu ghi vao ${DUONG_SO}.\n` +
+      `CHUA duoc dong y thi KHONG duoc tu ghi ve. Duong Bash khong bi chan ` +
+      `nhung file khoa doi la VAO SO — di duong do ma chua hoi thi chi la sua trom co dau vet.`,
+  });
 }
 
 // FAIL-OPEN khi chinh hook hong. Chan la exit 2; moi ma thoat khac deu cho lenh
 // di tiep. Nhung loi khong bat thi Node in ca vet stack ra stderr va vet do vao
 // ngu canh — nen bat lay roi thoat 0 im lang.
-//
-// Chon fail-open chu khong fail-closed: do mot phien 12/09, 13 lan chan thi 4
-// lan chan NHAM. Hook hong ma chan het thi khong ai lam viec duoc; hook hong ma
-// cho qua thi chi mat mot lop nhac — so lenh van ghi, van con dau vet.
 process.on('uncaughtException', () => process.exit(0));
 process.on('unhandledRejection', () => process.exit(0));
+
+// Chay o CA BA muc. Day la lop bao ve, khong phai lop tien nghi.
+// Muon tat that thi ghi ID vao .claude/hook_phien.txt — co ghi la co dau vet.
+if (!bat(ID, ['nhe', 'thuong', 'chat'])) process.exit(0);
 
 let raw = '';
 process.stdin.on('error', () => process.exit(0));
@@ -192,19 +183,36 @@ process.stdin.on('end', () => {
   const { muc, nguon } = docDanhSach(root);
   const tenCongCu = tho?.tool_name ?? '';
 
-  // --- Bash: KHONG chan, chi ghi so -----------------------------------------
-  // Doi tu chan sang ghi so ngay 12/09 - xem ghi chu dau file.
+  // --- Bash: chup truoc, so sau, doi that moi ghi so ------------------------
+  // Ve duyet la cua duong Edit/Write: duong Bash khong tieu ve, khong thi mot lenh
+  // Bash se an mat cai ve dang cho dung cho Edit.
   if (tenCongCu === 'Bash') {
-    const lenh = boVanBan(tho?.tool_input?.command ?? '');
-    if (!lenh) process.exit(0);
-    const coLenhGhi = LENH_GHI.some((d) => lenh.includes(d));
-    // Chi so voi muc khoa la FILE. Muc thu muc ("...//") de nguyen: ten thu muc
-    // hay xuat hien trong lenh doc binh thuong (`ls .github/workflows/`).
-    const trung = muc.filter((d) => !d.endsWith('/') && lenh.includes(d)
-      && (coLenhGhi || chuyenHuongVao(lenh, d)));
-    // Ve duyet la cua duong Edit/Write. Duong Bash khong tieu ve - tieu o day
-    // thi mot lenh `grep` doan nham se an mat cai ve dang cho dung.
-    for (const d of trung) ghiSo(root, `GHI SO Bash -> ${d}`);
+    const pAnh = duongAnh(tho);
+    if (tho?.hook_event_name === 'PostToolUse') {
+      let truoc;
+      try { truoc = JSON.parse(readFileSync(pAnh, 'utf8')); } catch { process.exit(0); }
+      try { rmSync(pAnh, { force: true }); } catch { /* anh thua nam trong thu muc tam, may ao tu xoa */ }
+      const sau = chup(root, muc);
+      const doi = [...new Set([...Object.keys(truoc), ...Object.keys(sau)])]
+        .filter((f) => (truoc[f] ?? null) !== (sau[f] ?? null));
+      if (doi.length) {
+        // `git pull`/`merge`/`checkout -- f` cung doi mtime, nhung ket qua trung HEAD — la
+        // thay doi DA nam trong lich su git, khong phai sua moi. Chi ghi file con KHAC HEAD.
+        // Khong phai repo git (hay git hong) thi ghi het.
+        let ban = null;
+        try {
+          ban = new Set(execFileSync('git', ['status', '--porcelain', '-z', '--', ...doi],
+            { cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
+            .split('\0').filter((m) => m.length > 3).map((m) => m.slice(3)));
+        } catch { /* khong phai repo git: ghi het */ }
+        for (const f of doi) if (!ban || ban.has(f)) ghiSo(root, `GHI SO Bash -> ${f}`);
+      }
+      process.exit(0);
+    }
+    try {
+      mkdirSync(dirname(pAnh), { recursive: true });
+      writeFileSync(pAnh, JSON.stringify(chup(root, muc)));
+    } catch { /* khong chup duoc thi lenh nay khong vao so — mat mot dong nhac, khong mat viec */ }
     process.exit(0);
   }
 

@@ -43,6 +43,10 @@ done
 # Hai thuoc nay cai_dat.mjs luon chep vao, nen repo nao cung do duoc.
 [ -f scripts/check_token.mjs ] && chay "check:token" "node scripts/check_token.mjs"
 [ -f scripts/check_ke_hoach.mjs ] && chay "check:kehoach" "node scripts/check_ke_hoach.mjs"
+# Bon thuoc bo do nghe 20-29/09 (cai_dat chep vao tu lau ma chua noi — 29/09 noi).
+for t in check_hook check_nguong check_cap check_ten; do
+  [ -f "scripts/$t.mjs" ] && chay "${t/_/:}" "node scripts/$t.mjs"
+done
 
 # Thuoc RIENG repo nay: ban ke la thu duy nhat repo co, phai co thuoc giu.
 [ -f cong-cu/vet_kho.mjs ] && chay "vet:kho" "node cong-cu/vet_kho.mjs"
