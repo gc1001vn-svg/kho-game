@@ -66,9 +66,11 @@ const loai = [
     ['Poly Haven hdris', dem(polyhaven, (r) => r.loai === 'hdris')],
     ['OpenGameArt Texture', dem(oga, (r) => r.loai === 'Texture')],
     ['Poly Haven textures', dem(polyhaven, (r) => r.loai === 'textures')],
+    ['3dtextures.me', doc('3dtextures.tsv').length],
   ]],
   ['Font', [['Google Fonts', doc('font.tsv').length]]],
   ['Ma nguon (hoc kien truc)', [['GitHub', doc('ma-nguon-mo.tsv').length]]],
+  ['Thu vien code (npm)', [['ke/thu-vien.tsv', doc('thu-vien.tsv').length]]],
 ];
 
 let tong = 0;
@@ -89,7 +91,10 @@ console.log(`  Kenney            ${kenney.length} goi (2D ${k2d} · 3D ${k3d}`
   + ` · Audio ${dem(kenney, (r) => /Audio/.test(r.loai || ''))}`
   + ` · Textures ${dem(kenney, (r) => /Textures/.test(r.loai || ''))})`);
 console.log(`  itch.io CC0       ${itch.length} goi (3D ${dem(itch, (r) => /3d/i.test(r.tag || ''))}`
-  + ` · 2D ${dem(itch, (r) => /2d/i.test(r.tag || ''))})\n`);
+  + ` · 2D ${dem(itch, (r) => /2d/i.test(r.tag || ''))})`);
+const quaternius = doc('quaternius.tsv');
+console.log(`  Quaternius        ${quaternius.length} goi (${dem(quaternius, (r) => r.mon)} goi ke ten model)`);
+console.log(`  2d-assets         ${doc('2d-assets.tsv').length} goi 2D (mirror Kenney + OpenGameArt)\n`);
 
 // --- Chu de ---
 const CHU_DE = {

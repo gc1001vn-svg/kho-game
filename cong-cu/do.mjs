@@ -106,7 +106,9 @@ console.log(dong1);
 for (const { nguon, cot, trung } of kq) {
   console.log(`\n=== ${nguon} — ${trung.length} trúng${donVi(nguon)} · ${tomLicense(cot, trung)}`);
   for (const { o } of (het ? trung : trung.slice(0, TRAN_IN))) {
-    console.log('  ' + cot.map((c, i) => (c === 'tag' ? null : o[i])).filter(Boolean).join(' | '));
+    // Cot dai (ten model ca goi, mo ta) cat con 160 ky tu: xem ky mot nguon ma khong ngop.
+    console.log('  ' + cot.map((c, i) => (c === 'tag' ? null : o[i])).filter(Boolean)
+      .map((v) => (v.length > 160 ? `${v.slice(0, 159)}…` : v)).join(' | '));
   }
   if (!het && trung.length > TRAN_IN) console.log(`  ... con ${trung.length - TRAN_IN} dong, them --het de xem het`);
 

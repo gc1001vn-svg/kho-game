@@ -126,6 +126,12 @@ export const mau = (t) => new RegExp(
 
 const CC0 = /cc0|publicdomain\/zero|creative_commons_0|public domain/i;
 
+/**
+ * Tach chu hoa dinh lien: `ChickenCoop` -> `Chicken Coop`, `TowerWindmill` -> `Tower Windmill`.
+ * Ten model Quaternius/Kenney viet kieu nay - khop tron tu ma khong tach thi `coop` khong trung.
+ */
+const tachHoa = (s) => s.replace(/([a-z0-9])([A-Z])/g, '$1 $2');
+
 let banKe = null;
 /** Doc moi ban ke MOT lan (33 MB) - bo de goi do nhieu lan thi khong doc lai. */
 export function docBanKe() {
@@ -155,9 +161,9 @@ export function timKiem(tra, { tranTam = 0, locNguon = null } = {}) {
     const trung = [];
     for (const d of than) {
       const o = d.split('\t');
-      if (!re.some((r) => r.test(iKhop.map((i) => o[i] || '').join(' \t ')))) continue;
+      if (!re.some((r) => r.test(tachHoa(iKhop.map((i) => o[i] || '').join(' \t '))))) continue;
       if (tranTam > 0 && iTam >= 0 && Number(o[iTam]) > tranTam) continue;
-      const diem = (re.some((r) => r.test(o[iTen] || '')) ? 2 : 0) + (CC0.test(o[iLic] || '') ? 1 : 0);
+      const diem = (re.some((r) => r.test(tachHoa(o[iTen] || ''))) ? 2 : 0) + (CC0.test(o[iLic] || '') ? 1 : 0);
       trung.push({ o, diem });
     }
     if (!trung.length) continue;

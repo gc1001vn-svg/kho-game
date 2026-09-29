@@ -9,7 +9,8 @@
  *
  * BON DIEU KIEN de goi la "nuong duoc", thieu mot la loai:
  *   1. License CC0 · CC-BY · MIT (luat 3). SA/ND da bi loai tu buoc quet.
- *   2. Dinh dang may nuong doc duoc: `.obj` · `.gltf` · `.glb`. **`.fbx` thi CHUA.**
+ *   2. Dinh dang may nuong doc duoc: `.obj` · `.gltf` · `.glb`. `.fbx` doi duoc bang
+ *      `mo_hinh.mjs fbx` (29/09) nhung khong doi so: Icosa chi 1/73.626 model chi-co-FBX.
  *   3. <= 8.000 tam giac (tran cua may nuong sprite).
  *   4. TAI DUOC tu may ao. Poly Pizza dut o day: `static.poly.pizza` tra 403 cua
  *      Cloudflare, ke ca khi lai Chromium.
@@ -44,6 +45,7 @@ ra.push(['Poly Haven', phOk.length, ph.length, 'CC0, API mo']);
 // --- Hai ban ke duoi la GOI, khong ke le tung model ---
 const kenney3d = doc('kenney.tsv').filter((r) => /3D/.test(r.loai || '')).length;
 const itch3d = doc('itch.tsv').filter((r) => /3D|3d/.test(r.tag || '')).length;
+const quaternius = doc('quaternius.tsv').length;
 
 // --- Da nam tren dia / kho chung: TAP CON cua Kenney · Quaternius · KayKit, dung cong ---
 // Bo 1.689 dong Icosa nam nham trong ban ke du an truoc khi dem, khong thi cong hai lan.
@@ -64,7 +66,7 @@ for (const [ten, ok, ca, ghi] of ra) {
   console.log(`  ${ten.padEnd(16)} ${String(ok).padStart(6)} / ${String(ca).padStart(6)}  ${ghi}`);
 }
 console.log(`  ${'—'.padEnd(16)} ${String(tong).padStart(6)}   model le\n`);
-console.log(`  Goi chua ke le:  Kenney 3D ${kenney3d} goi · itch.io CC0 3D ${itch3d} goi`);
+console.log(`  Goi chua ke le:  Kenney 3D ${kenney3d} goi · itch.io CC0 3D ${itch3d} goi · Quaternius ${quaternius} goi`);
 console.log(`  Da tren dia:     quoc-chien ${tren_dia} · kho chung tayvuc ${kho_chung}`);
 console.log(`                   (tap con cua Kenney/Quaternius/KayKit — DUNG cong vao tong)\n`);
 console.log(`  LOAI — do duoc, tai khong duoc:  Poly Pizza ${ppTam}/${pp.length} <= ${TRAN_TAM} tam`);

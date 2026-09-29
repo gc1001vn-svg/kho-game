@@ -1,0 +1,43 @@
+ten	license	dung_cho	tag	cach_lay	canh_bao
+three.quarks	MIT	hiệu ứng hạt, VFX cho three.js: lửa, khói, nổ, phép	particle,particles,vfx,effect,effects,fire,smoke,explosion,magic,three	npm i three.quarks	chỉ cho game dùng three.js
+three-nebula	MIT	hệ hạt cho three.js	particle,particles,vfx,effect,effects,three	npm i three-nebula	chỉ cho game dùng three.js
+@pixi/particle-emitter	MIT	hệ hạt cho PixiJS	particle,particles,vfx,effect,effects,pixi	npm i @pixi/particle-emitter	chỉ cho game dùng PixiJS
+yuka	MIT	AI trò chơi: lái, máy trạng thái, mục tiêu, tìm đường, giác quan	ai,steering,fsm,state machine,pathfinding,npc,behavior	npm i yuka	-
+mistreevous	MIT	cây hành vi cho AI lính, quân, dân	ai,behavior tree,npc,behavior	npm i mistreevous	-
+easystarjs	MIT	tìm đường A* trên lưới ô	pathfinding,astar,grid,path	npm i easystarjs	-
+rot-js	BSD-3-Clause	bộ roguelike: tầm nhìn, sinh bản đồ, tìm đường, lượt	roguelike,fov,dungeon,map generation,pathfinding,rng,turn	npm i rot-js	BSD-3 ngoài CC0/CC-BY/MIT - anh quyết
+simplex-noise	MIT	nhiễu simplex: sinh địa hình, mây, gợn nước	noise,terrain,procedural,simplex,perlin	npm i simplex-noise	-
+alea	MIT	số ngẫu nhiên có hạt giống - ván chơi tái lập được	rng,random,seed	npm i alea	-
+seedrandom	MIT	số ngẫu nhiên có hạt giống	rng,random,seed	npm i seedrandom	-
+howler	MIT	phát âm thanh web: nhạc nền, tiếng hiệu ứng, sprite âm	audio,sound,sounds,music,sfx	npm i howler	-
+tone	MIT	tổng hợp âm, nhạc sinh bằng mã	audio,music,synth,procedural	npm i tone	-
+zzfx	MIT	sinh tiếng hiệu ứng bằng số, vài trăm byte	sound,sounds,sfx,procedural,retro	npm i zzfx	-
+@tweenjs/tween.js	MIT	chuyển động mượt: giao diện, máy quay, vật	tween,animation,easing,ui,camera	npm i @tweenjs/tween.js	-
+inkjs	MIT	thoại, cốt truyện rẽ nhánh (ngôn ngữ ink)	dialogue,story,narrative,quest	npm i inkjs	-
+miniplex	MIT	ECS gọn cho TypeScript	ecs,entity	npm i miniplex	-
+bitecs	MPL-2.0	ECS hiệu năng cao	ecs,entity,performance	npm i bitecs	MPL-2.0 ngoài CC0/CC-BY/MIT - anh quyết
+maxrects-packer	MIT	xếp sprite vào atlas	atlas,sprite,sprites,packing,spritesheet	npm i maxrects-packer	-
+@gltf-transform/core	MIT	đọc, sửa, tối ưu glTF; kho-game dùng trong mo_hinh.mjs	gltf,glb,model,optimize,3d	npm i @gltf-transform/core	-
+meshoptimizer	MIT	giảm tam, nén lưới; kho-game dùng trong mo_hinh.mjs giam	mesh,simplify,lod,optimize,3d	npm i meshoptimizer	-
+fbx2gltf	BSD-3-Clause	đổi FBX sang GLB, giữ clip chuyển động; kho-game mo_hinh.mjs fbx	fbx,gltf,glb,convert,animation,3d	npm i fbx2gltf	BSD-3 - chỉ dùng làm công cụ, không đóng vào game
+obj2gltf	Apache-2.0	đổi OBJ sang glTF	obj,gltf,convert,3d	npm i obj2gltf	Apache-2.0 ngoài CC0/CC-BY/MIT - anh quyết nếu đóng vào game
+pixi.js	MIT	vẽ 2D WebGL/WebGPU	2d,renderer,sprite,sprites,webgl	npm i pixi.js	-
+phaser	MIT	engine game 2D trọn gói	2d,engine,game	npm i phaser	-
+three	MIT	vẽ 3D WebGL/WebGPU	3d,renderer,webgl	npm i three	-
+@babylonjs/core	Apache-2.0	engine 3D trọn gói	3d,engine	npm i @babylonjs/core	Apache-2.0 ngoài CC0/CC-BY/MIT - anh quyết
+kaplay	MIT	engine 2D nhỏ, dễ học	2d,engine	npm i kaplay	-
+littlejsengine	MIT	engine 2D siêu nhẹ	2d,engine,retro	npm i littlejsengine	-
+excalibur	BSD-2-Clause	engine 2D viết bằng TypeScript	2d,engine,typescript	npm i excalibur	BSD-2 ngoài CC0/CC-BY/MIT - anh quyết
+ogl	Unlicense	WebGL tối giản	webgl,3d,renderer	npm i ogl	-
+twgl.js	MIT	WebGL gọn	webgl,renderer	npm i twgl.js	-
+postprocessing	Zlib	hậu kỳ cho three.js: bloom, SSAO, màu	postprocessing,bloom,effect,effects,three	npm i postprocessing	Zlib ngoài CC0/CC-BY/MIT - anh quyết
+troika-three-text	MIT	chữ SDF sắc nét trong three.js	text,font,fonts,three	npm i troika-three-text	-
+ldtk	MIT	đọc bản đồ vẽ bằng LDtk	tilemap,level,map,tiles	npm i ldtk	-
+wavefunctioncollapse	MIT	sinh bản đồ, ô lát bằng WFC	procedural,tilemap,map generation,wfc,tiles	npm i wavefunctioncollapse	-
+planck	MIT	vật lý 2D (Box2D)	physics,2d,collision	npm i planck	-
+matter-js	MIT	vật lý 2D	physics,2d,collision	npm i matter-js	-
+@dimforge/rapier2d-compat	Apache-2.0	vật lý 2D (WASM)	physics,2d,collision	npm i @dimforge/rapier2d-compat	Apache-2.0 ngoài CC0/CC-BY/MIT - anh quyết
+pngjs	MIT	đọc, ghi PNG thuần JS trong Node	png,image	npm i pngjs	-
+fast-png	MIT	mã hoá PNG nhanh	png,image	npm i fast-png	-
+@napi-rs/canvas	MIT	Canvas 2D trong Node: vẽ, xuất PNG	canvas,image,2d	npm i @napi-rs/canvas	-
+sharp	Apache-2.0	xử lý ảnh nhanh: đổi cỡ, webp	image,resize,png,webp	npm i sharp	Apache-2.0; tải nhị phân libvips từ npm
