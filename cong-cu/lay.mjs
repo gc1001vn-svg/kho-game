@@ -107,16 +107,19 @@ async function mocThat(url) {
 }
 
 /**
- * Model chua co trong manifest: hoi API lay danh sach ban, chon ban nhe nhat tai duoc.
- * Thu tu uu tien GLB (mot file, tu chua) roi GLTF2, GLTF1; wayback truoc, backblaze sau.
+ * Model chua co trong manifest, hay ban manifest (wayback) tai hong: hoi API lay danh sach
+ * ban, chon ban nhe nhat tai duoc. Uu tien GLB (mot file, tu chua) roi GLTF2, GLTF1;
+ * BACKBLAZE TRUOC, wayback sau — 28-29/09 `web.archive.org` qua proxy may ao dut
+ * `ws_closed_mid_exchange` ca 21/21 lan, backblaze thi tai duoc.
  */
 async function tuApi(m) {
   const j = JSON.parse((await curl([`https://api.icosa.gallery/v1/assets/${m.id}`])).toString());
-  for (const host of ['web.archive.org', 's3.us-east-005.backblazeb2.com']) {
+  for (const host of ['s3.us-east-005.backblazeb2.com', 'web.archive.org']) {
     for (const loai of ['GLB', 'GLTF2', 'GLTF1']) {
       for (const f of j.formats || []) {
         if (f.formatType !== loai || !f.root?.url?.includes(host)) continue;
-        const moc = await mocThat(f.root.url);
+        let moc = null;
+        try { moc = await mocThat(f.root.url); } catch { /* host nay dut: thu ban ke tiep */ }
         if (!moc) continue;
         const phu = [];
         for (const r of f.resources || []) {
@@ -132,52 +135,63 @@ async function tuApi(m) {
   throw new Error('khong ban nao con luu');
 }
 
+/**
+ * Tai mot model ve `thuMuc` theo `m.url` (+ file phu), kiem la model that, ghi ghi cong.
+ * Tra ve 'co_san' neu da co tren dia, 'xong' neu vua tai. Hong thi nem loi.
+ */
+async function taiVe(m, thuMuc) {
+  const file = join(thuMuc, m.file);
+  if (existsSync(file) && statSync(file).size > 0) return 'co_san';
+  mkdirSync(thuMuc, { recursive: true });
+  await curl(['-o', file, m.url]);
+  const dau = readFileSync(file).subarray(0, 5).toString();
+  if (!(dau.startsWith('glTF') || dau.trimStart().startsWith('{'))) {
+    rmSync(file, { force: true });
+    throw new Error('khong phai model: ' + dau);
+  }
+  for (const p of m.phu || []) {
+    const pd = join(thuMuc, (p.file || '').replace(/[^\w./-]/g, '_'));
+    if (existsSync(pd) && statSync(pd).size > 0) continue;
+    mkdirSync(dirname(pd), { recursive: true });
+    await curl(['-o', pd, p.url]);
+    // File phu rong la model hong am tham: `.gltf` van doc duoc, den luc nuong moi
+    // gay `Invalid typed array length`. Bat ngay o day.
+    if (!existsSync(pd) || statSync(pd).size === 0) {
+      rmSync(pd, { force: true });
+      rmSync(file, { force: true });
+      throw new Error(`file phu rong: ${p.file}`);
+    }
+  }
+  // Ghi cong di theo model, khong nam mot cho de roi mat.
+  writeFileSync(
+    join(thuMuc, 'ghi_cong.json'),
+    JSON.stringify(
+      { ten: m.ten, tac_gia: m.tac_gia, license: m.license, so_tam: m.so_tam, trang: m.trang, nguon: ten },
+      null,
+      1,
+    ) + '\n',
+  );
+  return 'xong';
+}
+
 let xong = 0, boQua = 0, hong = 0;
 const chay = async () => {
   for (;;) {
-    let m = viec.shift();
+    const m = viec.shift();
     if (m === undefined) return;
     const thuMuc = join(dich, ten, m.id);
     try {
-      if (!m.url) m = await tuApi(m);
-    } catch (loi) {
-      hong++;
-      console.log(`HONG ${m.ten} (${m.id}): ${String(loi.message).slice(0, 50)}`);
-      continue;
-    }
-    const file = join(thuMuc, m.file);
-    if (existsSync(file) && statSync(file).size > 0) { boQua++; continue; }
-    mkdirSync(thuMuc, { recursive: true });
-    try {
-      await curl(['-o', file, m.url]);
-      const dau = readFileSync(file).subarray(0, 5).toString();
-      if (!(dau.startsWith('glTF') || dau.trimStart().startsWith('{'))) {
-        rmSync(file, { force: true });
-        throw new Error('khong phai model: ' + dau);
+      let kq;
+      try {
+        kq = await taiVe(m.url ? m : await tuApi(m), thuMuc);
+      } catch (loi) {
+        // Ban manifest la wayback ma tai hong (28-29/09: hong 21/21 qua proxy may ao)
+        // -> hoi API lay ban backblaze, thu lai MOT lan. Khong phai wayback thi bao hong.
+        if (!m.url?.includes('web.archive.org')) throw loi;
+        kq = await taiVe(await tuApi(m), thuMuc);
       }
-      for (const p of m.phu || []) {
-        const pd = join(thuMuc, (p.file || '').replace(/[^\w./-]/g, '_'));
-        if (existsSync(pd) && statSync(pd).size > 0) continue;
-        mkdirSync(dirname(pd), { recursive: true });
-        await curl(['-o', pd, p.url]);
-        // File phu rong la model hong am tham: `.gltf` van doc duoc, den luc nuong moi
-        // gay `Invalid typed array length`. Bat ngay o day.
-        if (!existsSync(pd) || statSync(pd).size === 0) {
-          rmSync(pd, { force: true });
-          rmSync(file, { force: true });
-          throw new Error(`file phu rong: ${p.file}`);
-        }
-      }
-      // Ghi cong di theo model, khong nam mot cho de roi mat.
-      writeFileSync(
-        join(thuMuc, 'ghi_cong.json'),
-        JSON.stringify(
-          { ten: m.ten, tac_gia: m.tac_gia, license: m.license, so_tam: m.so_tam, trang: m.trang, nguon: ten },
-          null,
-          1,
-        ) + '\n',
-      );
-      xong++;
+      if (kq === 'co_san') boQua++;
+      else xong++;
     } catch (loi) {
       hong++;
       // Dong thu muc rong lai - de no nam do thi lan sau tuong da co, va lenh dem
