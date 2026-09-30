@@ -41,3 +41,4 @@ pngjs	MIT	đọc, ghi PNG thuần JS trong Node	png,image	npm i pngjs	-
 fast-png	MIT	mã hoá PNG nhanh	png,image	npm i fast-png	-
 @napi-rs/canvas	MIT	Canvas 2D trong Node: vẽ, xuất PNG	canvas,image,2d	npm i @napi-rs/canvas	-
 sharp	Apache-2.0	xử lý ảnh nhanh: đổi cỡ, webp	image,resize,png,webp	npm i sharp	Apache-2.0; tải nhị phân libvips từ npm
+pixi-filters	MIT	bộ lọc hậu kỳ 2D cho PixiJS: tilt-shift, bloom, bảng màu LUT, lightmap đêm, phản chiếu nước, tia sáng — đọc mã GLSL để học	postprocessing,filter,filters,shader,bloom,tilt-shift,tiltshift,lut,lightmap,reflection,godray,effect,effects,pixi	npm i pixi-filters	chỉ chạy với PixiJS; game tự viết WebGL thì đọc mã, chép có ghi công MIT
