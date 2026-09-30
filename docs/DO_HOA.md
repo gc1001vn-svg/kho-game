@@ -4,6 +4,7 @@
 > Phong cách, màu, đèn nướng của `quoc-chien` đã chốt ở `quoc-chien/docs/ART_BIBLE.md` — file
 > này **không lặp lại**; nó nói **kỹ thuật**: làm sao cho cảnh sống, có chiều sâu, bấm thấy
 > sướng tay. Ảnh game thương mại **không lên repo** (repo công khai) — chỉ để link.
+> **Kỹ năng, trạng thái** (luật chơi + cách báo cho người chơi): `KY_NANG_TRANG_THAI.md`.
 
 ## 1. `quoc-chien` 30/09 — vì sao "chán"
 

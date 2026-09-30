@@ -651,6 +651,11 @@ Học từ game 3D và 2D giả 3D: năm cách làm "giả 3D" (nướng sprite,
 vào bộ vẽ tự viết của `quoc-chien`, và chẩn đoán vì sao đồ hoạ `quoc-chien` 30/09 "chán".
 **Đọc trước khi làm hiệu ứng, hậu kỳ, chuyển động ở bất kỳ game nào.**
 
+**Kỹ năng, trạng thái — `docs/KY_NANG_TRANG_THAI.md` (30/09):** 12 bài học từ 12 game (Into the
+Breach, Slay the Spire, Total War, Darkest Dungeon, Reigns, Crusader Kings 3…), khung dữ liệu chung
+học Unreal GAS (hiệu ứng · nhãn · tín hiệu hình tách khỏi phần tính), 10 luật thiết kế trạng thái,
+bảng cách hiện từng trạng thái, kỹ năng mẫu cho trận xem được, kế hoạch thử ở `quoc-chien`.
+
 ## Nợ của kho — rà 18/09, số sinh từ `vet:kho`
 
 - **✅ Hai bản kê dự án: SỬA XONG 18/09**, gốc là `cong-cu/nap_ke_cu.mjs` (không phải
