@@ -644,6 +644,13 @@ ChickenCoop, Silo, Windmill…) + **Ultimate Crops** cho ruộng/trại.
 | **TRELLIS.2** (MIT, ảnh → 3D) | 4 tỉ tham số, cần GPU — máy ảo không GPU, `huggingface.co` chặn; chủ dự án không có máy tính |
 | **Gemini sinh ảnh** | khoá hiện có **liệt kê** `gemini-3.1-flash-image`, `gemini-3-pro-image`; **chưa gọi thử** (tốn tiền). Ảnh AI nhiều nước không bảo hộ bản quyền, gắn SynthID, khó đồng phong cách — chủ dự án quyết |
 
+## Kỹ thuật đồ hoạ — `docs/DO_HOA.md` (30/09)
+
+Học từ game 3D và 2D giả 3D: năm cách làm "giả 3D" (nướng sprite, normal map, HD-2D, pixel
+2.5D, 3D phong cách hoá), 14 hiệu ứng xếp theo độ đáng làm và độ tốn máy trên iPhone, chỗ gắn
+vào bộ vẽ tự viết của `quoc-chien`, và chẩn đoán vì sao đồ hoạ `quoc-chien` 30/09 "chán".
+**Đọc trước khi làm hiệu ứng, hậu kỳ, chuyển động ở bất kỳ game nào.**
+
 ## Nợ của kho — rà 18/09, số sinh từ `vet:kho`
 
 - **✅ Hai bản kê dự án: SỬA XONG 18/09**, gốc là `cong-cu/nap_ke_cu.mjs` (không phải
