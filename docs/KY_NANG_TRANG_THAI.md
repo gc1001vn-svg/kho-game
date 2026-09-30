@@ -2,7 +2,7 @@
 
 > Tra 30/09/2026, dùng cho **mọi dự án game**. Đọc cùng `DO_HOA.md` (kỹ thuật vẽ: hậu kỳ, hạt,
 > đèn). File này nói **luật chơi** của kỹ năng và trạng thái, và **ngôn ngữ hình** để báo chúng
-> cho người chơi. Mục 8 là kế hoạch thử ở `quoc-chien` — **CHƯA DUYỆT**.
+> cho người chơi. Mục 8 là kế hoạch thử ở `quoc-chien` — anh duyệt 30/09, **cả 3 đợt xong 30/09**.
 
 ## 1. Mười hai bài học — mỗi bài một game
 
@@ -173,6 +173,14 @@ Học được: lớp diễn thiếu `doi`/`dang` của từng lính (dáng ch�
 `LinhVe`, không đụng `sim/`; màn dọc zoom vừa khít trận chỉ **0,18×** → cờ phải có cỡ tối thiểu theo điểm CSS;
 khựng khung = dừng ĐỒNG HỒ PHÁT ngay tại mốc (không phải dừng vẽ), mỗi bước tối đa một mốc.
 Chi tiết: `quoc-chien/docs/NHAT_KY/THU_2_30_09.md`.
+
+**Kết quả Thử 3 (30/09, bản `30/09 20:08`):** anh chơi thử iPhone: **59 fps, "mọi thứ ok"** — hiểu được vì sao thẻ ra. 3 lệnh
+vẽ, `?tat=het` 1; 0 trang atlas; `sim:van`/`sim:tran` y như trước. Bất ổn 3 bậc (khói đen ≥ 50 % ngưỡng thẻ → đám đông + cờ
+đỏ ≥ 80 % → lửa khi thẻ mở), chữ ⚠ đổi màu theo bậc · chấm Reigns 🏠 📦 ⚙ đọc từ `HauQua` · bảng tách nguồn nghiên cứu, điểm/giờ,
+trần nhà/kho. Học được: **đám đông dùng lại sprite người có sẵn**, trộn vào dòng xếp trục sâu thì không đi xuyên nhà, 0 ảnh mới;
+chọn nhà theo **tỉ lệ khung** chứ không theo lề cố định (zoom gần là không nhà nào lọt); hạt nhỏ cần **cỡ tối thiểu theo điểm
+CSS** (lửa 5 px ở 0,8× là không thấy); tách nguồn chỉ cần 2 getter chỉ-đọc. Chi tiết: `quoc-chien/docs/NHAT_KY/THU_3_30_09.md`.
+**Cả 3 đợt thử xong.**
 
 ## 9. Nguồn (tra 30/09/2026)
 
