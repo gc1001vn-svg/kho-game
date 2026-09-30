@@ -167,6 +167,13 @@ bộ đếm `tac`/`doi` ở `City.ts` gom **theo loại nhà mỗi giờ** — i
 chỗ ống khói phải đo trên ảnh chụp (đoán theo khung sprite lệch hẳn); icon SVG nhúng vào gói JS thì khỏi đụng
 cấu hình PWA. Chi tiết: `quoc-chien/docs/NHAT_KY/THU_1_30_09.md`.
 
+**Kết quả Thử 2 (30/09, bản `30/09 18:53`) — phần máy, CHỜ anh đo iPhone:** 2 lệnh vẽ (cảnh + lô hạt Thử 1), `?tat=het` 1;
+0 trang atlas; `sim:van`/`sim:tran` y như trước. Cờ, bụi, khói, chớp sinh bằng shader (kiểu 8 "cờ" trong `Hat.ts`).
+Học được: lớp diễn thiếu `doi`/`dang` của từng lính (dáng chỉ nằm trong tên sprite) → thêm 2 trường chỉ-đọc ở
+`LinhVe`, không đụng `sim/`; màn dọc zoom vừa khít trận chỉ **0,18×** → cờ phải có cỡ tối thiểu theo điểm CSS;
+khựng khung = dừng ĐỒNG HỒ PHÁT ngay tại mốc (không phải dừng vẽ), mỗi bước tối đa một mốc.
+Chi tiết: `quoc-chien/docs/NHAT_KY/THU_2_30_09.md`.
+
 ## 9. Nguồn (tra 30/09/2026)
 
 - Unreal GAS: [Gameplay Effects](https://dev.epicgames.com/documentation/en-us/unreal-engine/gameplay-effects-for-the-gameplay-ability-system-in-unreal-engine) ·
