@@ -89,6 +89,17 @@ curl -s -o constraint-driven-development/references/floor-guard.md \
   "https://raw.githubusercontent.com/addyosmani/agent-skills/main/skills/constraint-driven-development/references/floor-guard.md"
 ```
 
+Roi ap lai cho da sua so voi ban goc — curl ghi de, khong ap lai la mat:
+
+```bash
+patch -p1 < sua-so-voi-goc.diff   # dung trong cong-cu/skills
+```
+
+Sua 30/09 (prompt-audit): duong dan, ten skill, lenh khong co trong bo nay; mot cau
+thuc ep trong `diagnosing-bugs` di nguoc luat "dung va noi ra" cua chinh no. Hunk nao
+hong (ban goc da doi cho do) thi sua tay, roi `diff -u` ban goc voi ban da sua de sinh
+lai file va.
+
 Roi `node cong-cu/cai_dat.mjs <repo>` o tung repo de day ban moi xuong.
 
 **May ao chan `api.github.com` cho repo ngoai phien, chan ca HTML `github.com`,
@@ -99,7 +110,7 @@ lenh tren dung `curl` tung file thay vi tai ca repo.
 
 Nguon: `github.com/mattpocock/skills`, `skills/engineering/diagnosing-bugs/` (MIT,
 Matt Pocock). Tai 23/09/2026 tu `raw.githubusercontent.com/mattpocock/skills/main/`,
-**giu nguyen** `SKILL.md` + `scripts/hitl-loop.template.sh` (SKILL tro toi, thieu la
+**giu nguyen** `SKILL.md` (tru mot cau, xem `sua-so-voi-goc.diff`) + `scripts/hitl-loop.template.sh` (SKILL tro toi, thieu la
 tro treo). Giay phep: `LICENSE-mattpocock-skills.txt`.
 
 **Vi sao lay:** vong chan doan 6 buoc, cot loi la **dung vong kiem do-duoc truoc khi doan**

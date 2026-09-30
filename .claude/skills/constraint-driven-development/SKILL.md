@@ -24,7 +24,7 @@ Apply this skill when:
 - An agent is producing volume nobody is reading line by line
 - CI has checks but nobody can say which ones block a merge and which ones are decoration
 - Coverage, performance, or accessibility numbers get argued about per-PR instead of decided once
-- You're about to run `/build auto` or any autonomous loop, and the only thing standing between it and main is a test suite the agent also wrote
+- You're about to run `/loop` or any autonomous loop, and the only thing standing between it and main is a test suite the agent also wrote
 
 **When NOT to use:**
 
@@ -56,7 +56,7 @@ Report what you found in two lines, then ask only what's left.
 
 ### Step 2: Four questions, each with a default
 
-Follow the one-question-at-a-time discipline from `interview-me`, with one change: every question here has a default, so "I don't know" is a complete answer that still produces a working config.
+Ask one question at a time. Every question here has a default, so "I don't know" is a complete answer that still produces a working config.
 
 ```
 Q1: Beyond the floor, which of these do you want enforced?
@@ -187,12 +187,12 @@ The commands now live in two places — the `Checked by` column in `CONSTRAINTS.
 
 The single biggest mistake is running everything everywhere. A check that stalls the agent gets switched off, and a gate people switched off is worse than no gate, because the bar still looks like it exists.
 
-| Phase | Command | What runs | Budget |
-|-------|---------|-----------|--------|
-| BUILD | `/build` | Types, lint, secrets, the floor | under 5s, changed file only |
-| VERIFY | `/test` | Related tests, coverage on changed lines | under 90s |
-| REVIEW | `/review` | Everything, plus the guards below | minutes |
-| SHIP | `/ship` | Direction checks, no regressions | CI |
+| Phase | When | What runs | Budget |
+|-------|------|-----------|--------|
+| BUILD | after each edit | Types, lint, secrets, the floor | under 5s, changed file only |
+| VERIFY | when the task looks done | Related tests, coverage on changed lines | under 90s |
+| REVIEW | before merge | Everything, plus the guards below | minutes |
+| SHIP | in CI | Direction checks, no regressions | CI |
 
 Two rules that keep this tolerable:
 
