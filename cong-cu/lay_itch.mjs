@@ -32,7 +32,9 @@ import { join } from 'node:path';
 const args = process.argv.slice(2);
 const iDich = args.indexOf('--dich');
 const DICH = iDich >= 0 ? args[iDich + 1] : 'assets_source';
-const duAn = args.filter((a, i) => !a.startsWith('--') && i !== iDich + 1);
+// Chi bo gia tri cua `--dich` khi CO `--dich`: thieu no thi iDich = -1, `i !== 0` bo mat goi
+// dau tien ma van thoat 0 (30/09: `npm run tai:itch` cua quoc-chien sot `medieval-village-megakit`).
+const duAn = args.filter((a, i) => !a.startsWith('--') && (iDich < 0 || i !== iDich + 1));
 if (!duAn.length) {
   console.error('Dung: node cong-cu/lay.mjs itch <tac-gia>/<goi>... [--dich <thu-muc>]   (cot `goi` cua ke/itch.tsv)');
   process.exit(1);
