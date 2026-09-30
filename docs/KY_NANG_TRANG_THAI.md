@@ -139,7 +139,7 @@ Làm theo thứ tự: **khung dữ liệu mục 2** (một lần, dùng mãi) �
 mới chỉ thêm một dòng dữ liệu + một dòng tín hiệu. Game 3D (`tayvuc`): cùng khung, bên vẽ dùng
 `three.quarks` (MIT) cho hạt.
 
-## 8. Thử ở `quoc-chien` — kế hoạch đề xuất (CHƯA DUYỆT)
+## 8. Thử ở `quoc-chien` — anh duyệt cả 3 đợt 30/09
 
 Móc có sẵn trong mã (đọc 30/09, commit `df5a07c`):
 
@@ -160,6 +160,12 @@ Móc có sẵn trong mã (đọc 30/09, commit `df5a07c`):
 **Luật khi thử:** chỉ ĐỌC số từ mô phỏng, không sửa — kết quả trận, cân bằng giữ nguyên;
 `sim:van`, `sim:tran` phải ra y như trước. Mỗi đợt một phiên mở ở `quoc-chien` (hook, thước của
 repo đó chỉ chạy khi phiên mở ở đó). Chạy được thì ghi kết quả về mục này.
+
+**Kết quả Thử 1 (30/09, bản `30/09 17:33`):** anh đo iPhone **59 fps cả có lẫn không hiệu ứng**, "nhìn ổn hơn bản
+gốc". 3 lệnh vẽ (cảnh + lô hạt + quad hậu kỳ), 0 trang atlas thêm; `sim:van`/`sim:tran` y như trước. Học được:
+bộ đếm `tac`/`doi` ở `City.ts` gom **theo loại nhà mỗi giờ** — icon cần 2 số đếm chỉ-đọc **từng nhà** trong `ThuNha`;
+chỗ ống khói phải đo trên ảnh chụp (đoán theo khung sprite lệch hẳn); icon SVG nhúng vào gói JS thì khỏi đụng
+cấu hình PWA. Chi tiết: `quoc-chien/docs/NHAT_KY/THU_1_30_09.md`.
 
 ## 9. Nguồn (tra 30/09/2026)
 
