@@ -176,8 +176,11 @@ async function tuApi(m) {
         if (!moc) continue;
         const phu = [];
         for (const r of f.resources || []) {
-          const mr = await mocThat(r.url);
-          if (mr) phu.push({ file: r.relativePath, url: mr });
+          // Ban backblaze van khai `resources` tro sang wayback. Wayback dut thi bo qua o day:
+          // `layTheoGltf` suy URL tu chinh file `.gltf` (cung thu muc backblaze) va lay thay.
+          let mr = null;
+          try { mr = await mocThat(r.url); } catch { /* host dut: layTheoGltf lay thay */ }
+          if (mr) phu.push({ file: r.relativePath || decodeURIComponent(r.url.split('/').pop()), url: mr });
         }
         const tep = (f.root.relativePath || decodeURIComponent(f.root.url.split('/').pop()))
           .replace(/[^\w.-]/g, '_');
@@ -189,12 +192,48 @@ async function tuApi(m) {
 }
 
 /**
+ * Keo file `.bin` va anh ma ban `.gltf` tro toi, lay o CUNG THU MUC voi file goc.
+ *
+ * API KHONG LUON KHAI `resources`, va khai thi hay tro sang wayback (qua proxy may ao dut).
+ * Nen doc thang `buffers`/`images` trong `.gltf`. Buoc nay co trong
+ * `quoc-chien/tools/tai_icosa.mjs` cu; ban gop sang day 29/09 danh roi no - 30/09 model ve chi
+ * co `.gltf` ma van bao lay duoc, den luc nuong moi `ENOENT model.bin`.
+ */
+async function layTheoGltf(m, file, thuMuc) {
+  const j = JSON.parse(readFileSync(file, 'utf8'));
+  // glTF 1.0 de `buffers` la OBJECT chu khong phai mang.
+  const ds = [...(Array.isArray(j.buffers) ? j.buffers : Object.values(j.buffers || {})),
+    ...(Array.isArray(j.images) ? j.images : Object.values(j.images || {}))];
+  for (const uri of ds.map((x) => x.uri).filter(Boolean)) {
+    // `data:` nam san trong file. URL tuyet doi la tham chieu ngoai (model Tilt Brush tro
+    // sang shader o `tiltbrush.com`) - khong phai file phu, bo qua chu dung bao hong.
+    if (uri.startsWith('data:') || /^https?:\/\//i.test(uri)) continue;
+    const pd = join(thuMuc, decodeURIComponent(uri).replace(/[^\w./-]/g, '_'));
+    if (existsSync(pd) && statSync(pd).size > 0) continue;
+    mkdirSync(dirname(pd), { recursive: true });
+    try {
+      const moc = await mocThat(m.url.replace(/[^/]*$/, encodeURI(uri)));
+      if (moc) await curl(['-o', pd, moc]);
+    } catch { /* host dut: bao hong ngay duoi */ }
+    if (!existsSync(pd) || statSync(pd).size === 0) {
+      rmSync(pd, { force: true });
+      rmSync(file, { force: true });
+      throw new Error(`thieu file phu ${uri}`);
+    }
+  }
+}
+
+/**
  * Tai mot model ve `thuMuc` theo `m.url` (+ file phu), kiem la model that, ghi ghi cong.
  * Tra ve 'co_san' neu da co tren dia, 'xong' neu vua tai. Hong thi nem loi.
  */
 async function taiVe(m, thuMuc) {
   const file = join(thuMuc, m.file);
-  if (existsSync(file) && statSync(file).size > 0) return 'co_san';
+  if (existsSync(file) && statSync(file).size > 0) {
+    // Ban tai truoc 30/09 co the co `.gltf` ma thieu `.bin`: lay bu roi moi coi la co san.
+    if (file.toLowerCase().endsWith('.gltf')) await layTheoGltf(m, file, thuMuc);
+    return 'co_san';
+  }
   mkdirSync(thuMuc, { recursive: true });
   await curl(['-o', file, m.url]);
   const dau = readFileSync(file).subarray(0, 5).toString();
@@ -206,15 +245,12 @@ async function taiVe(m, thuMuc) {
     const pd = join(thuMuc, (p.file || '').replace(/[^\w./-]/g, '_'));
     if (existsSync(pd) && statSync(pd).size > 0) continue;
     mkdirSync(dirname(pd), { recursive: true });
-    await curl(['-o', pd, p.url]);
-    // File phu rong la model hong am tham: `.gltf` van doc duoc, den luc nuong moi
-    // gay `Invalid typed array length`. Bat ngay o day.
-    if (!existsSync(pd) || statSync(pd).size === 0) {
-      rmSync(pd, { force: true });
-      rmSync(file, { force: true });
-      throw new Error(`file phu rong: ${p.file}`);
-    }
+    // Host file phu dut thi khong nem loi o day: `layTheoGltf` lay thay tu thu muc file goc,
+    // va bao hong neu van thieu.
+    try { await curl(['-o', pd, p.url]); } catch { /* layTheoGltf lay thay */ }
+    if (existsSync(pd) && statSync(pd).size === 0) rmSync(pd, { force: true });
   }
+  if (file.toLowerCase().endsWith('.gltf')) await layTheoGltf(m, file, thuMuc);
   // Ghi cong di theo model, khong nam mot cho de roi mat.
   writeFileSync(
     join(thuMuc, 'ghi_cong.json'),
