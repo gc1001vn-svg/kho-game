@@ -15,12 +15,12 @@ import { existsSync, readFileSync } from 'node:fs';
 import { execSync, spawn } from 'node:child_process';
 import { resolve } from 'node:path';
 import {
-  bat, thoat, cat_tran, skill_chua_khoa, la_repo_game, KHO_GAME, KHO_GAME_URL,
+  bat, thoat, cat_tran, skill_chua_khoa, tu_tat_skill_moi, la_repo_game, KHO_GAME, KHO_GAME_URL,
 } from './hook_chung.mjs';
 
 const ID = 'phien:dau-phien';
 
-// Hook nay chi BAO CAO. No hong thi phien van phai chay binh thuong — khong co
+// Hook nay chu yeu BAO CAO — viec ghi duy nhat la tu tat skill moi (02/10). No hong thi phien van phai chay binh thuong — khong co
 // luoi nay thi mot loi khong ai ngo do ra ca vet stack vao ngu canh moi phien.
 process.on('uncaughtException', () => process.exit(0));
 process.on('unhandledRejection', () => process.exit(0));
@@ -64,10 +64,15 @@ if (existsSync(pSet)) {
       d.push('skillOverrides TRONG — moi phien phi ~12.500 ky tu. Chay cong-cu/cai_dat.mjs');
     } else {
       // Ham dung chung voi `check_hook` (lenh do): hook nay co the chay truoc khi skill
-      // tai ve may va sot, lenh do chay sau bat lai. Sua o BAN MAU kho — `cai_dat.mjs`
-      // ghi de `skillOverrides` cua repo moi dau phien, sua thang settings.json la mat.
-      const sot = skill_chua_khoa();
-      if (sot.length) d.push(`skill CHUA co khoa: ${sot.join(' ')} — them vao /home/user/ghi-nho/cong-cu/skill_overrides.json roi chay cai_dat.mjs; co y bat thi ghi .claude/skill_bat.txt`);
+      // tai ve may va sot, lenh do chay sau bat lai. TU GHI `off` (chot 02/10) vao ca ban
+      // mau kho lan settings.json cua repo — `cai_dat.mjs` ghi de repo theo ban mau.
+      try {
+        const tat = tu_tat_skill_moi();
+        if (tat.length) d.push(`da TU TAT skill moi (off): ${tat.join(' ')} — bao chu du an mot dong, commit ghi-nho; muon bat thi go khoi cong-cu/skill_overrides.json hoac ghi .claude/skill_bat.txt`);
+      } catch {
+        const sot = skill_chua_khoa();
+        if (sot.length) d.push(`skill CHUA co khoa, tu tat HONG: ${sot.join(' ')} — them tay vao /home/user/ghi-nho/cong-cu/skill_overrides.json roi chay cai_dat.mjs`);
+      }
     }
   } catch { d.push(`${pSet} hong dinh dang`); }
 } else if (existsSync('.git')) {

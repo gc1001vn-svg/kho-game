@@ -40,7 +40,7 @@
 // ---------------------------------------------------------------------------
 // Fail-open tuyet doi: moi duong loi trong file nay deu tra ve "cho chay tiep".
 
-import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { homedir } from 'node:os';
 
@@ -239,6 +239,35 @@ export function skill_chua_khoa(root = goc(), thu_muc_skill = join(homedir(), '.
   };
   quet(thu_muc_skill, 3);
   return [...ten].filter((t) => !(t in khoa) && !bat_co_y.includes(t)).sort();
+}
+
+/** Ban mau khoa skill dung chung moi repo. `GC_BAN_MAU_KHOA` chi de thu, khong dong ban that. */
+export const BAN_MAU_KHOA = process.env.GC_BAN_MAU_KHOA || '/home/user/ghi-nho/cong-cu/skill_overrides.json';
+
+/**
+ * TU TAT skill moi chua co khoa: ghi `"<ten>": "off"` vao ban mau kho (repo khac nhan qua
+ * `cai_dat.mjs`) VA vao `skillOverrides` cua repo dang mo (thuoc `check:hook` xanh ngay, tu
+ * phien sau het nap). Chi THEM khoa, khong sua khoa da co. Tra ve ten vua tat.
+ *
+ * VI SAO: 13/09 chu du an doi "tat skill khong lien quan phai TU CHAY", ban cu chi BAO —
+ * 02/10 skill `docs` lot, tro ly dung lai hoi. Chu du an chot 02/10: hook tu ghi `off`.
+ * Muon bat: go dong do khoi ban mau, hoac ghi ten vao `.claude/skill_bat.txt`.
+ * Ban mau chi ghi khi kho ghi-nho co tren may; ghi xong con phai commit kho.
+ */
+export function tu_tat_skill_moi(root = goc(), thu_muc_skill = join(homedir(), '.claude/skills')) {
+  const sot = skill_chua_khoa(root, thu_muc_skill);
+  if (!sot.length) return [];
+  const ghi_off = (p, lay) => {
+    const obj = doc_json(p);
+    if (!obj) return;
+    const khoa = lay(obj);
+    let doi = false;
+    for (const t of sot) if (!(t in khoa)) { khoa[t] = 'off'; doi = true; }
+    if (doi) writeFileSync(p, `${JSON.stringify(obj, null, 2)}\n`);
+  };
+  if (existsSync(BAN_MAU_KHOA)) ghi_off(BAN_MAU_KHOA, (m) => m);
+  ghi_off(join(root, '.claude/settings.json'), (s) => (s.skillOverrides ??= {}));
+  return sot;
 }
 
 /** Kho muc luc asset chung. Repo PUBLIC: clone doc-suong duoc, khong can `add_repo`. */
