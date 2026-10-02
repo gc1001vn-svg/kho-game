@@ -19,11 +19,20 @@
 // co san `mill`; 28/09 ket luan "khong co ga" khi kho co. Luat "do truoc" la chu; ket
 // qua nam san trong ngu canh thi khong the bo qua ma khong thay.
 //
+// 02/10 THEM CANH BAO NGU CANH PHINH: ngu canh luot truoc >= 150k token thi chen MOT dong
+// "viec moi khong lien quan -> mo phien moi". Vi sao: cache doc la khoan ton nhat (do 13/09:
+// 84,5%) — moi luot gui lai ca ngu canh, phien cang dai moi luot cang dat. Luat "viec moi ->
+// phien moi" o `so-thich.md` la chu phai nho; phien 02/10 di tu 43,5k len 215k token qua ba
+// viec khac nhau ma khong ai nhac. Y lay tu affaan-m/ECC (MIT) `suggest-compact.js` (#2155):
+// do bang `usage` THAT cua luot cuoi trong transcript, khong dem so lenh — vai lan doc file
+// lon da day ngu canh ma so lenh van it. Code viet lai, chi doc DUOI transcript.
+// Tat rieng phan nay: ghi `cau:ngu-canh` vao `.claude/hook_phien.txt`.
+//
 // Fail-open tuyet doi: moi duong loi deu tra `continue: true` roi thoat 0.
 // Hook nay khong bao gio duoc chan mot luot lam viec that.
 
-import { readFileSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { readFileSync, existsSync, mkdirSync, writeFileSync, openSync, readSync, fstatSync, closeSync } from 'node:fs';
+import { join, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
@@ -42,6 +51,13 @@ const DIEM_TOI_THIEU = 2;   // duoi nguong nay coi nhu khong lien quan
 const VUNG_DAU = 5;         // chi xet 5 khoi diem cao nhat, het thi im
 const BAO_PHU = 0.4;        // khoi phai trung >= 40% so tu dang tra
 const NHO_TOI_DA = 200;     // so ma bam giu lai moi phien
+
+// Canh bao ngu canh (02/10). Do phien 02/10: luot dau 43,5k token (system + tool + CLAUDE.md
+// + ba file kho) -> 150k la ~3,5 lan luot dau. Doi hai so nay la doi do nhay, khong sua gi khac.
+const ID_NC = 'cau:ngu-canh';
+const NGUONG_NC = 150000;      // token: tu day bat dau nhac
+const BUOC_NC = 50000;         // token: nhac lai moi khi phinh them chung nay
+const DUOI_DOC = 512 * 1024;   // byte cuoi transcript can doc — dong assistant cuoi nam trong day
 
 // Tu qua thuong, trung cung khong noi len gi.
 //
@@ -204,6 +220,92 @@ function doc_so(p) {
 }
 
 /**
+ * Ngu canh (token) cua luot goi model CUOI trong mot doan transcript JSONL; 0 = khong thay.
+ *
+ * Ngu canh = input + cache doc + cache ghi cua luot do — dung luong moi luot sau phai gui lai.
+ * Transcript ghi MOT DONG cho moi khoi noi dung (suy nghi, chu, goi tool), dong nao cung lap lai
+ * cung `usage`: cong ca file la dem trung (do 02/10: 109 dong, 34 luot that). Chi lay dong cuoi
+ * nen khong dinh.
+ */
+function tinh_ngu_canh(duoi) {
+  const dong = String(duoi).split('\n');
+  for (let i = dong.length - 1; i >= 0; i--) {
+    if (!dong[i].includes('"usage"')) continue;
+    let j;
+    // Dong dau doan bi cat giua chung thi JSON hong: bo dung dong do, khong nuot loi nao khac.
+    try { j = JSON.parse(dong[i]); } catch { continue; }
+    const u = j?.type === 'assistant' ? j.message?.usage : null;
+    if (!u) continue;
+    return (u.input_tokens || 0) + (u.cache_read_input_tokens || 0) + (u.cache_creation_input_tokens || 0);
+  }
+  return 0;
+}
+
+/** Doc DUOI_DOC byte cuoi transcript. Doc ca file (1,2 MB o phien 02/10) moi luot go la phi. */
+function doc_duoi(duong) {
+  let fd;
+  try {
+    fd = openSync(duong, 'r');
+    const co = fstatSync(fd).size;
+    const lay = Math.min(co, DUOI_DOC);
+    const buf = Buffer.alloc(lay);
+    readSync(fd, buf, 0, lay, co - lay);
+    return buf.toString('utf8');
+  } catch {
+    return ''; // khong co / khong doc duoc transcript: coi nhu chua biet ngu canh -> im
+  } finally {
+    // Dong fd hong thi tien trinh sap thoat cung tu tra — khong con viec gi de lam.
+    try { if (fd !== undefined) closeSync(fd); } catch { /* xem dong tren */ }
+  }
+}
+
+/** Buoc nhac: -1 = duoi nguong; moi BUOC_NC token tren nguong la mot buoc. */
+function buoc_nhac(ngu_canh) {
+  return ngu_canh < NGUONG_NC ? -1 : Math.floor((ngu_canh - NGUONG_NC) / BUOC_NC);
+}
+
+/**
+ * Khoi ngu canh: { dong, ghi, k, ly_do } — `dong` rong la im. `ghi()` luu buoc da nhac, chi goi
+ * khi khoi THAT SU duoc chen. Moi buoc nhac mot lan; ngu canh tut duoi nguong (sau khi nen)
+ * thi xoa so, lan phinh sau duoc nhac lai.
+ */
+function khoi_ngu_canh(vao) {
+  const rong = (ly_do) => ({ dong: [], ghi: () => {}, ly_do });
+  if (!bat(ID_NC, ['thuong', 'chat'])) return rong('canh bao ngu canh dang tat');
+  const nc = tinh_ngu_canh(doc_duoi(String(vao?.transcript_path ?? '')));
+  if (nc === 0) return rong('khong doc duoc usage trong transcript');
+
+  const p = duong_so(vao?.session_id);
+  const p_nc = p ? join(dirname(p), 'ngu_canh.txt') : null;
+  let da = -1;
+  try {
+    const n = p_nc && existsSync(p_nc) ? Number.parseInt(readFileSync(p_nc, 'utf8'), 10) : -1;
+    if (Number.isInteger(n)) da = n;
+  } catch { /* so hong: coi nhu chua nhac buoc nao — toi da nhac thua mot lan */ }
+  const ghi_buoc = (b) => {
+    if (!p_nc) return;
+    try { writeFileSync(p_nc, String(b)); } catch { /* mat so thi chi nhac thua, khong chan gi */ }
+  };
+
+  const b = buoc_nhac(nc);
+  const k = Math.round(nc / 1000);
+  if (b < 0) {
+    if (da >= 0) ghi_buoc(-1);
+    return rong(`ngu canh ~${k}k duoi nguong`);
+  }
+  if (b <= da) return rong(`ngu canh ~${k}k, buoc ${b} da nhac`);
+  return {
+    dong: [
+      `Ngu canh phien ~${k}k token: moi luot goi gui lai ngan ay (cache doc — khoan ton nhat, \`so-thich.md\` muc Token).`,
+      'Cau vua go la viec MOI khong lien quan -> bao anh mot dong: mo phien moi re hon. Con cung viec -> bo qua, dung nhac.',
+    ],
+    ghi: () => ghi_buoc(b),
+    k,
+    ly_do: '',
+  };
+}
+
+/**
  * Ghi JSON ra stdout roi thoat — CHO CHU RA HET moi thoat.
  *
  * `process.stdout.write(s); process.exit(0)` cat mat phan tren 146.176 byte
@@ -331,7 +433,10 @@ async function chinh(raw) {
   const da = new Set(p_so ? doc_so(p_so) : []);
   const gn = khoi_ghi_nho(prompt, da);
   const kg = await khoi_kho_game(prompt, da);
-  if (gn.dong.length === 0 && !kg.tho) return im(`${gn.ly_do} · kho-game: ${kg.ly_do}`);
+  const nc = khoi_ngu_canh(vao);
+  if (gn.dong.length === 0 && !kg.tho && nc.dong.length === 0) {
+    return im(`${gn.ly_do} · kho-game: ${kg.ly_do} · ngu canh: ${nc.ly_do}`);
+  }
 
   if (p_so) {
     try { writeFileSync(p_so, JSON.stringify([...da, ...gn.bam, ...(kg.bam ? [kg.bam] : [])].slice(-NHO_TOI_DA))); }
@@ -339,6 +444,11 @@ async function chinh(raw) {
   }
 
   const phan = [];
+  // Khoi ngu canh dung DAU: ngan nhat, va `cat_tran` cat tu cuoi — dat sau thi co ngay bi cat mat.
+  if (nc.dong.length) {
+    phan.push('<ngu-canh>', ...nc.dong, '</ngu-canh>');
+    nc.ghi();
+  }
   if (gn.dong.length) {
     phan.push(
       '<nhac-kho>',
@@ -365,6 +475,7 @@ async function chinh(raw) {
   const { van: ngu_canh, tok, cat } = cat_tran(phan.join('\n'));
 
   const nhan = [
+    nc.dong.length ? `ngu canh ~${nc.k}k` : '',
     gn.dong.length ? `${gn.dong.length} khoi` : '',
     kg.tho ? `kho-game [${kg.cum.join(' ')}]` : '',
   ].filter(Boolean).join(' + ');
