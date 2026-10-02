@@ -30,8 +30,8 @@ Bảy bước đầu phiên · cách trả lời · luật báo "xong": **ĐỀU
 
 ## Lệnh
 
-**Trước mỗi commit `bash scripts/do.sh`** — `check:token` · `check:kehoach` · `vet:kho`.
-`vet:kho` là thứ giữ ba luật trên, máy kiểm chứ không phải chữ phải nhớ.
+**Trước mỗi commit `bash scripts/do.sh`.** Trong đó `vet:kho` là thứ giữ ba luật trên, máy
+kiểm chứ không phải chữ phải nhớ.
 
 | Lệnh | Việc |
 |---|---|
