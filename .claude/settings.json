@@ -114,7 +114,7 @@
     "artifact-design": "off",
     "artifact-diagramming": "off",
     "artifact-capabilities": "off",
-    "claude-api": "user-invocable-only",
+    "claude-api": "off",
     "keybindings-help": "off",
     "init": "off",
     "giam-token": "user-invocable-only",
@@ -123,6 +123,7 @@
     "doubt-driven-development": "user-invocable-only",
     "constraint-driven-development": "user-invocable-only",
     "code-simplification": "user-invocable-only",
-    "google-workspace": "off"
+    "google-workspace": "off",
+    "docs": "off"
   }
 }
