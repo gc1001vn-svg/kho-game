@@ -9,7 +9,7 @@
  *
  * Kiem sau thu, ba thu dau HONG la thoat 1:
  *   1. Moi `ke/*.tsv` co header, co cot `ten` va `license`, so cot moi dong deu nhau.
- *   2. Khong dong nao mang license SA/ND (luat 3). Rieng `ke/ma-nguon-mo.tsv` duoc mien:
+ *   2. Khong dong nao mang license SA/ND, NC, GPL hay "giu moi quyen" (luat 3; NC/GPL them 03/10), license la thi nhac. Rieng `ke/ma-nguon-mo.tsv` duoc mien:
  *      no ke MA NGUON de doc kien truc, khong phai asset de dung, va co cot `canh_bao`.
  *   3. Cot `id` (neu co) khong trung nhau.
  *   4. `?` license — dem, so voi tran o `cong-cu/nguong_vet.json`. CHI DUOC TUT.
@@ -28,6 +28,13 @@ const KE = join(GOC, 'ke');
 const NGUONG = join(GOC, 'cong-cu', 'nguong_vet.json');
 /** Ban ke duoc mien luat SA/ND: ke ma nguon de HOC, khong phai asset de dung. */
 const MIEN_SA_ND = new Set(['ma-nguon-mo.tsv']);
+/** Luat 3: SA lay license sang ca du an, ND cam phai sinh. */
+const CAM_SA_ND = /-SA|sharealike|-ND|noderiv/i;
+/** Cung luat 3, them 03/10: YetiForce tu goi "ma nguon mo" roi doi sang license phi thuong mai.
+ *  NC cam dung thuong mai, GPL lay license nhu SA, "giu moi quyen" la khong cho gi. */
+const CAM_KHAC = /(^|[^a-z])NC([^a-z]|$)|non-?commercial|\bA?GPL|\bLGPL|all.rights.reserved/i;
+/** Ho license da co trong kho (dem 03/10). Gap ho khac -> nhac xem tay, khong do. */
+const QUEN = /CC-?0|public ?domain|publicdomain|CC.?BY|CREATIVE_COMMONS_BY|creativecommons\.org\/licenses\/by\/|MIT|OFL|Open Font|Apache|BSD|MPL|Unlicense|Zlib|Ubuntu Font|^\?$/i;
 /** Duoi file nhi phan — luat 1 cam commit vao repo nay. */
 const NHI_PHAN = /\.(glb|gltf|bin|fbx|obj|png|jpe?g|webp|zip|7z|tar|gz|wav|mp3|ogg|ttf|otf|woff2?)$/i;
 
@@ -56,8 +63,13 @@ for (const f of tsv) {
   if (lech) loi.push(`${f}: ${lech} dong lech so cot (header ${cot.length})`);
 
   if (iLic >= 0 && !MIEN_SA_ND.has(f)) {
-    const xau = than.filter((d) => /-SA|sharealike|-ND|noderiv/i.test(d.split('\t')[iLic] || ''));
+    const lic = (d) => d.split('\t')[iLic] || '';
+    const xau = than.filter((d) => CAM_SA_ND.test(lic(d)));
     if (xau.length) loi.push(`${f}: ${xau.length} dong license SA/ND — luat 3 cam`);
+    const cam = than.filter((d) => !CAM_SA_ND.test(lic(d)) && CAM_KHAC.test(lic(d)));
+    if (cam.length) loi.push(`${f}: ${cam.length} dong license NC/GPL/giu moi quyen (vd \`${lic(cam[0]).slice(0, 40)}\`) — luat 3 chi nhan CC0 · CC-BY · MIT`);
+    const la = than.filter((d) => !QUEN.test(lic(d)) && !CAM_SA_ND.test(lic(d)) && !CAM_KHAC.test(lic(d)));
+    if (la.length) nhac.push(`${f}: ${la.length} dong license la (vd \`${lic(la[0]).slice(0, 40)}\`) — xem tay co hop luat 3 khong`);
   }
 
   if (iId >= 0) {
