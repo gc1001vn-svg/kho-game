@@ -13,7 +13,7 @@
 //
 // Chay: `node scripts/check_ten.mjs`
 
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 
 /** Tu bi cam -> thay bang gi. */
@@ -62,9 +62,11 @@ function chiDinhDanh(ma) {
     .replace(/`(?:[^`\\]|\\.)*`/g, '``');
 }
 
-const files = execFileSync('git', ['ls-files'], { encoding: 'utf8' })
+// Ca file MOI chua `git add` (khong bi .gitignore loai): khong thi file vua them lot thuoc toi luc
+// commit - do 03/10, check:san xanh truoc commit roi do tren main.
+const files = execFileSync('git', ['ls-files', '--cached', '--others', '--exclude-standard'], { encoding: 'utf8' })
   .split('\n')
-  .filter((p) => p && DUOI.test(p) && !BO_QUA.has(p) && !p.startsWith('node_modules/'));
+  .filter((p) => p && existsSync(p) && DUOI.test(p) && !BO_QUA.has(p) && !p.startsWith('node_modules/'));
 
 const dinh = [];
 for (const p of files) {
