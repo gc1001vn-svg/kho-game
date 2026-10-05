@@ -31,7 +31,7 @@
 // Fail-open tuyet doi: moi duong loi deu tra `continue: true` roi thoat 0.
 // Hook nay khong bao gio duoc chan mot luot lam viec that.
 
-import { readFileSync, existsSync, mkdirSync, writeFileSync, openSync, readSync, fstatSync, closeSync } from 'node:fs';
+import { readFileSync, existsSync, mkdirSync, writeFileSync, rmSync, openSync, readSync, fstatSync, closeSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
@@ -40,7 +40,8 @@ import { pathToFileURL } from 'node:url';
 import { bat, goc, thoat as thoat_an, cat_tran, la_repo_game, KHO_GAME } from './hook_chung.mjs';
 
 const ID = 'cau:nhac-kho';
-const KHO = '/home/user/ghi-nho';
+// `GC_KHO_GHI_NHO` chi de thu hook (bo mau `do.sh`), khong dong vao ban that.
+const KHO = process.env.GC_KHO_GHI_NHO || '/home/user/ghi-nho';
 const NGUON = ['so-thich.md', 'du-an.md', 'trang-thai.md', 'cong-cu/luat-chi-tiet.md'];
 
 // Tran — co sang la phan tac dung, chinh cai dang di chong.
@@ -394,6 +395,40 @@ function khoi_ghi_nho(prompt, da) {
 }
 
 /**
+ * Cau DAU phien thuong la viec chinh, ma luc do kho chua clone: moi dau phien (`add_repo` roi clone)
+ * chay SAU cau dau, hook nay chay TRUOC. Do 05/10: so ghi `kho chua clone` dung o luot 1 — hook im
+ * dung cau quan trong nhat. Giu cau dau lai (chi cau DAU, khong ghi de); lan dau thay kho thi tra
+ * bu MOT lan roi xoa. Tra ve khoi cung dang `khoi_ghi_nho`, rong neu khong co gi.
+ */
+function cau_cho(p_so, prompt, da) {
+  const rong = { dong: [], bam: [], tieu_de: [], ly_do: '' };
+  if (!p_so) return rong;
+  const p = join(dirname(p_so), 'cau_cho.txt');
+  if (!existsSync(join(KHO, NGUON[0]))) {
+    try { if (!existsSync(p)) writeFileSync(p, prompt.slice(0, 2000)); } catch { /* mat cau cho thi chi mat lan tra bu */ }
+    return rong;
+  }
+  let cu;
+  try { cu = readFileSync(p, 'utf8'); rmSync(p); } catch { return rong; } // khong co cau cho: luot thuong
+  const r = khoi_ghi_nho(cu, da);
+  return r.dong.length ? r : rong;
+}
+
+/** Gop khoi tra bu (cau dau phien, di truoc) voi khoi cau nay — tong van <= SO_KHOI. */
+function gop_bu(bu, gn) {
+  if (!bu.dong.length) return gn;
+  if (!gn.dong.length) return bu;
+  const n = Math.max(0, SO_KHOI - bu.dong.length);
+  return {
+    dong: [...bu.dong, ...gn.dong.slice(0, n)],
+    bam: [...bu.bam, ...gn.bam.slice(0, n)],
+    tieu_de: [...bu.tieu_de, ...gn.tieu_de.slice(0, n)],
+    dau: bu.dau,
+    ly_do: '',
+  };
+}
+
+/**
  * Khoi kho-game: chi o repo game, chi khi cau co tu asset. Cat cum bang chinh `tim.mjs`
  * cua kho-game — mot tu dien, mot cach cat; thuoc `thu:do` ben do giu no khong bat nham
  * cau noi viec ("chạy lệnh đo cho kho game" ra 0 cum). Tra { tho, bam, cum, ly_do }.
@@ -431,7 +466,8 @@ async function chinh(raw) {
 
   const p_so = duong_so(vao?.session_id);
   const da = new Set(p_so ? doc_so(p_so) : []);
-  const gn = khoi_ghi_nho(prompt, da);
+  const bu = cau_cho(p_so, prompt, da);
+  const gn = gop_bu(bu, khoi_ghi_nho(prompt, new Set([...da, ...bu.bam])));
   const kg = await khoi_kho_game(prompt, da);
   const nc = khoi_ngu_canh(vao);
   if (gn.dong.length === 0 && !kg.tho && nc.dong.length === 0) {

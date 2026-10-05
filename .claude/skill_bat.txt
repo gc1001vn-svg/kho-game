@@ -3,3 +3,5 @@
 
 md   # co convert.sh, khong co ban thay the. Gui file ma khong goi no thi doc
      # file goc: mot .json 27 MB ~7 trieu token. 73 token/phien la bao hiem re nhat.
+
+diagnosing-bugs   # skill trong repo, co y mo cho model tu goi khi gap loi — cong-cu/skills/NGUON.md

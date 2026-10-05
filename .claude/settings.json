@@ -95,8 +95,8 @@
     "docx": "off",
     "xlsx": "off",
     "pdf": "off",
-    "vsp-safety-expert": "off",
-    "vsp-van-ban": "off",
+    "vsp-safety-expert": "user-invocable-only",
+    "vsp-van-ban": "user-invocable-only",
     "ponytail-audit": "user-invocable-only",
     "ponytail-debt": "user-invocable-only",
     "ponytail-gain": "user-invocable-only",
@@ -124,6 +124,7 @@
     "constraint-driven-development": "user-invocable-only",
     "code-simplification": "user-invocable-only",
     "google-workspace": "off",
-    "docs": "off"
+    "docs": "off",
+    "plugin-authoring": "off"
   }
 }

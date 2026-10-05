@@ -235,11 +235,16 @@ export function skill_chua_khoa(root = goc(), thu_muc_skill = join(homedir(), '.
   const set = doc_json(join(root, '.claude/settings.json'));
   if (!set) return [];
   const khoa = set.skillOverrides ?? {};
-  let bat_co_y = [];
-  try {
-    bat_co_y = readFileSync(join(root, '.claude/skill_bat.txt'), 'utf8')
-      .split('\n').map((l) => l.split('#')[0].trim()).filter(Boolean);
-  } catch { /* khong co file: moi skill khong khoa deu bi bao */ }
+  const bat_co_y = skill_bat(root);
+  return [...ten_skill(thu_muc_skill)].filter((t) => !(t in khoa) && !bat_co_y.includes(t)).sort();
+}
+
+/**
+ * Ten THU MUC moi skill co file tren dia (`~/.claude/skills/<ten>/` va `.../synced/<bucket>/<ten>/`).
+ * Skill dung san cua harness (vd `plugin-authoring`) KHONG co file — ham nay khong thay, phai ghi
+ * khoa tay vao ban mau. Dung chung cho `skill_chua_khoa` va `cai_dat.mjs`.
+ */
+export function ten_skill(thu_muc_skill = join(homedir(), '.claude/skills')) {
   const ten = new Set();
   const quet = (thu_muc, sau) => {
     let ds;
@@ -252,7 +257,15 @@ export function skill_chua_khoa(root = goc(), thu_muc_skill = join(homedir(), '.
     }
   };
   quet(thu_muc_skill, 3);
-  return [...ten].filter((t) => !(t in khoa) && !bat_co_y.includes(t)).sort();
+  return ten;
+}
+
+/** Ten trong `.claude/skill_bat.txt` (skill CO Y bat, `#` la ly do). Khong co file thi rong. */
+export function skill_bat(root = goc()) {
+  try {
+    return readFileSync(join(root, '.claude/skill_bat.txt'), 'utf8')
+      .split('\n').map((l) => l.split('#')[0].trim()).filter(Boolean);
+  } catch { return []; } // khong co file: khong skill nao duoc mien
 }
 
 /** Ban mau khoa skill dung chung moi repo. `GC_BAN_MAU_KHOA` chi de thu, khong dong ban that. */
