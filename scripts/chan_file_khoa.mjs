@@ -38,8 +38,8 @@
 // Y tuong co che hook lay tu MoonshotAI/kimi-code (MIT), code viet lai tu dau.
 
 import { execFileSync } from 'node:child_process';
-import { appendFileSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
-import { dirname, join, relative, isAbsolute } from 'node:path';
+import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { dirname, join, relative, isAbsolute, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 import { bat, goc, thoat } from './hook_chung.mjs';
 
@@ -65,6 +65,43 @@ function docDanhSach(root) {
   } catch {
     return { muc: MAC_DINH, nguon: 'danh sach mac dinh' };
   }
+}
+
+/**
+ * Repo CHUA mot file nam NGOAI repo mo phien: leo len toi thu muc co `.git`. Khong gap thi `null`.
+ *
+ * VI SAO (05/10): phien cloud luon co HAI repo tro len (luat dau phien `add_repo` kho ghi-nho), ma
+ * hook chi doc `file_khoa.txt` cua repo mo phien — `so-thich.md`, `cong-cu/` cua kho sua thang,
+ * khong ve, khong so (do 05/10: sua `hoi_gemini.mjs` di qua). File nam trong repo nao thi theo
+ * khoa, ve, so cua repo do. File TRONG repo mo phien giu nguyen cach cu (repo con, monorepo).
+ */
+function repoChua(duong) {
+  let d = dirname(resolve(duong));
+  for (;;) {
+    if (existsSync(join(d, '.git'))) return d;
+    const cha = dirname(d);
+    if (cha === d) return null;
+    d = cha;
+  }
+}
+
+/**
+ * Cac repo co danh sach khoa can chup quanh mot lenh Bash: repo mo phien, va tren cloud them
+ * repo anh em cung thu muc cha CO `.claude/file_khoa.txt` (kho ghi-nho, kho-game...). May that
+ * khong quet: thu muc cha co the la ~/dev chung moi du an — chup ca loat moi lenh la cham.
+ */
+function cacRepo(root) {
+  const ds = [root];
+  if (process.env.CLAUDE_CODE_REMOTE !== 'true') return ds;
+  const cha = dirname(resolve(root));
+  let con;
+  try { con = readdirSync(cha, { withFileTypes: true }); } catch { return ds; } // khong doc duoc cha: chi repo mo phien
+  for (const m of con) {
+    const d = join(cha, m.name);
+    if (m.isDirectory() && resolve(d) !== resolve(root)
+      && existsSync(join(d, '.git')) && existsSync(join(d, '.claude/file_khoa.txt'))) ds.push(d);
+  }
+  return ds;
 }
 
 /** Muc khoa trung voi `norm`, hay `undefined`. */
@@ -147,12 +184,12 @@ function ghiSo(root, van) {
   }
 }
 
-function chan(norm, khoa, nguon) {
+function chan(norm, khoa, nguon, rootFile) {
   thoat(2, {
     loi:
-      `File "${norm}" trung muc khoa "${khoa}" (${nguon}).\n` +
+      `File "${norm}" trung muc khoa "${khoa}" (${nguon} cua ${rootFile}).\n` +
       `Phai HOI CHU DU AN va duoc dong y truoc khi sua.\n` +
-      `Duoc dong y roi thi ghi mot dong "${norm}" vao ${DUONG_VE} roi sua lai — ` +
+      `Duoc dong y roi thi ghi mot dong "${norm}" vao ${join(rootFile, DUONG_VE)} roi sua lai — ` +
       `ve dung mot lan, va moi lan cho qua deu ghi vao ${DUONG_SO}.\n` +
       `CHUA duoc dong y thi KHONG duoc tu ghi ve. Duong Bash khong bi chan ` +
       `nhung file khoa doi la VAO SO — di duong do ma chua hoi thi chi la sua trom co dau vet.`,
@@ -188,30 +225,34 @@ process.stdin.on('end', () => {
   // Bash se an mat cai ve dang cho dung cho Edit.
   if (tenCongCu === 'Bash') {
     const pAnh = duongAnh(tho);
+    // Anh chup theo tung repo: { <goc repo>: { <file>: dau van tay } } — `cacRepo` (05/10).
+    const chupHet = () => Object.fromEntries(cacRepo(root).map((r) => [r, chup(r, docDanhSach(r).muc)]));
     if (tho?.hook_event_name === 'PostToolUse') {
-      let truoc;
-      try { truoc = JSON.parse(readFileSync(pAnh, 'utf8')); } catch { process.exit(0); }
+      let truocHet;
+      try { truocHet = JSON.parse(readFileSync(pAnh, 'utf8')); } catch { process.exit(0); }
       try { rmSync(pAnh, { force: true }); } catch { /* anh thua nam trong thu muc tam, may ao tu xoa */ }
-      const sau = chup(root, muc);
-      const doi = [...new Set([...Object.keys(truoc), ...Object.keys(sau)])]
-        .filter((f) => (truoc[f] ?? null) !== (sau[f] ?? null));
-      if (doi.length) {
+      const sauHet = chupHet();
+      for (const [r, truoc] of Object.entries(truocHet)) {
+        const sau = sauHet[r] ?? {};
+        const doi = [...new Set([...Object.keys(truoc), ...Object.keys(sau)])]
+          .filter((f) => (truoc[f] ?? null) !== (sau[f] ?? null));
+        if (!doi.length) continue;
         // `git pull`/`merge`/`checkout -- f` cung doi mtime, nhung ket qua trung HEAD — la
         // thay doi DA nam trong lich su git, khong phai sua moi. Chi ghi file con KHAC HEAD.
         // Khong phai repo git (hay git hong) thi ghi het.
         let ban = null;
         try {
           ban = new Set(execFileSync('git', ['status', '--porcelain', '-z', '--', ...doi],
-            { cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
+            { cwd: r, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
             .split('\0').filter((m) => m.length > 3).map((m) => m.slice(3)));
         } catch { /* khong phai repo git: ghi het */ }
-        for (const f of doi) if (!ban || ban.has(f)) ghiSo(root, `GHI SO Bash -> ${f}`);
+        for (const f of doi) if (!ban || ban.has(f)) ghiSo(r, `GHI SO Bash -> ${f}`);
       }
       process.exit(0);
     }
     try {
       mkdirSync(dirname(pAnh), { recursive: true });
-      writeFileSync(pAnh, JSON.stringify(chup(root, muc)));
+      writeFileSync(pAnh, JSON.stringify(chupHet()));
     } catch { /* khong chup duoc thi lenh nay khong vao so — mat mot dong nhac, khong mat viec */ }
     process.exit(0);
   }
@@ -219,16 +260,21 @@ process.stdin.on('end', () => {
   // --- Edit / Write / NotebookEdit -------------------------------------------
   const filePath = tho?.tool_input?.file_path ?? '';
   if (!filePath) process.exit(0);
-  const rel = isAbsolute(filePath) ? relative(root, filePath) : filePath;
-  const norm = rel.split('\\').join('/');
+  // File NGOAI repo mo phien thi theo repo chua no (`repoChua`, 05/10); khong thuoc repo nao thi bo.
+  const tuyetDoi = isAbsolute(filePath) ? filePath : join(root, filePath);
+  const ngoai = relative(root, tuyetDoi).startsWith('..');
+  const rootFile = ngoai ? repoChua(tuyetDoi) : root;
+  if (!rootFile) process.exit(0);
+  const ds = rootFile === root ? { muc, nguon } : docDanhSach(rootFile);
+  const norm = relative(rootFile, tuyetDoi).split('\\').join('/');
 
-  const khoa = timKhoa(muc, norm);
+  const khoa = timKhoa(ds.muc, norm);
   if (!khoa) process.exit(0);
 
-  if (tieuVe(root, norm)) {
-    ghiSo(root, `CHO QUA (ve) ${tenCongCu} -> ${norm}`);
+  if (tieuVe(rootFile, norm)) {
+    ghiSo(rootFile, `CHO QUA (ve) ${tenCongCu} -> ${norm}`);
     process.exit(0);
   }
-  ghiSo(root, `CHAN ${tenCongCu} -> ${norm}`);
-  chan(norm, khoa, nguon);
+  ghiSo(rootFile, `CHAN ${tenCongCu} -> ${norm}`);
+  chan(norm, khoa, ds.nguon, rootFile);
 });
