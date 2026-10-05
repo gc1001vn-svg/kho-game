@@ -15,8 +15,8 @@ Kho `ghi-nho` **Private** → phiên mới chưa có quyền. Đúng thứ tự:
 2. Có rồi → `git -C /home/user/ghi-nho pull -q`.
 3. `cat /home/user/ghi-nho/{so-thich,du-an,trang-thai}.md` — đọc HẾT, cấm `head`/`tail`/`sed -n`.
 
-Bảy bước đầu phiên · cách trả lời · luật báo "xong": **ĐỀU Ở KHO**. `cai_dat.mjs` gọi từ cài
-đặt cá nhân, không chép vào đây.
+Bảy bước đầu phiên · luật báo "xong": **Ở KHO**. Cách trả lời và `cai_dat.mjs`: cài đặt cá
+nhân, không chép vào đây.
 
 ## Ba luật của repo này
 
@@ -24,9 +24,11 @@ Bảy bước đầu phiên · cách trả lời · luật báo "xong": **ĐỀU
    thêm một mẻ là cộng dồn, không xoá được. `assets_source/` đã nằm trong `.gitignore`.
 2. **Bản kê LÀ bản ghi công.** Cột *Tác giả*, *License*, *Trang gốc* là nghĩa vụ pháp lý
    của CC-BY, không phải trang trí. Cắt cột là vi phạm license.
-3. **License chỉ nhận CC0 · CC-BY · MIT.** **CC-BY-SA và CC-BY-ND đều cấm** — SA lây
-   license sang cả dự án, ND cấm phái sinh mà nướng sprite chính là phái sinh. Lọc ngay ở
-   bước quét, đừng để lọt vào mục lục rồi lọc sau.
+3. **License: asset nhận CC0 · CC-BY · MIT, font thêm OFL; thư viện mã (`thu-vien.tsv`)
+   nhận loại dễ dãi (MIT, Apache, BSD, Zlib… — MPL là copyleft theo file).** **Cấm SA, ND,
+   NC, GPL, "giữ mọi quyền"** — SA/GPL lây license sang cả dự án, ND cấm phái sinh mà nướng
+   sprite chính là phái sinh. Lọc ngay ở bước quét. Riêng `ma-nguon-mo.tsv` được miễn: kê mã
+   để ĐỌC học, có cột `canh_bao`. License `?` có trần ở `cong-cu/nguong_vet.json`, chỉ được tụt.
 
 ## Lệnh
 
