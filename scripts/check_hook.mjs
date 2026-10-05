@@ -96,7 +96,7 @@ if (existsSync(KHO)) {
   }
 }
 
-// 7. `hook_chung.mjs` phai co mat: ca nam hook import no.
+// 7. `hook_chung.mjs` phai co mat: moi hook import no.
 if (!existsSync(join(goc, 'scripts/hook_chung.mjs'))) {
   loi.push('thieu scripts/hook_chung.mjs — chay `node /home/user/ghi-nho/cong-cu/cai_dat.mjs`');
 }

@@ -528,7 +528,7 @@ process.on('uncaughtException', () => thoat(IM));
 process.on('unhandledRejection', () => thoat(IM));
 
 // Muc `nhe` bo hook nay: no chen chu vao ngu canh MOI LUOT go, dat nhat trong
-// nam hook. Tat thi mat lop nhac, khong mat lop bao ve nao.
+// bo hook. Tat thi mat lop nhac, khong mat lop bao ve nao.
 if (!bat(ID, ['thuong', 'chat'])) { ghi_so('im — muc hien tai khong goi hook nay'); thoat(IM); }
 
 let raw = '';

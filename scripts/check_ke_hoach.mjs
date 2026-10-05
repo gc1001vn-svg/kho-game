@@ -9,7 +9,7 @@
 //
 // Ke hoach dai la dau hieu lam SAI CHO: phan dai thuong la giai thich va so do,
 // thu do thuoc ve `docs/NHAT_KY/` (ghi SAU khi lam) chu khong phai ke hoach
-// (ghi TRUOC khi lam). `so-thich.md` muc "Lap ke hoach" co bang chon muc.
+// (ghi TRUOC khi lam). `cong-cu/luat-chi-tiet.md` muc "Lap ke hoach" co bang chon muc.
 
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';

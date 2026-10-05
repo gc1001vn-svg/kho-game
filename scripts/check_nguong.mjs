@@ -33,7 +33,7 @@ const MOC = '.claude/nguong_goc.txt';
 const THEO_DOI = [
   {
     ten: 'check_token.nguong',
-    mo_ta: 'nguong token cua AGENTS.md',
+    mo_ta: 'nguong token cua CLAUDE.md',
     doc() {
       // Nguong that = `.claude/nguong_token.txt` neu co, khong thi so mac dinh trong ma.
       const rieng = '.claude/nguong_token.txt';
