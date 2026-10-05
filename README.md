@@ -139,9 +139,10 @@ node cong-cu/nap_ke_cu.mjs ../quoc-chien/docs/KHO_CHUNG.md tayvuc-kho-chung \
 **Mỗi nguồn có bản kê riêng trong `ke/`, và bản kê LÀ bản ghi công** — cột *Tác giả* và
 *Trang gốc* là nghĩa vụ pháp lý, đừng cắt.
 
-Chỉ nhận **CC0 · CC-BY · MIT**. **CC-BY-SA và CC-BY-ND đều cấm**: SA lây license sang cả
-dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite chính là phái sinh, và
-"chơi một mình, không buôn bán" không gỡ được điều đó.
+Asset chỉ nhận **CC0 · CC-BY · MIT** (font thêm OFL). **Cấm SA, ND, NC, GPL**: SA lây license
+sang cả dự án, ND cấm tác phẩm phái sinh — mà nướng model thành sprite chính là phái sinh, và
+"chơi một mình, không buôn bán" không gỡ được điều đó. Bản đủ (thư viện mã, bản kê được miễn,
+trần license `?`): luật 3 trong `CLAUDE.md` — `vet:kho` giữ.
 
 ## Nguồn đang có
 
