@@ -26,7 +26,7 @@
 
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { bat, thoat } from './hook_chung.mjs';
+import { bat, goc, thoat } from './hook_chung.mjs';
 
 const ID = 'dung:chan-bao-xong';
 
@@ -138,7 +138,7 @@ process.stdin.on('end', () => {
 
   // Noi la co so do that -> doi chieu voi so lenh da chay trong luot nay.
   // So khong co (chua cai ghi_so_lenh.mjs) thi cho qua, khong chan mo.
-  const root = process.env.CLAUDE_PROJECT_DIR ?? process.cwd();
+  const root = goc();
   let daChayLenh = true;
   try {
     const so = readFileSync(join(root, '.claude/so_lenh.log'), 'utf8');

@@ -18,7 +18,7 @@ import { appendFileSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { join, dirname } from 'node:path';
 // Hook nay khong in gi ra stdout/stderr nen khong can `thoat()` — moi duong ra
 // deu la `process.exit(0)` tay khong, khong co chu de mat.
-import { bat } from './hook_chung.mjs';
+import { bat, goc } from './hook_chung.mjs';
 
 const ID = 'sau:ghi-so-lenh';
 const GIU_DONG = 300;
@@ -47,7 +47,7 @@ process.stdin.on('end', () => {
       .slice(0, 200);
     const dong = `${d?.prompt_id ?? '-'}\t${ten}\t${chiTiet}\n`;
 
-    const root = process.env.CLAUDE_PROJECT_DIR ?? process.cwd();
+    const root = goc();
     const so = join(root, '.claude/so_lenh.log');
     mkdirSync(dirname(so), { recursive: true });
     appendFileSync(so, dong);

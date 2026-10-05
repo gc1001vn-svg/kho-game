@@ -37,7 +37,7 @@ import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
-import { bat, thoat as thoat_an, cat_tran, la_repo_game, KHO_GAME } from './hook_chung.mjs';
+import { bat, goc, thoat as thoat_an, cat_tran, la_repo_game, KHO_GAME } from './hook_chung.mjs';
 
 const ID = 'cau:nhac-kho';
 const KHO = '/home/user/ghi-nho';
@@ -331,7 +331,7 @@ const IM = { continue: true, suppressOutput: true };
  */
 function ghi_so(ly_do) {
   try {
-    const root = process.env.CLAUDE_PROJECT_DIR ?? process.cwd();
+    const root = goc();
     const thu_muc = join(root, '.claude');
     mkdirSync(thu_muc, { recursive: true });
     const so = join(thu_muc, 'nhac_kho.log');

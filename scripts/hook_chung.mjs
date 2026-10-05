@@ -41,8 +41,9 @@
 // Fail-open tuyet doi: moi duong loi trong file nay deu tra ve "cho chay tiep".
 
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join, resolve, sep } from 'node:path';
 import { homedir } from 'node:os';
+import { fileURLToPath } from 'node:url';
 
 /** Muc hop le, tu long den chat. */
 export const MUC_HOP_LE = ['nhe', 'thuong', 'chat'];
@@ -59,7 +60,20 @@ export const TRAN_GHI = 146176;
  */
 export const TRAN_NGU_CANH = 4000;
 
-const goc = () => process.env.CLAUDE_PROJECT_DIR ?? process.cwd();
+/**
+ * Thu muc repo cua hook = cha cua `scripts/` noi file nay nam (cai_dat chep vao `<repo>/scripts/`).
+ *
+ * VI SAO KHONG DUNG `CLAUDE_PROJECT_DIR`: phien cloud co HAI repo (luat dau phien `add_repo` kho
+ * ghi-nho) chay o thu muc CHA cac ban clone, nen bien do la `/home/user` — hook tim `.claude/...`
+ * o do, khong thay gi, im lang cho qua. Do 04/10: so lenh ngung ghi tu luot 2, sua `AGENTS.md`
+ * (file khoa) lot qua ma 0. Bien la thu muc CHA cua repo chua script thi lay repo chua script;
+ * con lai giu bien (phien mot repo; test tro bien vao mot repo gia o thu muc tam).
+ */
+export const goc = () => {
+  const bien = resolve(process.env.CLAUDE_PROJECT_DIR ?? process.cwd());
+  const theoScript = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+  return theoScript.startsWith(bien + sep) ? theoScript : bien;
+};
 
 function doc_json(duong) {
   try { return JSON.parse(readFileSync(duong, 'utf8')); } catch { return null; }

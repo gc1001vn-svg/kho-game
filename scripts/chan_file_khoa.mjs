@@ -41,7 +41,7 @@ import { execFileSync } from 'node:child_process';
 import { appendFileSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, isAbsolute } from 'node:path';
 import { tmpdir } from 'node:os';
-import { bat, thoat } from './hook_chung.mjs';
+import { bat, goc, thoat } from './hook_chung.mjs';
 
 const ID = 'truoc:chan-file-khoa';
 
@@ -179,7 +179,7 @@ process.stdin.on('end', () => {
   } catch {
     process.exit(0);
   }
-  const root = process.env.CLAUDE_PROJECT_DIR ?? process.cwd();
+  const root = goc();
   const { muc, nguon } = docDanhSach(root);
   const tenCongCu = tho?.tool_name ?? '';
 
