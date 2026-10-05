@@ -120,7 +120,7 @@ cấm) · `three.quarks` (MIT) chỉ dùng được với three.js.
 
 Danh sách mục 3 vẫn đúng, làm trên cảnh 3D: AO (nướng sẵn hoặc SSAO) · viền lưới phóng to kiểu
 Townscaper · độ sâu trường ảnh · bloom · hạt `three.quarks` · hậu kỳ `postprocessing` (Zlib —
-ngoài CC0/CC-BY/MIT, anh quyết). Tiny Glade là **trần** của đèn toàn cục, không phải mốc cho iPhone.
+license thư viện mã kho nhận, `CLAUDE.md` luật 3; cài vào game vẫn hỏi anh). Tiny Glade là **trần** của đèn toàn cục, không phải mốc cho iPhone.
 
 ## 7. Nguồn (tra 30/09/2026)
 
