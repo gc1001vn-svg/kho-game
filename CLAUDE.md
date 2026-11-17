@@ -12,7 +12,7 @@ Kho `ghi-nho` **Private** → phiên mới chưa có quyền. Đúng thứ tự:
    `git clone --depth 1 https://github.com/gc1001vn-svg/ghi-nho /home/user/ghi-nho`.
    Clone khi chưa `add_repo` luôn trả
    `fatal: could not read Username for 'https://github.com': terminal prompts disabled`.
-2. Có rồi → `git -C /home/user/ghi-nho pull -q`.
+2. Có rồi → không `pull` (máy đã lấy bản mới lúc mở phiên).
 3. `cat /home/user/ghi-nho/{so-thich,du-an,trang-thai}.md` — đọc HẾT, cấm `head`/`tail`/`sed -n`.
 
 Bảy bước đầu phiên · luật báo "xong": **Ở KHO**. Cách trả lời và `cai_dat.mjs`: cài đặt cá
